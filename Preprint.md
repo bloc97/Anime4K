@@ -44,7 +44,7 @@ Common edge refinement algorithms such as unsharp masking<sup>**[6]**</sup> take
 
 Learning-based algorithms take in **LR_U** and try to predict the residual ***r*** with a neural network, a sparse dictionnary or look for self similarity in the image. Unfortuately learning based methods are for now too slow for real-time applications, but we cannot ignore their effectiveness. Algorithms such as waifu2x or VDSR vastly outperforms any other general-purpose upscaling algorithms.  
 
-However, we will take advantage of the fact that our upscaling algorithm only needs to work on a **single** type of content (animation), thus we might have a chance to outperform learning-based algorithm.
+However, we will take advantage of the fact that our upscaling algorithm only needs to work on a **single** type of content (animation), thus we might have a chance to match (or even outperform) learning-based algorithms.
 
 
 ## Proposed Method
