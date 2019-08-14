@@ -35,7 +35,7 @@ Unfinished, Still cleaning and commenting the code.
 **Why not just use madVR with NGU?**  
 -NGU is proprietary, this algorithm is licensed under MIT.  
 
-**Where are the PNSR/SSIM metrics?**  
+**Where are the PSNR/SSIM metrics?**  
 -There are no ground truths of 4K anime.  
 
 **I think the results are worse!**  
