@@ -15,7 +15,8 @@ Anime4K is a state-of-the-art open-source high-quality real-time anime upscaling
 
 # HLSL Usage Instructions (MPC-BE with madVR)  
 **Windows Only**  
-# [HLSL Installation](HLSL_Instructions.md)
+# [HLSL Installation](HLSL_Instructions.md)  
+Note for developpers: For performance, the HLSL shaders use the Alpha channel to store the gradient, you might need to make a backup of the the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)  
 
 # Java Usage Instructions (Standalone)
 Currently unavailable.  
