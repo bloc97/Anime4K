@@ -1,0 +1,29 @@
+
+# Usage Instructions (HLSL)
+*If you wish to use another media player, look at their documentation on how to install HLSL shaders.*
+
+1- Install [**MPC-BE**](https://sourceforge.net/projects/mpcbe/) and [madVR](http://madvr.com/) (Optional, but good for quality)  
+2- Copy the .hlsl files to `%AppData%\Roaming\MPC-BE\Shaders`  
+3- Add the shaders **(The order is important!)**   
+
+![Step1](results/Step1.png?raw=true)
+
+**Different screen resolutions need different shaders:**  
+Smaller or equal to 1080p  
+```
+-Anime4K_ComputeLum  
+-Anime4K_Push  
+-Anime4K_ComputeGradient  
+-Anime4K_PushGrad_Weak  
+```
+Larger than 1080p  
+```
+-Anime4K_ComputeLum  
+-Anime4K_Push  
+-Anime4K_ComputeGradient  
+-Anime4K_PushGrad  
+```
+
+Note: *Anime4K_Push* is an optional pass that thins lines, it can be removed if the effect is unsatisfactory for certain anime.
+
+![Step2](results/Step2.png?raw=true)
