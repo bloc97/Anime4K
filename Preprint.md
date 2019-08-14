@@ -93,7 +93,7 @@ Instead of needing to upscale beforehand, the user can simply watch the anime wi
 
 
 Here are a few randomly selected comparisons:  
-*Unless otherwise specified, all Anime4K upscales in comparisons are pre-upscaled with the Jinc algorithm found in madVR. The NGU variant used is NGU Sharp*
+*Unless otherwise specified, all Anime4K upscales in comparisons are pre-upscaled with the Jinc algorithm found in madVR. The NGU variant used is NGU Sharp.*
 
 ### 1080p to 4K
 ![Upscale Comparison 0](results/Comparisons/0.png?raw=true)
