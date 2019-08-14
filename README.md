@@ -28,6 +28,18 @@ Unfinished, Still cleaning and commenting the code.
 <br/>
 <br/>
 
+## FAQ
+**Why not just use waifu2x?**  
+-waifu2x is too slow for real time applications.  
+
+**Why not just use madVR with NGU?**  
+-NGU is proprietary, this algorithm is licensed under MIT.  
+
+**Where are the PNSR/SSIM metrics?**  
+-There are no ground truths of 4K anime.  
+
+**I think the results are worse!**  
+-Surely some people like sharper edges, some like softer ones. Do try it yourself on a few anime before reaching a definite conclusion. People *tend* to prefer sharper edges. Also, seeing the comparisons on a 1080p screen is not representative of the final results on a 4K screen, the pixel density and sharpness of the final image is simply not comparable.
 
 
 # Psudo-Preprint Preview
