@@ -62,7 +62,7 @@ As a general rule, the less blurry an image is, the thinner the residual lines. 
 
 The main objective is to modify **LR_U** (the blurry image) until its residual becomes thinnest, giving us one of the possible **HR** (sharp) images.
 
-Our algorithm will simply take as input **LR_U** and its residual, push the residual's pixels so that the lines becomes thinner. For each 'push' operation performed on the residual, we do the same on the color image. The residual will serve as a guide where to push. This has the effect of iteratively maximizing the gradients of an image, which mathematically is equivalent to minimizing blur, but without overshoot or rining artifacts commonly found on traditional 'unblurring' and 'sharpening' approaches.
+Our algorithm will simply take as input **LR_U** and its residual, push the residual's pixels so that the residual lines becomes thinner. For each 'push' operation performed on the residual, we do the same on the color image. The residual will serve as a guide where to push. This has the effect of iteratively maximizing the gradients of an image, which mathematically is equivalent to minimizing blur, but without overshoot or rining artifacts commonly found on traditional 'unblurring' and 'sharpening' approaches.
 
 Pseudocode:
 ```
@@ -79,7 +79,7 @@ One trick our algorithm uses to improve performance is to use a sobel filter to 
 An advantage of this algorithm is the fact it is scale-independant. The anime could be incorrectly upscaled beforehand (double upscaling, or even downscaled then upscaled), and this algorithm will still detect the blurry edges and refine them. Thus, the image can be upscaled in advance with any algorithm the user prefers (Bilinear, Jinc, xBR, or even waifu2x), this algorithm will then correctly refine the edges and remove blur. Running this algorithm on animes mastered at 900p makes the result look like a true 1080p anime.
 For a stronger deblur, we simply run the algorithm again. This algorithm iteratively sharpens the image.
 
-However, for 2x upscales, we noticed that the lines were usually too thick and looked unnatural (since blur usually spread dark lines outwards, making them thicker), thus we added a pre-pass to thin lines. This pass is not integral to the algorithm and can be safely removed by the user if wishes to keep the thick lines.  
+However, for 2x upscales, we noticed that the lines were usually too thick and looked unnatural (since blur usually spread dark lines outwards, making them thicker), thus we added a pre-pass to thin lines. This pass is not integral to the algorithm and can be safely removed by the user if he wishes to keep the thick lines.  
 
 We have implemented this algorithm both in Java and HLSL/C, they can be found in this repo.
 The Java version can be used as an API to upscale images, while the HLSL code can be used as custom shaders for any media player supporting HLSL shaders. (In particular MPC-HC and MPC-BE with madVR)
