@@ -4,7 +4,7 @@
 
 1- Install [**MPC-BE**](https://sourceforge.net/projects/mpcbe/) and [madVR](http://madvr.com/) (Optional, but good for quality)  
 2- Download the .hlsl shader files [**here**](https://github.com/bloc97/Anime4K/releases/download/0.9/Anime4K_HLSL.zip)  
-3- Copy the .hlsl files to `%AppData%\Roaming\MPC-BE\Shaders`  
+3- Copy the .hlsl files to `%AppData%\MPC-BE\Shaders`  
 4- Add the shaders **(The order is important!)**   
 
 ![Step1](results/Step1.png?raw=true)
