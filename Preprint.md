@@ -88,7 +88,7 @@ The Java version can be used as an API to upscale images, while the HLSL code ca
 ## Results
 
 To our surprise, such a simple method produced a exceptionally effective algorithm for unblurring and upscaling anime. It is not as good as waifu2x for recovering small details, but is very good at reconstructing sharp edges from blurry lines.  
-Furthermore, due to the simplicity of this algorithm, running it on an GPU (*AMD RX Vega 64*) takes a mere 3 miliseconds, allowing us to upscale anime in real time.  
+Furthermore, due to the simplicity of this algorithm, running it on an GPU (*AMD RX Vega 64*) takes a mere 3 miliseconds, allowing us to upscale anime in real time. Even running on much less powerful integrated laptop GPUs (*Ryzen 5 2500U APU with Vega 8*) only takes 9 miliseconds.  
 Instead of needing to upscale beforehand, the user can simply watch the anime with our algorithm running. This algorithm can potentially be implemented on phones or even run directly on the CPU if the user does not have a GPU.
 
 
