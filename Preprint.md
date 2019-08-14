@@ -32,7 +32,7 @@ Using traditionnal 'unblurring' or 'sharpening' techniques causes overshoot<sup>
 
 Learning-based approaches (such as waifu2x, VDSR, EDSR, etc.) are a few orders of magnitude too slow for real-time (<30ms) applications, especially at UHD resolutions. Furthermore, the resulting algorithm outputs good quality upscales of 720p anime for 1080p screens, potentially allowing users to save disk space and/or network bandwidth by only archiving 720p encodes.
 
-Note: Often 1080p anime is not true 1080p. They are often mastered in the studio at around 900p, then upscaled to 1080p for the final product. Some exceptions include blu-ray masters of full-length animation films.
+To further complicate the issue, 1080p anime is often not true 1080p. They are usually mastered in the studio at around 900p, then upscaled to 1080p for the final product. Some exceptions include blu-ray masters of full-length animation films.
 
 ### Existing algorithms
 As a general rule, an image can be decomposed into two parts, its low frequency components ***LR_U*** and a high frequency residual ***r***.
