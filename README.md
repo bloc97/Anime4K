@@ -1,2 +1,2 @@
 # Anime4K
-A High-Quality Real Time Anime Upscaler
+Anime4K is a high-quality real-time anime upscaling algorithm that can be implemented in any language.
