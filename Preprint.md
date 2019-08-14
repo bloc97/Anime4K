@@ -73,7 +73,7 @@ Pseudocode:
         push the color pixel in the current direction
 ```
 
-One trick our algorithm uses to improve performance is to use a sobel filter to approximate the image's residual instead of computing the residual with a gaussian filter, as computing a gaussian kernel is more expensive. Furthermore, minimizing the sobel gradient is mathematically similar (but not equivalent!) to minimizing the residual. This modification yielded no quality degradation on visual inspection.
+One trick our algorithm uses to improve performance is to use a sobel filter to approximate the image's residual instead of computing the residual with a gaussian filter, as computing a gaussian kernel is more expensive. Furthermore, maximizing the sobel gradient is mathematically similar (but not equivalent!) to maximizing the residual. This modification yielded no quality degradation on visual inspection.
 
 
 An advantage of this algorithm is the fact it is scale-independant. The anime could be incorrectly upscaled beforehand (double upscaling, or even downscaled then upscaled), and this algorithm will still detect the blurry edges and refine them. Thus, the image can be upscaled in advance with any algorithm the user prefers (Bilinear, Jinc, xBR, or even waifu2x), this algorithm will then correctly refine the edges and remove blur. Running this algorithm on animes mastered at 900p makes the result look like a true 1080p anime.
