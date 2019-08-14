@@ -10,7 +10,8 @@ Anime4K is a state-of-the-art open-source high-quality real-time anime upscaling
 <br/>
 <br/>
 
-# HLSL Usage Instructions (MPC-BE with madVR)
+# HLSL Usage Instructions (MPC-BE with madVR)  
+**Windows Only**  
 [HLSL Installation](HLSL_Instructions.md)
 
 # Java Usage Instructions (Standalone)
