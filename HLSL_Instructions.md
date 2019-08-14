@@ -28,3 +28,12 @@ Larger than 1080p
 Note: *Anime4K_Push* is an optional pass that thins lines, it can be removed if the effect is unsatisfactory for certain anime.
 
 ![Step2](results/Step2.png?raw=true)
+
+
+### If madVR is installed
+These settings are used for all the comparisons.
+*These are heavy on the GPU, do not use them if rendering times rise above 30ms*
+
+![Settings1](results/Settings1.png?raw=true)
+
+![Settings1](results/Settings2.png?raw=true)
