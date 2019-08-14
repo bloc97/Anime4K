@@ -30,7 +30,7 @@ Using existing kernel algorithms alone such as Bicubic or xBR<sup>**[5]**</sup> 
 
 Using traditionnal 'unblurring' or 'sharpening' techniques causes overshoot<sup>**[3]**</sup> to appear near edges, which distracts the viewer and reduces the perceptual quality of the picture.  
 
-Learning-based approaches (such as waifu2x, VDSR, EDSR, etc.) are a few orders of magnitude too slow for real-time (<30ms) applications, especially at UHD resolutions. Furthermore, the resulting algorithm outputs good quality upscales of 720p anime for 1080p screens, potentially allowing users to save disk space and/or network bandwidth by only archiving 720p encodes.
+Learning-based approaches (such as waifu2x, VDSR, EDSR, etc.) are a few orders of magnitude too slow for real-time (<30ms) applications, especially at UHD resolutions.
 
 To further complicate the issue, 1080p anime is often not true 1080p. They are usually mastered in the studio at around 900p, then upscaled to 1080p for the final product. Some exceptions include blu-ray masters of full-length animation films.
 
@@ -151,13 +151,13 @@ Furthermore, supervised training for a neural network to do 4K upscaling is curr
 
 After a quick double blind test involving a few individuals, we were able to conjure up this (not-so-accurate) relative graph.  
 
-Anime4K used as a standalone upscaling algorithm (Bilinear + Anime4K) already outperforms other more complex algorithms. With a little help (Jinc or xBR), it quickly becomes state of the art in the real time category.  
+Anime4K used as a standalone upscaling algorithm (Bilinear + Anime4K) already outperforms other more complex algorithms. With a little help (Jinc or xBR), it quickly becomes state of the art in the real time category. 
 
 ![Relative Quality Comparison Graph](results/Graph.png?raw=true)
 
 
 ## Conclusion
-In conclusion, while our algorithm is very simple, it is also very good at upscaling anime within a short time budget. We are certain that some refinement (such as a better edge detection algorithm) will reduce artifacts, but that is left for another time. If the reader is interested enough, we encourage analyzing and improving this algorithm.
+In conclusion, while our algorithm is very simple, it is also very good at upscaling anime within a short time budget. Furthermore, the resulting algorithm outputs good quality upscales of 720p anime for 1080p screens, potentially allowing users to save disk space and/or network bandwidth by only archiving 720p encodes. We are certain that some refinement (such as a better edge detection algorithm) will reduce artifacts, but that is left for another time. If the reader is interested enough, we encourage analyzing and improving this algorithm.  
 
 
 ## Sources
