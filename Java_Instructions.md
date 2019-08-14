@@ -2,12 +2,12 @@
 # Usage Instructions (Java)
 
 1- Install Java JRE 12  
-2- Download the jar and library files [**here**](https://github.com/bloc97/Anime4K/releases/download/0.9/Anime4K_Java.zip)  
+2- Download the jar and library files [**here**](https://github.com/bloc97/Anime4K/releases/download/0.9/Anime4K_Java.zip), or build the jar yourself with the maven source project.  
 3- Extract the files  
 4- Run as administrator this command `java -jar Anime4K.jar input.png output.png` for 2x scale  
 
 Available parameters:  
-`java -jar Anime4K.jar [File_In] [File_Out] (Scale ) (Push_Strength ) (Push_Grad_Strength)`  
+`java -jar Anime4K.jar [File_In] [File_Out] (Scale ) (Push_Strength) (Push_Grad_Strength)`  
 
 Default Scale: `2`  
 Default Push_Strength: `Scale / 6`  
