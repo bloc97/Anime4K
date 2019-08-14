@@ -6,7 +6,7 @@ Anime4K is a state-of-the-art open-source high-quality real-time anime upscaling
 *State of the art as of August 2019, this will unquestionably be outperformed very soon.*
 
 
-#### *Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated whatsoever with this project, please contact me and I will gladly take it down.*
+#### *Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact me and I will gladly take it down.*
 
 ![Comparison](results/Comparisons/1_time.png?raw=true)
 
