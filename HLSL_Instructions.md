@@ -31,9 +31,9 @@ Note: *Anime4K_Push* is an optional pass that thins lines, it can be removed if 
 
 
 ### If madVR is installed
-These settings are used for all the comparisons.
-*These are heavy on the GPU, do not use them if rendering times rise above 30ms*
+*These are heavy on the GPU, do not use them if rendering times rise above 30ms*  
 
+Settings used for all the comparisons:  
 ![Settings1](results/Settings1.png?raw=true)
 
 ![Settings1](results/Settings2.png?raw=true)
