@@ -14,6 +14,7 @@ Anime4K is a state-of-the-art open-source high-quality real-time anime upscaling
 [HLSL Installation](HLSL_Instructions.md)
 
 # Java Usage Instructions (Standalone)
+Unfinished, Still cleaning and commenting the code.
 [Java Installation](Java_Instructions.md)
 
 
