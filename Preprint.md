@@ -42,14 +42,14 @@ As a general rule, an image can be decomposed into two parts, its low frequency 
 Intuitively, single image super-resolution is defined as recovering high-frequency residuals ***r*** using the low frequency data ***LR_U*** (the blurry, low resolution image).  
 Common edge refinement algorithms such as unsharp masking<sup>**[6]**</sup> take the low resolution image, extract the low resolution image's residual by computing the difference between the low resolution image with a even lower resolution of that image, then it thins and sharpens that residual to finally add it to **LR_U**. This method creates ringing and overshoot commonly seen on existing sharpening algorithms. We need something better that does not distract the viewer.  
 
-Learning-based algorithms take in **LR_U** and try to predict the residual ***r*** with a neural network, a sparse dictionnary or look for self similarity in the image. Unfortuately learning based methods are for now too slow for real-time applications, but we cannot ignore their effectiveness. Algorithms such as waifu2x or VDSR vastly outperforms any other general-purpose upscaling algorithms.  
+Learning-based algorithms take in **LR_U** and try to predict the residual ***r*** with a neural network, a sparse dictionary or look for self similarity in the image. Unfortunately learning based methods are for now too slow for real-time applications, but we cannot ignore their effectiveness. Algorithms such as waifu2x or VDSR vastly outperform any other general-purpose upscaling algorithms.  
 
 However, we will take advantage of the fact that our upscaling algorithm only needs to work on a **single** type of content (animation), thus we might have a chance to match (or even outperform) learning-based algorithms.
 
 
 ## Proposed Method
 
-Generally, animation frames do not contain a lot of textures, they are mostly composed of flat shaded objects and lines. Thus, a human can quickly recongnize a low-quality upscale of an anime, since even slight bit of bluriness is noticeable.
+Generally, animation frames do not contain a lot of textures, they are mostly composed of flat shaded objects and lines. Thus, a human can quickly recognize a low-quality upscale of an anime, since even slight bit of bluriness is noticeable.
 
 Instead of going for a general purpose upscaling algorithm, we decided to find a good edge-refinement algorithm. Crisp edges are more important to anime upscaling than recovering small details such as texture.
 
@@ -62,7 +62,7 @@ As a general rule, the less blurry an image is, the thinner the residual lines. 
 
 The main objective is to modify **LR_U** (the blurry image) until its residual becomes thinnest, giving us one of the possible **HR** (sharp) images.
 
-Our algorithm will simply take as input **LR_U** and its residual, push the residual's pixels so that the residual lines becomes thinner. For each 'push' operation performed on the residual, we do the same on the color image. The residual will serve as a guide where to push. This has the effect of iteratively maximizing the gradients of an image, which mathematically is equivalent to minimizing blur, but without overshoot or rining artifacts commonly found on traditional 'unblurring' and 'sharpening' approaches.
+Our algorithm will simply take as input **LR_U** and its residual, push the residual's pixels so that the residual lines becomes thinner. For each 'push' operation performed on the residual, we do the same on the color image. The residual will serve as a guide where to push. This has the effect of iteratively maximizing the gradients of an image, which mathematically is equivalent to minimizing blur, but without overshoot or ringing artifacts commonly found on traditional 'unblurring' and 'sharpening' approaches.
 
 Pseudocode:
 ```
@@ -76,7 +76,7 @@ Pseudocode:
 One trick our algorithm uses to improve performance is to use a sobel filter to approximate the image's residual instead of computing the residual with a gaussian filter, as computing a gaussian kernel is more expensive. Furthermore, maximizing the sobel gradient is mathematically similar (but not equivalent!) to minimizing the residual thickness. This modification yielded no quality degradation on visual inspection.
 
 
-An advantage of this algorithm is the fact it is scale-independant. The anime could be incorrectly upscaled beforehand (double upscaling, or even downscaled then upscaled), and this algorithm will still detect the blurry edges and refine them. Thus, the image can be upscaled in advance with any algorithm the user prefers (Bilinear, Jinc, xBR, or even waifu2x), this algorithm will then correctly refine the edges and remove blur. Running this algorithm on animes mastered at 900p makes the result look like a true 1080p anime.
+An advantage of this algorithm is the fact it is scale-independent. The anime could be incorrectly upscaled beforehand (double upscaling, or even downscaled then upscaled), and this algorithm will still detect the blurry edges and refine them. Thus, the image can be upscaled in advance with any algorithm the user prefers (Bilinear, Jinc, xBR, or even waifu2x), this algorithm will then correctly refine the edges and remove blur. Running this algorithm on animes mastered at 900p makes the result look like a true 1080p anime.
 For a stronger deblur, we simply run the algorithm again. This algorithm iteratively sharpens the image.
 
 However, for 2x upscales, we noticed that the lines were usually too thick and looked unnatural (since blur usually spread dark lines outwards, making them thicker), thus we added a pre-pass to thin lines. This pass is not integral to the algorithm and can be safely removed by the user if he wishes to keep the thick lines.  
@@ -137,7 +137,7 @@ Other algorithms are not shown as they perform poorly for art upscaling and are 
 Our algorithm can better recover sharp edges from all the pictures, even compared to waifu2x since it was specially tailored for this purpose.
 
 However, a big weakness of our algorithm shows when we try to recover small details present in anime style art. waifu2x outperformed our algorithm by a large margin when there is texture detail, however since upscaling art was not our main goal, our results are acceptable.  
-Furthermore, since our algorithm is scale-independant, we can apply it after running waifu2x, further enhancing and sharpening the edges.  
+Furthermore, since our algorithm is scale-independent, we can apply it after running waifu2x, further enhancing and sharpening the edges.  
 
 Then, as predicted, the bigger the upscaling scale, the harder it is for our algorithm. (Also harder for other algorithms) It succesfully sharpens the edges but cannot recover  sharp corners and texture, making the picture look like a pastel painting. Some people might like this style, some might not.  
 
