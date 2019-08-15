@@ -16,12 +16,12 @@ Anime4K is a state-of-the-art open-source high-quality real-time anime upscaling
 # HLSL Usage Instructions (MPC-BE with madVR)  
 **Windows Only**  
 # [HLSL Installation](HLSL_Instructions.md)  
-Note for developpers: For performance, the HLSL shaders use the Alpha channel to store the gradient, you might need to make a backup of the the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)  
+Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient, you might need to make a backup of the the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)  
 
 # GLSL Usage Instructions (MPV)  
 **Cross platform**  
 # [GLSL Installation](GLSL_Instructions.md)  
-Note for developpers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient, you might need to make a backup of the the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)  
+Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient, you might need to make a backup of the the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)  
 
 # Java Usage Instructions (Standalone)
 # [Java Installation](Java_Instructions.md)
