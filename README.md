@@ -74,7 +74,7 @@ Thus, to assess its true effectiveness with a metric, a few Pixels had the geniu
 
 Let's also say that in their world, downscaling is always done using the Nearest-Neighbour algorithm.  
 
-Due to the small brains of Pixels, the authors of Diagonal4K do not realize that if the 1x1 image is black, it must be Anime 1, and if it were to be be black instead, Anime 2.  
+Due to the small brains of Pixels, the authors of Diagonal4K do not realize that if the 1x1 image is black, it must be Anime 1, and if it were to be be white instead, Anime 2.  
 
 But 4 years prior, another group of smart pixels used the power of machine learning to augment their small brains. Their algorithm sexyCircle2x, a pixel-network, learnt that 1x1 black image is Anime 1, and 1x1 black is Anime 2. It learnt the distribution of Animes, and correctly guesses what anime corresponds to what pixel color.  
 
