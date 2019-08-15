@@ -34,7 +34,7 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 <br/>
 <br/>
 
-[Read Full Pseudo-Preprint Here](Preprint.md)
+# [Read Full Pseudo-Preprint Here](Preprint.md)
 
 ## FAQ
 **Why not just use waifu2x?**  
