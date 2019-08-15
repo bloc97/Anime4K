@@ -1,6 +1,6 @@
 
 # Usage Instructions (HLSL)
-*If you wish to use another media player, look at their documentation on how to install HLSL shaders.*
+*If you wish to use another media player, look at their documentation on how to install HLSL shaders and modify the shader accordingly if needed.*
 
 1- Install [**MPC-BE**](https://sourceforge.net/projects/mpcbe/) and [madVR](http://madvr.com/) (Optional, but good for quality)  
 2- Download the .hlsl shader files [**here**](https://github.com/bloc97/Anime4K/releases/download/0.9/Anime4K_HLSL.zip)  
