@@ -42,7 +42,7 @@ vec4 hook() { //Save lum on POSTKERNEL
 //!BIND POSTKERNEL
 //!BIND NATIVE
 
-#define strength ((SCALED_size.x) / (NATIVE_size.x) / 6)
+#define strength (min((SCALED_size.x) / (NATIVE_size.x) / 6, 1))
 
 vec4 getLargest(vec4 cc, vec4 lightestColor, vec4 a, vec4 b, vec4 c) {
 	vec4 newColor = cc * (1 - strength) + ((a + b + c) / 3) * strength;
@@ -209,7 +209,7 @@ vec4 hook() { //Save grad on POSTKERNEL
 //!BIND POSTKERNEL
 //!BIND NATIVE
 
-#define strength ((SCALED_size.x) / (NATIVE_size.x) / 2)
+#define strength (min((SCALED_size.x) / (NATIVE_size.x) / 2, 1))
 
 vec4 getAverage(vec4 cc, vec4 a, vec4 b, vec4 c) {
 	return cc * (1 - strength) + ((a + b + c) / 3) * strength;
