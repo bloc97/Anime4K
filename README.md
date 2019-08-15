@@ -46,7 +46,7 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 **Where are the PSNR/SSIM metrics?**  
 -There are no ground truths of 4K anime.  
 
-**Why not do PSNR/SSIM on 480p->720p upscaling?**  
+# **Why not do PSNR/SSIM on 480p->720p upscaling?**  
 -I get this question a lot, and let me clarify things. Usually when I try to demonstrate a point I try to do it in the extreme, so that the reasoning becomes very clear.  
 
 Let's say in another hypothetical world (lets call it PixLand) all anime are just diagonal lines on a 2x2 image. So there are only two possible anime pictures possible in that world. Lets also say that in this world, all images are binary, no grayscale.  
