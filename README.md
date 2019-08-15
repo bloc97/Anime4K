@@ -84,7 +84,7 @@ Back to the present, those Pixels dug out sexyCircle2x and begun their compariso
 
 ![Demo 1](results/Demo/1x1-2x2.png?raw=true)
 
-Applying sexyCircle2x to 2x2 anime also yields plausible 4x4 "anime", but they do not and will never know if it is truely anime. However they trust the algorithm since it is a pixel-network, and must be smarter than their small Pixel brains.  
+Applying sexyCircle2x to 2x2 anime also yields plausible 4x4 "anime", but they do not and will never know if it is truely anime. However they trust the algorithm enough since it is a pixel-network, and must be smarter than their small Pixel brains.  
 
 So the results are:  
 sexyCircle2x correctly upscales 1x1 -> 2x2  
