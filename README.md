@@ -76,7 +76,7 @@ Due to the small brains of Pixels, the authors of Diagonal4K do not realize that
 
 But 4 years prior, another group of smart pixels used the power of machine learning to augment their small brains. Their algorithm sexyCircle2x, a pixel-network, learnt that 1x1 black image is Anime 1, and 1x1 black is Anime 2. It learnt the distribution of Animes, and correctly guesses what anime corresponds to what pixel color.  
 
-People were dumbfounded. "Wow! It can basically generate anime!" "Incredible!"  
+People were dumbfounded. "Wow! It can basically generate anime!" "Incredible! Details out of thin air!" "Garbage In, Awesomeness out!"  
 
 Back to the present, those Pixels dug out sexyCircle2x and begun their comparison. The pixel-network upscales 1x1 -> 2x2 correctly, while Diagonal4K does not. Thus they concluded that Diagonal4K must be inferior.  
 
