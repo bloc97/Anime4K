@@ -98,7 +98,7 @@ Diagonal4K upscales 2x2 -> 4x4 and preserves the line straightness, but some Pix
 
 **Thus the question is: Is Diagonal4K an inferior algorithm compared sexyCircle2x?**  
 
-I think this question is nonsensical! It is impossible to tell.  
+I think this question is nonsensical! It is impossible to even tell which algorithm is best at upscaling 2x2 to 4x4.  
 
 Of course, this example is very extreme, but the same principles applies here.  
 
