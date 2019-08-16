@@ -8,7 +8,7 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 *State of the art\* in the realtime anime upscaling category, the fastest at acheiving reasonable quality. We do not claim this is a superior quality general purpose SISR algorithm compared to machine-learning approaches.*
 
-***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact me and I will gladly take it down.***
+***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact me us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
 ![Comparison](results/Comparisons/1_time.png?raw=true)
 
