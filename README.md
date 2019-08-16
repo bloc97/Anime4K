@@ -3,7 +3,7 @@
 Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscaling algorithm that can be implemented in any programming language, anywhere.  
 
 ![Thumbnail Image](results/Main.png?raw=true)
-*State of the art as of August 2019, this will unquestionably be outperformed very soon.*
+*State of the art\* as of August 2019, this will unquestionably be outperformed very soon.*
 
 
 #### *Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact me and I will gladly take it down.*
@@ -84,7 +84,7 @@ Back to the present, those Pixels dug out sexyCircle2x and begun their compariso
 
 ![Demo 1](results/Demo/1x1-2x2.png?raw=true)
 
-Applying sexyCircle2x to 2x2 anime also yields plausible 4x4 "anime", but they do not and will never know if it is truely anime. However they trust the algorithm enough since it is a pixel-network, and must be smarter than their small Pixel brains.  
+Applying sexyCircle2x to 2x2 anime also yields plausible 4x4 "anime", but they do not and will never know if it is truly anime. However they trust the algorithm enough since it is a pixel-network, and must be smarter than their small Pixel brains.  
 
 So the results are:  
 sexyCircle2x correctly upscales 1x1 -> 2x2  
