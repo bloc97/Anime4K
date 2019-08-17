@@ -9,3 +9,7 @@ canvas {
 input[type=range] {
     width: 200px;
 }
+
+video {
+    display: none;
+}

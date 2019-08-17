@@ -10,11 +10,11 @@
 </head>
 <body onload="onLoad();">
     <div>
-        <span>Image :</span>
-        <input type="text" id="txtSrc" value="input.png">
-        <button onclick="onImageChanged();">Load from URL</button>
+        <span>Image/Video :</span>
+        <input type="text" id="txtSrc" value="input.mp4" placeholder="input.png/mp4 or URI">
+        <button onclick="onSourceChanged();">Load from URI</button>
         <span>or from</span>
-        <input type="file" id="fileImg" accept="image/*" onchange="onSelectFile(this);">
+        <input type="file" id="fileImg" accept="image/*,video/*" onchange="onSelectFile(this);">
     </div>
     <div>
         <span>Scale :</span>
@@ -28,5 +28,8 @@
     <div>
         <canvas id="board" width="1280" height="720">Oops!</canvas>
     </div>
+    <video id="movOrig" autoplay loop preload="auto" crossorigin="anonymous">
+        Oops!
+    </video>
 </body>
 </html>

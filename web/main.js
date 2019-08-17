@@ -64,6 +64,11 @@ function bindTexture(gl, texture, unit) {
     gl.bindTexture(gl.TEXTURE_2D, texture);
 }
 
+function updateTexture(gl, texture, src) {
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src);
+}
+
 function createBuffer(gl, data) {
     var buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -451,6 +456,7 @@ function Scaler(gl) {
     this.gl = gl;
 
     this.inputTex = null;
+    this.inputMov = null;
     this.inputWidth = 0;
     this.inputHeight = 0;
 
@@ -472,13 +478,28 @@ function Scaler(gl) {
     this.blur = 2.0;
 }
 
-Scaler.prototype.input = function(img) {
+Scaler.prototype.inputImage = function(img) {
     const gl = this.gl;
 
     this.inputWidth = img.width;
     this.inputHeight = img.height;
 
     this.inputTex = createTexture(gl, gl.LINEAR, img);
+    this.inputMov = null;
+}
+
+Scaler.prototype.inputVideo = function(mov) {
+    const gl = this.gl;
+
+    const width = mov.videoWidth;
+    const height = mov.videoHeight;
+
+    this.inputWidth = width;
+    this.inputHeight = height;
+
+    let emptyPixels = new Uint8Array(width * height * 4);
+    this.inputTex = createTexture(gl, gl.LINEAR, emptyPixels, width, height);
+    this.inputMov = mov;
 }
 
 Scaler.prototype.resize = function(scale) {
@@ -510,6 +531,11 @@ Scaler.prototype.render = function() {
     const gradPgm = this.gradProgram;
     const finalPgm = this.finalProgram;
     const drawPgm = this.drawProgram;
+
+
+    if (this.inputMov) {
+        updateTexture(gl, this.inputTex, this.inputMov);
+    }
 
 
     gl.disable(gl.DEPTH_TEST);
@@ -634,6 +660,7 @@ Scaler.prototype.render = function() {
 var scaler = null;
 
 function onLoad() {
+    const movOrig = document.getElementById('movOrig');
     const txtScale = document.getElementById('txtScale');
     const barBold = document.getElementById('sliderBold');
     const barBlur = document.getElementById('sliderBlur');
@@ -642,13 +669,28 @@ function onLoad() {
     const gl = board.getContext('webgl');
 
 
+    movOrig.addEventListener('canplaythrough', function() {
+        movOrig.play();
+    }, true);
+    movOrig.addEventListener('loadedmetadata', function() {
+        let scale = parseFloat(txtScale.value);
+
+        scaler = new Scaler(gl);
+        scaler.inputVideo(movOrig);
+        scaler.resize(scale);
+    }, true);
+    movOrig.addEventListener('error', function() {
+        alert("Can't load the video.");
+    }, true);
+
+
     const inputImg = new Image();
     inputImg.src = "input.png";
     inputImg.onload = function() {
         let scale = parseFloat(txtScale.value);
 
         scaler = new Scaler(gl);
-        scaler.input(inputImg);
+        scaler.inputImage(inputImg);
         scaler.resize(scale);
     }
 
@@ -667,7 +709,24 @@ function onLoad() {
     requestAnimationFrame(render);
 }
 
+function getSourceType(uri) {
+    const movTypes = ['mp4', 'webm', 'ogv', 'ogg'];
+
+    let ext = uri.split('.').pop().split(/\#|\?/)[0];
+
+    for (let i=0; i<movTypes.length; ++i) {
+        if (ext === movTypes[i]) {
+            return 'mov';
+        }
+    }
+
+    return 'img';
+}
+
 function changeImage(src) {
+    const movOrig = document.getElementById('movOrig');
+    movOrig.src = '';
+
     const txtScale = document.getElementById('txtScale');
 
     const inputImg = new Image();
@@ -676,7 +735,7 @@ function changeImage(src) {
     inputImg.onload = function() {
         let scale = parseFloat(txtScale.value);
 
-        scaler.input(inputImg);
+        scaler.inputImage(inputImg);
         scaler.resize(scale);
     }
     inputImg.onerror = function() {
@@ -684,16 +743,34 @@ function changeImage(src) {
     }
 }
 
-function onImageChanged() {
+function changeVideo(src) {
+    const movOrig = document.getElementById('movOrig');
+    movOrig.src = src;
+}
+
+function onSourceChanged() {
     const txtSrc = document.getElementById('txtSrc');
-    changeImage(txtSrc.value);
+    let uri = txtSrc.value;
+
+    if (getSourceType(uri) == 'img') {
+        changeImage(uri);
+    }
+    else {
+        changeVideo(uri);
+    }
 }
 
 function onSelectFile(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            changeImage(e.target.result);
+            let src = e.target.result;
+            if (getSourceType(input.value) == 'img') {
+                changeImage(src);
+            }
+            else {
+                changeVideo(src);
+            }
         };
         reader.readAsDataURL(input.files[0]);
     }
