@@ -667,13 +667,12 @@ function onLoad() {
     requestAnimationFrame(render);
 }
 
-function onImageChanged() {
-    const txtSrc = document.getElementById('txtSrc');
+function changeImage(src) {
     const txtScale = document.getElementById('txtScale');
 
     const inputImg = new Image();
     inputImg.crossOrigin = "Anonymous";
-    inputImg.src = txtSrc.value;
+    inputImg.src = src;
     inputImg.onload = function() {
         let scale = parseFloat(txtScale.value);
 
@@ -682,6 +681,21 @@ function onImageChanged() {
     }
     inputImg.onerror = function() {
         alert("Can't load the image.");
+    }
+}
+
+function onImageChanged() {
+    const txtSrc = document.getElementById('txtSrc');
+    changeImage(txtSrc.value);
+}
+
+function onSelectFile(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            changeImage(e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
 }
 
