@@ -725,7 +725,7 @@ function getSourceType(uri) {
 
 function changeImage(src) {
     const movOrig = document.getElementById('movOrig');
-    movOrig.src = '';
+    movOrig.pause();
 
     const txtScale = document.getElementById('txtScale');
 
