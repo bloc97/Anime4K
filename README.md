@@ -1,6 +1,6 @@
 # Anime4K
 
-Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscaling algorithm that can be implemented in any programming language, anywhere.
+Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscaling algorithm that can be implemented in any programming language.
 
 ![Thumbnail Image](results/Main.png?raw=true)
 
