@@ -1,3 +1,5 @@
+//Anime4K GLSL v0.9
+
 // MIT License
 
 // Copyright (c) 2019 bloc97
