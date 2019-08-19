@@ -35,7 +35,7 @@ Click on the link above to read Java version installation and usage instructions
 
 ## Psudo-Preprint Preview
 
-## [Read Full Pseudo-Preprint](Preprint.md)
+### [Read Full Pseudo-Preprint](Preprint.md)
 
 B. Peng  
 August 2019
