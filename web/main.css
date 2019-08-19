@@ -1,0 +1,15 @@
+body {
+    background-color: whitesmoke;
+}
+
+canvas {
+    background-color: black;
+}
+
+input[type=range] {
+    width: 200px;
+}
+
+video {
+    display: none;
+}
