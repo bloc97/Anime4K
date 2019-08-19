@@ -12,7 +12,7 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ## v1.0 Release Candidate
 
-Reduced aliasing and banding in Anime4K v1.0 RC
+Reduced texture loss, aliasing and banding in Anime4K v1.0 RC
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/0_RC.png)
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/1_RC.png)
