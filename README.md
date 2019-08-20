@@ -16,7 +16,7 @@ Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of per
 
 What's new:
  - A line detection algorithm.
- - Gradient maximization is only applied near lines using the line detector, instead of indiscriminately affecting the entire image. This has the effect of ignoring textures or out of focus elements.
+ - Gradient maximization is only applied near lines using the line detector, instead of indiscriminately affecting the entire image. This has the effect of ignoring textures and out of focus elements.
   - Finally, one iteration of targeted FXAA is applied on the lines using the line detector to reduce aliasing.
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/0_RC.png)
