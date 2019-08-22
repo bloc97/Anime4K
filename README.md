@@ -82,9 +82,11 @@ NGU is proprietary, this algorithm is licensed under MIT.
 
 ### How does FSRCNNX compare to this
 
-*Note: FSRCNNX was not specifically designed for anime.*
+Since it performs poorly (perceptually) compared to other algorithms, it was left out of our visual comparisons.
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/FSRCNNX.png)
+
+*Note: FSRCNNX was not specifically designed for anime.*
 
 ### Where are the PSNR/SSIM metrics
 
