@@ -80,6 +80,12 @@ waifu2x is too slow for real time applications.
 
 NGU is proprietary, this algorithm is licensed under MIT.
 
+### How does FSRCNNX compare to this
+
+*Note: FSRCNNX was not specifically designed for anime.*
+
+![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/FSRCNNX.png)
+
 ### Where are the PSNR/SSIM metrics
 
 There are no ground truths of 4K anime.
