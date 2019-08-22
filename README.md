@@ -47,7 +47,7 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 Click on the link above to read Java version installation and usage instructions.
 
 
-## Psudo-Preprint Preview
+## Pseudo-Preprint Preview
 
 ### [Read Full Pseudo-Preprint](Preprint.md)
 
