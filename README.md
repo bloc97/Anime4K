@@ -86,7 +86,7 @@ Since it performs poorly (perceptually, for anime) compared to other algorithms,
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/FSRCNNX.png)
 
-*Note: FSRCNNX was not specifically designed for anime.*
+*Note: FSRCNNX was not specifically trained/designed for anime. It is however a good general-purpose SISR algorithm for video.*
 
 ### Where are the PSNR/SSIM metrics
 
