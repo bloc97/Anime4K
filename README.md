@@ -12,7 +12,12 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ## v1.0 Release Candidate
 
-Reduced texture loss, aliasing and banding in Anime4K v1.0 RC
+Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of performance. It now takes 6ms. +2ms for line detection and +1ms for line targeted FXAA.
+
+What's new:
+ - A line detection algorithm.
+ - Gradient maximization is only applied near lines using the line detector, instead of indiscriminately affecting the entire image. This has the effect of ignoring textures and out of focus elements.
+  - Finally, one iteration of targeted FXAA is applied on the lines using the line detector to reduce aliasing.
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/0_RC.png)
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/1_RC.png)
@@ -42,7 +47,7 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 Click on the link above to read Java version installation and usage instructions.
 
 
-## Psudo-Preprint Preview
+## Pseudo-Preprint Preview
 
 ### [Read Full Pseudo-Preprint](Preprint.md)
 
