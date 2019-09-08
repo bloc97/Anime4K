@@ -4,7 +4,7 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ![Thumbnail Image](results/Main.png?raw=true)
 
-*State of the art\* as of August 2019 in the real time anime upscaling category, the fastest at acheiving reasonable quality. We do not claim this is a superior quality general purpose SISR algorithm compared to machine learning approaches.*
+*State of the art as of August 2019 in the real time anime upscaling category, the fastest at acheiving reasonable quality. We do not claim this is a superior quality general purpose SISR algorithm compared to machine learning approaches.*
 
 ***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
@@ -98,6 +98,6 @@ There are no ground truths of 4K anime.
 
 Comparing PSNR/SSIM on 480p->720p upscales does not prove and is not a good indicator of 1080p->2160p upscaling quality. (Eg. poor performance of waifu2x on 1080p anime) 480p anime images have a lot of high frequency information (lines might be thinner than 1 pixel), while 1080p anime images have a lot of redundant information. 1080p->2160p upscaling on anime is thus objectively easier than 480p->720p.
 
-### I think the results are worse
+### I think the results are worse than \<x>
 
 Surely some people like sharper edges, some like softer ones. Do try it yourself on a few anime before reaching a definite conclusion. People *tend* to prefer sharper edges. Also, seeing the comparisons on a 1080p screen is not representative of the final results on a 4K screen, the pixel density and sharpness of the final image is simply not comparable.
