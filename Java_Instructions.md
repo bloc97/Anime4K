@@ -9,8 +9,8 @@ Available parameters:
 `java -jar Anime4K.jar [File_In] [File_Out] (Scale) (Push_Grad_Strength) (Push_Strength)`  
 
 Default Scale: `2`  
-Default Push_Strength: `Scale / 6`  
 Default Push_Grad_Strength: `Scale / 2`  
+Default Push_Strength: `Scale / 6`  
 
 Examples:  
 `java -jar Anime4K.jar test.png test_upscaled.png 4`  
