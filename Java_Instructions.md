@@ -2,7 +2,7 @@
 # Usage Instructions (Java)
 
 1- Install Java JDK 12.  
-2- Build the jar with the maven source project.  
+2- Build the jar with the maven source project using the appropriate cmd/shell script.  
 3- Run as administrator this command `java -jar Anime4K.jar input.png output.png` for 2x scale  
 
 Available parameters:  
