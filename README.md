@@ -46,6 +46,11 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 
 Click on the link above to read Java version installation and usage instructions.
 
+## Projects that use Anime4K
+ - Anime4K for TouchDesigner https://github.com/yeataro/TD-Anime4K
+ - Anime4K for Unity https://github.com/keijiro/UnityAnime4K
+ - Anime Video Upscaling Pipeline https://github.com/k4yt3x/video2x
+
 
 ## Pseudo-Preprint Preview
 
