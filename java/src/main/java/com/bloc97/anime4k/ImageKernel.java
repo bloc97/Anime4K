@@ -68,7 +68,7 @@ public final class ImageKernel extends Kernel {
     public void process() {
         //Compute Lum
         runtype[0] = 0;
-        this.execute(colorData.length);
+        this.put(runtype).execute(colorData.length);
         
         int maxUnblur = runtype[1];
         int remainingUnblur = runtype[1];
@@ -81,7 +81,7 @@ public final class ImageKernel extends Kernel {
             } else {
                 runtype[0] = 2;
             }
-            this.execute(colorData.length);
+            this.put(runtype).execute(colorData.length);
             isForwardPass = !isForwardPass;
             
             remainingUnblur -= currentThin;
@@ -95,7 +95,7 @@ public final class ImageKernel extends Kernel {
         } else {
             runtype[0] = 4;
         }
-        this.execute(colorData.length);
+        this.put(runtype).execute(colorData.length);
         isForwardPass = !isForwardPass;
         
         int maxRefine = runtype[2];
@@ -109,7 +109,7 @@ public final class ImageKernel extends Kernel {
             } else {
                 runtype[0] = 6;
             }
-            this.execute(colorData.length);
+            this.put(runtype).execute(colorData.length);
             isForwardPass = !isForwardPass;
             
             remainingRefine -= currentRefine;
