@@ -4,7 +4,7 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ![Thumbnail Image](results/Main.png?raw=true)
 
-*\*State of the art as of August 2019 in the real-time anime 4K upscaling category, the fastest at acheiving reasonable quality. We do not claim this is a superior quality general purpose SISR algorithm compared to machine learning approaches.*
+*\*State of the art as of August 2019 in the real-time anime 4K upscaling category, the fastest at achieving reasonable quality. We do not claim this is a superior quality general purpose SISR algorithm compared to machine learning approaches.*
 
 ***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
@@ -30,7 +30,7 @@ This implementation is **only for Windows**.
 
 ### [HLSL Installation](HLSL_Instructions.md)  
 
-Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient, you might need to make a backup of the the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)
+Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient. You might need to make a backup of the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)
 
 ## GLSL Usage Instructions (MPV)
 
@@ -38,7 +38,7 @@ This implementation is **cross platform**.
 
 ### [GLSL Installation](GLSL_Instructions.md)
 
-Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient, you might need to make a backup of the the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)
+Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient. You might need to make a backup of the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)
 
 ## Java Usage Instructions (Standalone)
 
