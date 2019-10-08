@@ -49,6 +49,7 @@ Click on the link above to read Java version installation and usage instructions
 ## Projects that use Anime4K
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
  - https://github.com/keijiro/UnityAnime4K (Anime4K for Unity)
+ - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
 
 
