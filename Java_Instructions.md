@@ -18,4 +18,4 @@ Examples:
 `java -jar Anime4K.jar test.png test_upscaled.png 3 1 1`    
 
 Note to developers:
-For faster batch processing please look at Main.java and modify the code so that the Kernel is not re-created for each picture. (Kernel reuse will accelerate processing greately.)
+For faster batch processing please look at Main.java and modify the code so that the Kernel is not re-created for each picture. (Kernel reuse will accelerate processing greatly.)
