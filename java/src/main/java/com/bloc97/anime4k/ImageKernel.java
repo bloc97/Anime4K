@@ -122,13 +122,7 @@ public final class ImageKernel extends Kernel {
     }
     
     private int clamp(int i, int min, int max) {
-        if (i < min) {
-            i = min;
-        } else if (i > max) {
-            i = max;
-        }
-
-        return i;
+        return i < min ? min : max;
     }
     private int getAlpha(int argb) {
         return argb >>> 24 & 0xFF;
