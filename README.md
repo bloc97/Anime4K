@@ -20,7 +20,7 @@ The greatest difficulties encountered right now are caused by these issues that 
  - Few true 1080p anime (Even some anime mastered at 1080p have sprites that were downsampled)
  - Non-1080p anime are upsampled to 1080p using simple algorithms, resulting in a blurry 1080p image. Our algorithm has to detect this. (Main reason why waifu2x does not work well on anime)
  - UV channels of anime are subsampled (4:2:0), which means the color channels of 1080p anime are in fact 540p, thus there is a lack of 1080p ground truth for the UV channels.
- - Simulating H.264/H.265 compression artifacts (for analysis and denoising) is not trivial and are relatively time-consuming to create.
+ - Simulating H.264/H.265 compression artifacts (for analysis and denoising) is not trivial and is relatively time-consuming.
  - Due to the workflow of animation studios and their lack of time/budget, resampling artifacts of individual sprites are present in many modern anime.
  - So on...
 
