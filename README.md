@@ -22,6 +22,7 @@ The greatest difficulties encountered right now are caused by these issues that 
  - UV channels of anime are subsampled (4:2:0), which means the color channels of 1080p anime are in fact 540p, thus there is a lack of 1080p ground truth for the UV channels.
  - Simulating H.264/H.265 compression artifacts (for analysis and denoising) is not trivial and is relatively time-consuming.
  - Due to the workflow of animation studios and their lack of time/budget, resampling artifacts of individual sprites are present in many modern anime.
+ - Speed (preferably real-time) is paramount, since we do not want to re-encode video each time the algorithm improves. There is also less risk of permanently altering original content.
  - So on...
 
 However, we still believe by shrinking the size of VDSR or FSRCNN and using an hybrid approach we can achieve good results.  
