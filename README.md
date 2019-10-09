@@ -10,6 +10,23 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ![Comparison](results/Comparisons/1_time.png?raw=true)
 
+## Notice
+
+We understand that this algorithm is far from perfect, and are working towards a hybrid approach (using Machine Learning) to improve Anime4K. 
+
+The greatest difficulties encountered right now are caused by these issues that other media does not suffer from:
+
+ - Lack of ground truth (No True 4K Anime)
+ - Few true 1080p anime (Even some anime mastered at 1080p have sprites that were downsampled)
+ - UV channels of anime are subsampled (4:2:0), which means the color channels of 1080p anime are in fact 540p, thus there is a lack of 1080p ground truth for the UV channels.
+ - H.264/H.265 compression artifacts are not trivial and are relatively time-consuming to create.
+ - Due to the workflow of animation studios and their lack of time/budget, resampling artifacts of individual sprites are present in many modern anime.
+ - So on...
+
+However, we still believe by shrinking the size of VDSR or FSRCNN and using an hybrid approach we can achieve good results.  
+Stay tuned for more info!
+ 
+
 ## v1.0 Release Candidate
 
 Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of performance. It now takes 6ms. +2ms for line detection and +1ms for line targeted FXAA.
