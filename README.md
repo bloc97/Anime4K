@@ -37,7 +37,7 @@ Performance is back on par with v0.9 Beta, but without any loss in quality. (3ms
 
 Two more versions are included for less powerful GPUs.  
  - Anime4K_Fast (1.5ms)  
- - Anime4K_UltraFast (1ms)  
+ - Anime4K_UltraFast (1ms) (For potato PCs)
 
 ## v1.0 Release Candidate
 
