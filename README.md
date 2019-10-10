@@ -133,7 +133,7 @@ The word you are actually looking for is 'interpolation'. No, this algorithm doe
 
 However, it seems that when an upscaling algorithm is very complex (xBR or waifu2x), people tend to not care about the definitions and agree that it is somehow "super-resolution" and not a "sharpening" filter. But when the algorithm is extremely simple, like Anime4K in this case, they immediately assume it is a "sharpening" algorithm.  
 
-Somehow "sharpening" is bad but "super-resolution" is good?
+Somehow "sharpening" is bad but "super-resolution" is good when they are referring to the same thing?
 
 You have to understand that De-Blurring/Sharpening (in the specific case of gaussian blur) and Super-Resolution are **equivalent** in signal processing. If your algorithm can do one, it can do the other.
 
