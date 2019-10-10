@@ -142,4 +142,6 @@ A deblur algorithm can be used to super-resolve, by first upsampling an low reso
 
 Over-sharpening is usually what people associate with "sharpening" algorithms. It is not because they are "sharpening" algorithms that they are somehow "bad", it is simply because they are too simple or used for the wrong purpose. In Anime4K's case, we're sacrificing smoothness by introducing some aliasing, but with the benefit of **zero** ringing artifacts. Ringing is much more noticeable compared to aliasing when watching anime on 4K screens.
 
+Just as how unsharp masking can ruin an image with ringing, Anime4K can do the same with aliasing if not used properly. People who don't mind ringing can keep using unsharp masking while those who don't mind aliasing can use Anime4K.
+
 For those commenting around about sharpening = bad, please, do some research before spreading misinformation.
