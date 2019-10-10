@@ -131,8 +131,8 @@ Surely some people like sharper edges, some like softer ones. Do try it yourself
 
 The word you are actually looking for is 'interpolation'. No, this algorithm doesn't do any rigorous interpolation. The interpolation step can be done by Nearest-Neighbor, Bilinear, Bicubic or any of your algorithm of choice. It just happens that the better the interpolation algorithm, the better the final results.
 
-However, it seems that when an upscaling algorithm is very complex (xBR or waifu2x), people tend to not care about the definitions and agree that it is somehow "super-resolution" and not a "sharpening" filter. But when the algorithm is extremely simple, like Anime4K in this case, they immediately assume it is a "sharpening" algorithm.
-You have to understand that De-Blurring/Sharpening (in the specific case of gaussian blur) and Super-Resolution are equivalent in the signal processing sense. If your algorithm can do one, it can do the other.
-A Super-Resolution algorithm can be used to deblur, by first determining the blur factor, downscaling the image accordingly, and applying the SR algorithm.
-A deblur algorithm can be used to super-resolve, by first upsampling an low resolution image, applying gaussian blur, and applying the deblur algorithm.
+However, it seems that when an upscaling algorithm is very complex (xBR or waifu2x), people tend to not care about the definitions and agree that it is somehow "super-resolution" and not a "sharpening" filter. But when the algorithm is extremely simple, like Anime4K in this case, they immediately assume it is a "sharpening" algorithm.  
+You have to understand that De-Blurring/Sharpening (in the specific case of gaussian blur) and Super-Resolution are equivalent in the signal processing sense. If your algorithm can do one, it can do the other.  
+A Super-Resolution algorithm can be used to deblur, by first determining the blur factor, downscaling the image accordingly, and applying the SR algorithm.  
+A deblur algorithm can be used to super-resolve, by first upsampling an low resolution image, applying gaussian blur, and applying the deblur algorithm.  
 Please, do some research before spreading misinformation.
