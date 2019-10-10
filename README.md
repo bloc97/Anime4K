@@ -138,7 +138,7 @@ Somehow "sharpening" is bad but "super-resolution" is good when they are referri
 You have to understand that De-Blurring/Sharpening (in the specific case of gaussian blur) and Super-Resolution are **equivalent** in signal processing. If your algorithm can do one, it can do the other.
 
 A Super-Resolution algorithm can be used to deblur, by first determining the blur factor, downscaling the image accordingly, and applying the SR algorithm.  
-A deblur algorithm can be used to super-resolve, by first upsampling an low resolution image, applying gaussian blur, and applying the deblur algorithm.  
+A deblur algorithm can be used to super-resolve, by first upsampling an low resolution image, applying gaussian blur, and applying the deblur algorithm. (This is what Anime4K does!)
 
 Over-sharpening is usually what people associate with "sharpening" algorithms. It is not because they are "sharpening" algorithms, it is simply because they are too simple. In Anime4K's case, we're sacrificing smoothness by introducing some aliasing, but with the benefit of **zero** ringing artifacts. Ringing is much more noticeable compared to aliasing on 4K screens.
 
