@@ -134,4 +134,6 @@ Surely some people like sharper edges, some like softer ones. Do try it yourself
 TL;DR
 
 Sharpening, De-Blurring and Super-Resolution are synonyms (they are equivalent).  
-A Super-Resolution algorithm can do upscaling.
+Anime4K can de-blur, thus is a SR algorithm.  
+A Super-Resolution algorithm can do upscaling.  
+Thus, Anime4K is an upscaling algorithm.
