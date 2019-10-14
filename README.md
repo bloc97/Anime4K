@@ -29,6 +29,16 @@ However, we still believe by shrinking the size of VDSR or FSRCNN and using an h
 Stay tuned for more info!
  
 
+## v1.0 Release Candidate 2
+
+Improved speed.
+
+Performance is back on par with v0.9 Beta, but without any loss in quality. (3ms on RX Vega 64)
+
+Two more versions are included for less powerful GPUs.  
+ - Anime4K_Fast (1.5ms)  
+ - Anime4K_UltraFast (1ms) (For potato PCs)
+
 ## v1.0 Release Candidate
 
 Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of performance. It now takes 6ms. +2ms for line detection and +1ms for line targeted FXAA.
@@ -133,7 +143,7 @@ Surely some people like sharper edges, some like softer ones. Do try it yourself
 
 TL;DR
 
-Sharpening, De-Blurring and Super-Resolution are synonyms (they are equivalent).  
-Anime4K can de-blur, thus is a SR algorithm.  
+Sharpening, De-Blurring and Super-Resolution are equivalent.  
+Anime4K can de-blur, and is equivalent to a SR algorithm.  
 A Super-Resolution algorithm can do upscaling.  
 Thus, Anime4K is an upscaling algorithm.
