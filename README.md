@@ -33,11 +33,13 @@ Stay tuned for more info!
 
 Improved speed.
 
-Performance is back on par with v0.9 Beta, but without any loss in quality. (3ms on RX Vega 64)
+Performance is back on par with v0.9 Beta, with only insignificant loss in quality compared to v1.0 RC1. (3ms on RX Vega 64)
 
 Two more versions are included for less powerful GPUs.  
  - Anime4K_Fast (1.5ms)  
  - Anime4K_UltraFast (1ms) (For potato PCs)
+
+![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/1.0/RC2_Comparison.png)
 
 ## v1.0 Release Candidate
 
