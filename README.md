@@ -39,6 +39,8 @@ Two more versions are included for less powerful GPUs.
  - Anime4K_Fast (1.5ms)  
  - Anime4K_UltraFast (1ms) (For potato PCs)
 
+![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/1.0/RC2_Comparison.png)
+
 ## v1.0 Release Candidate
 
 Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of performance. It now takes 6ms. +2ms for line detection and +1ms for line targeted FXAA.
