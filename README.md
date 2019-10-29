@@ -40,6 +40,7 @@ Two more versions are included for less powerful GPUs.
  - Anime4K_UltraFast (1ms) (For potato PCs)
 
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/1.0/RC2_Comparison.png)
+*Please view in full size on a 4K display for a correct comparison.*
 
 ## v1.0 Release Candidate
 
