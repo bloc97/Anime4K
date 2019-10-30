@@ -67,6 +67,7 @@ Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` text
 ## HLSL Usage Instructions (MPC-BE with madVR)
 
 This implementation is **only for Windows**.
+
 This implementation is also **outdated**, the latest version is developped on GLSL.
 
 ### [HLSL Installation](HLSL_Instructions.md)  
