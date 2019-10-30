@@ -56,14 +56,6 @@ What's new:
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/2_RC.png)
 ![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/3_RC.png)
 
-## HLSL Usage Instructions (MPC-BE with madVR)
-
-This implementation is **only for Windows**.
-
-### [HLSL Installation](HLSL_Instructions.md)  
-
-Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient. You might need to make a backup of the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)
-
 ## GLSL Usage Instructions (MPV)
 
 This implementation is **cross platform**.
@@ -72,7 +64,18 @@ This implementation is **cross platform**.
 
 Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient. You might need to make a backup of the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)
 
+## HLSL Usage Instructions (MPC-BE with madVR)
+
+This implementation is **only for Windows**.
+This implementation is also **outdated**, the latest version is developped on GLSL.
+
+### [HLSL Installation](HLSL_Instructions.md)  
+
+Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient. You might need to make a backup of the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)
+
 ## Java Usage Instructions (Standalone)
+
+This implementation is **outdated**, the latest version is developped on GLSL.
 
 ### [Java Installation](Java_Instructions.md)
 
