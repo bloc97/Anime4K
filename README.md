@@ -115,7 +115,7 @@ Remarkably, the proposed method does not use any machine-learning or statistical
 
 ### How does it *actually actually* work?
 
-There's an excellent write-up by shi-yan that describes the (original v0.9) algorithm in detail (in fact better than in the preprint), with interactive sliders. See for yourself! https://epiphany.pub/@shi-yan/anime4k
+There's an excellent write-up by [shi-yan](https://github.com/shi-yan) that describes the (original v0.9) algorithm in detail (in fact better than in the preprint), with interactive sliders. See for yourself! https://epiphany.pub/@shi-yan/anime4k
 
 ## FAQ
 
