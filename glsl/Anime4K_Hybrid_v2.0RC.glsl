@@ -48,11 +48,11 @@ float saturate(float x) {
 }
 
 float minf3(float x, float y, float z) {
-    return min(x, min(y, z));
+	return min(x, min(y, z));
 }
 
 float maxf3(float x, float y, float z) {
-    return max(x, max(y, z));
+	return max(x, max(y, z));
 }
 
 float rcp(float x) {
@@ -62,83 +62,83 @@ float rcp(float x) {
 	return 1.0 / x;
 }
 
-vec4 hook() {    
-    // fetch a 3x3 neighborhood around the pixel 'e',
-    //  a b c
-    //  d(e)f
-    //  g h i
+vec4 hook() {	 
+	// fetch a 3x3 neighborhood around the pixel 'e',
+	//	a b c
+	//	d(e)f
+	//	g h i
 	
-    float pixelX = HOOKED_pt.x;
-    float pixelY = HOOKED_pt.y;
-    vec3 a = HOOKED_tex(HOOKED_pos + vec2(-pixelX, -pixelY)).rgb;
-    vec3 b = HOOKED_tex(HOOKED_pos + vec2(0.0, -pixelY)).rgb;
-    vec3 c = HOOKED_tex(HOOKED_pos + vec2(pixelX, -pixelY)).rgb;
-    vec3 d = HOOKED_tex(HOOKED_pos + vec2(-pixelX, 0.0)).rgb;
-    vec3 e = HOOKED_tex(HOOKED_pos).rgb;
-    vec3 f = HOOKED_tex(HOOKED_pos + vec2(pixelX, 0.0)).rgb;
-    vec3 g = HOOKED_tex(HOOKED_pos + vec2(-pixelX, pixelY)).rgb;
-    vec3 h = HOOKED_tex(HOOKED_pos + vec2(0.0, pixelY)).rgb;
-    vec3 i = HOOKED_tex(HOOKED_pos + vec2(pixelX, pixelY)).rgb;
+	float pixelX = HOOKED_pt.x;
+	float pixelY = HOOKED_pt.y;
+	vec3 a = HOOKED_tex(HOOKED_pos + vec2(-pixelX, -pixelY)).rgb;
+	vec3 b = HOOKED_tex(HOOKED_pos + vec2(0.0, -pixelY)).rgb;
+	vec3 c = HOOKED_tex(HOOKED_pos + vec2(pixelX, -pixelY)).rgb;
+	vec3 d = HOOKED_tex(HOOKED_pos + vec2(-pixelX, 0.0)).rgb;
+	vec3 e = HOOKED_tex(HOOKED_pos).rgb;
+	vec3 f = HOOKED_tex(HOOKED_pos + vec2(pixelX, 0.0)).rgb;
+	vec3 g = HOOKED_tex(HOOKED_pos + vec2(-pixelX, pixelY)).rgb;
+	vec3 h = HOOKED_tex(HOOKED_pos + vec2(0.0, pixelY)).rgb;
+	vec3 i = HOOKED_tex(HOOKED_pos + vec2(pixelX, pixelY)).rgb;
   
 	// Soft min and max.
-	//  a b c             b
-	//  d e f * 0.5  +  d e f * 0.5
-	//  g h i             h
-    // These are 2.0x bigger (factored out the extra multiply).
-    float mnR = minf3( minf3(d.r, e.r, f.r), b.r, h.r);
-    float mnG = minf3( minf3(d.g, e.g, f.g), b.g, h.g);
-    float mnB = minf3( minf3(d.b, e.b, f.b), b.b, h.b);
-    
-    float mnR2 = minf3( minf3(mnR, a.r, c.r), g.r, i.r);
-    float mnG2 = minf3( minf3(mnG, a.g, c.g), g.g, i.g);
-    float mnB2 = minf3( minf3(mnB, a.b, c.b), g.b, i.b);
-    mnR = mnR + mnR2;
-    mnG = mnG + mnG2;
-    mnB = mnB + mnB2;
-    
-    float mxR = maxf3( maxf3(d.r, e.r, f.r), b.r, h.r);
-    float mxG = maxf3( maxf3(d.g, e.g, f.g), b.g, h.g);
-    float mxB = maxf3( maxf3(d.b, e.b, f.b), b.b, h.b);
-    
-    float mxR2 = maxf3( maxf3(mxR, a.r, c.r), g.r, i.r);
-    float mxG2 = maxf3( maxf3(mxG, a.g, c.g), g.g, i.g);
-    float mxB2 = maxf3( maxf3(mxB, a.b, c.b), g.b, i.b);
-    mxR = mxR + mxR2;
-    mxG = mxG + mxG2;
-    mxB = mxB + mxB2;
-    
-    // Smooth minimum distance to signal limit divided by smooth max.
-    float rcpMR = rcp(mxR);
-    float rcpMG = rcp(mxG);
-    float rcpMB = rcp(mxB);
+	//	a b c			  b
+	//	d e f * 0.5	 +	d e f * 0.5
+	//	g h i			  h
+	// These are 2.0x bigger (factored out the extra multiply).
+	float mnR = minf3( minf3(d.r, e.r, f.r), b.r, h.r);
+	float mnG = minf3( minf3(d.g, e.g, f.g), b.g, h.g);
+	float mnB = minf3( minf3(d.b, e.b, f.b), b.b, h.b);
+	
+	float mnR2 = minf3( minf3(mnR, a.r, c.r), g.r, i.r);
+	float mnG2 = minf3( minf3(mnG, a.g, c.g), g.g, i.g);
+	float mnB2 = minf3( minf3(mnB, a.b, c.b), g.b, i.b);
+	mnR = mnR + mnR2;
+	mnG = mnG + mnG2;
+	mnB = mnB + mnB2;
+	
+	float mxR = maxf3( maxf3(d.r, e.r, f.r), b.r, h.r);
+	float mxG = maxf3( maxf3(d.g, e.g, f.g), b.g, h.g);
+	float mxB = maxf3( maxf3(d.b, e.b, f.b), b.b, h.b);
+	
+	float mxR2 = maxf3( maxf3(mxR, a.r, c.r), g.r, i.r);
+	float mxG2 = maxf3( maxf3(mxG, a.g, c.g), g.g, i.g);
+	float mxB2 = maxf3( maxf3(mxB, a.b, c.b), g.b, i.b);
+	mxR = mxR + mxR2;
+	mxG = mxG + mxG2;
+	mxB = mxB + mxB2;
+	
+	// Smooth minimum distance to signal limit divided by smooth max.
+	float rcpMR = rcp(mxR);
+	float rcpMG = rcp(mxG);
+	float rcpMB = rcp(mxB);
 
-    float ampR = saturate(min(mnR, 2.0 - mxR) * rcpMR);
-    float ampG = saturate(min(mnG, 2.0 - mxG) * rcpMG);
-    float ampB = saturate(min(mnB, 2.0 - mxB) * rcpMB);
-    
-    // Shaping amount of sharpening.
-    ampR = sqrt(ampR);
-    ampG = sqrt(ampG);
-    ampB = sqrt(ampB);
-    
-   // Filter shape.
-   //  0 w 0
-   //  w 1 w
-   //  0 w 0  
-   float peak = -rcp(lerp(8.0, 5.0, saturate(SHARPNESS)));
-   
-   float wR = ampR * peak;
-   float wG = ampG * peak;
-   float wB = ampB * peak;
-   
-   float rcpWeightR = rcp(1.0 + 4.0 * wR);
-   float rcpWeightG = rcp(1.0 + 4.0 * wG);
-   float rcpWeightB = rcp(1.0 + 4.0 * wB);
-   
-   vec4 outColor = vec4(saturate((b.r*wR+d.r*wR+f.r*wR+h.r*wR+e.r)*rcpWeightR),
-                            saturate((b.g*wG+d.g*wG+f.g*wG+h.g*wG+e.g)*rcpWeightG),
-                            saturate((b.b*wB+d.b*wB+f.b*wB+h.b*wB+e.b)*rcpWeightB), 0);
-   return outColor;
+	float ampR = saturate(min(mnR, 2.0 - mxR) * rcpMR);
+	float ampG = saturate(min(mnG, 2.0 - mxG) * rcpMG);
+	float ampB = saturate(min(mnB, 2.0 - mxB) * rcpMB);
+	
+	// Shaping amount of sharpening.
+	ampR = sqrt(ampR);
+	ampG = sqrt(ampG);
+	ampB = sqrt(ampB);
+	
+	// Filter shape.
+	//  0 w 0
+	//  w 1 w
+	//  0 w 0  
+	float peak = -rcp(lerp(8.0, 5.0, saturate(SHARPNESS)));
+
+	float wR = ampR * peak;
+	float wG = ampG * peak;
+	float wB = ampB * peak;
+
+	float rcpWeightR = rcp(1.0 + 4.0 * wR);
+	float rcpWeightG = rcp(1.0 + 4.0 * wG);
+	float rcpWeightB = rcp(1.0 + 4.0 * wB);
+
+	vec4 outColor = vec4(saturate((b.r*wR+d.r*wR+f.r*wR+h.r*wR+e.r)*rcpWeightR),
+							saturate((b.g*wG+d.g*wG+f.g*wG+h.g*wG+e.g)*rcpWeightG),
+							saturate((b.b*wB+d.b*wB+f.b*wB+h.b*wB+e.b)*rcpWeightB), 0);
+	return outColor;
 }
 
 
@@ -161,7 +161,7 @@ vec4 hook() {
 	//[ l  c  r]
 	//[bl  b br]
 	float l = getLum(HOOKED_tex(HOOKED_pos + vec2(-d.x, 0)));
-    float c = getLum(HOOKED_tex(HOOKED_pos));
+	float c = getLum(HOOKED_tex(HOOKED_pos));
 	float r = getLum(HOOKED_tex(HOOKED_pos + vec2(d.x, 0)));
 	
 	
@@ -197,12 +197,12 @@ vec4 hook() {
 	//[ l cc  r]
 	//[bl  b br]
 	float tx = LUMAD_tex(HOOKED_pos + vec2(0, -d.y)).x;
-    float cx = LUMAD_tex(HOOKED_pos).x;
+	float cx = LUMAD_tex(HOOKED_pos).x;
 	float bx = LUMAD_tex(HOOKED_pos + vec2(0, d.y)).x;
 	
 	
 	float ty = LUMAD_tex(HOOKED_pos + vec2(0, -d.y)).y;
-    //float cy = LUMAD_tex(HOOKED_pos).y;
+	//float cy = LUMAD_tex(HOOKED_pos).y;
 	float by = LUMAD_tex(HOOKED_pos + vec2(0, d.y)).y;
 	
 	
@@ -244,7 +244,7 @@ vec4 hook() {
 	//[ l  c  r]
 	//[bl  b br]
 	float l = LUMAD_tex(HOOKED_pos + vec2(-d.x, 0)).x;
-    float c = LUMAD_tex(HOOKED_pos).x;
+	float c = LUMAD_tex(HOOKED_pos).x;
 	float r = LUMAD_tex(HOOKED_pos + vec2(d.x, 0)).x;
 	
 	
@@ -297,12 +297,12 @@ vec4 hook() {
 	//[ l cc  r]
 	//[bl  b br]
 	float tx = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y)).x;
-    float cx = LUMAMM_tex(HOOKED_pos).x;
+	float cx = LUMAMM_tex(HOOKED_pos).x;
 	float bx = LUMAMM_tex(HOOKED_pos + vec2(0, d.y)).x;
 	
 	
 	float ty = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y)).y;
-    //float cy = LUMAMM_tex(HOOKED_pos).y;
+	//float cy = LUMAMM_tex(HOOKED_pos).y;
 	float by = LUMAMM_tex(HOOKED_pos + vec2(0, d.y)).y;
 	
 	
@@ -324,20 +324,20 @@ vec4 hook() {
 	float c0 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 2)).z;
 	float d0 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 1)).z;
 	float e0 = LUMAMM_tex(HOOKED_pos).z;
-	float f0 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 1)).z;
-	float g0 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 2)).z;
-	float h0 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 3)).z;
-	float i0 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 4)).z;
+	float f0 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 1)).z;
+	float g0 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 2)).z;
+	float h0 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 3)).z;
+	float i0 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 4)).z;
 	
 	float a1 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 4)).w;
 	float b1 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 3)).w;
 	float c1 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 2)).w;
 	float d1 = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y * 1)).w;
 	float e1 = LUMAMM_tex(HOOKED_pos).w;
-	float f1 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 1)).w;
-	float g1 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 2)).w;
-	float h1 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 3)).w;
-	float i1 = LUMAMM_tex(HOOKED_pos + vec2(0,  d.y * 4)).w;
+	float f1 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 1)).w;
+	float g1 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 2)).w;
+	float h1 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 3)).w;
+	float i1 = LUMAMM_tex(HOOKED_pos + vec2(0,	d.y * 4)).w;
 	
 	float norm = sqrt(xgrad * xgrad + ygrad * ygrad);
 	if (norm <= 0.001) {
