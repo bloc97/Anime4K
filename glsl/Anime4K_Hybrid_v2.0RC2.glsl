@@ -1,4 +1,4 @@
-//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate
+//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate 2
 
 // MIT License
 
@@ -26,7 +26,7 @@
 
 
 
-//!DESC Anime4K-Hybrid-CAS-v2.0RC
+//!DESC Anime4K-Hybrid-CAS-v2.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
 
@@ -143,7 +143,7 @@ vec4 hook() {
 
 
 
-//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC
+//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
 //!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
@@ -182,7 +182,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC
+//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
@@ -222,7 +222,7 @@ vec4 hook() {
 	return vec4(clamp(sqrt(xgrad * xgrad + ygrad * ygrad), 0, 1), 0, 0, 0);
 }
 
-//!DESC Anime4K-Hybrid-ComputeMinMaxX-v2.0RC
+//!DESC Anime4K-Hybrid-ComputeMinMaxX-v2.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
@@ -240,11 +240,16 @@ float min9(float a, float b, float c, float d, float e, float f, float g, float 
 vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
+    float c = LUMAD_tex(HOOKED_pos).x;
+	
+	if (c < 0.1) {
+		return vec4(0);
+	}
+	
 	//[tl  t tr]
 	//[ l  c  r]
 	//[bl  b br]
 	float l = LUMAD_tex(HOOKED_pos + vec2(-d.x, 0)).x;
-    float c = LUMAD_tex(HOOKED_pos).x;
 	float r = LUMAD_tex(HOOKED_pos + vec2(d.x, 0)).x;
 	
 	
@@ -275,9 +280,10 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-ComputeMinMaxY-v2.0RC
+//!DESC Anime4K-Hybrid-ComputeMinMaxY-v2.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
+//!BIND LUMAD
 //!BIND LUMAMM
 //!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!SAVE LUMAMM
@@ -292,6 +298,10 @@ float min9(float a, float b, float c, float d, float e, float f, float g, float 
 
 vec4 hook() {
 	vec2 d = HOOKED_pt;
+	
+	if (LUMAD_tex(HOOKED_pos).x < 0.1) {
+		return vec4(0);
+	}
 	
 	//[tl  t tr]
 	//[ l cc  r]
@@ -393,27 +403,30 @@ float gaussian(float x, float s, float m, float a) {
 vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
+	vec4 dc = LUMAMM_tex(HOOKED_pos);
+	
 	float upratio = clamp(SCALED_size.x / LUMA_size.x - 1, 0, 6);
+	float lval = clamp(abs(dc.z - dc.w) * EDGE_DETECT_STRENGTH * upratio, 0, 1) * clamp(LUMAD_tex(HOOKED_pos).x * DERIVATIVE_STRENGTH * upratio, 0, 1);
 	
+	if (abs(dc.x + dc.y) <= 0.0001) {
+		return SCALED_tex(HOOKED_pos);
+	}
 	
-	float lval = clamp(abs(LUMAMM_tex(HOOKED_pos).z - LUMAMM_tex(HOOKED_pos).w) * EDGE_DETECT_STRENGTH * upratio, 0, 1) * clamp(LUMAD_tex(HOOKED_pos).x * DERIVATIVE_STRENGTH * upratio, 0, 1);
 	if (upratio < 1) {
 		lval = lval * pow(upratio, UPSCALE_RATIO_HYSTERESIS);
 	}
 	
-	float dx = LUMAMM_tex(HOOKED_pos).x;
-	float dy = LUMAMM_tex(HOOKED_pos).y;
 	float dval = lval * clamp(gaussian(lval, DEBLUR_SIGMA, DEBLUR_MEAN, ANTIALIAS_STRENGTH), 0, 1);
 	
 	
-	float xpos = -sign(dx);
-	float ypos = -sign(dy);
+	float xpos = -sign(dc.x);
+	float ypos = -sign(dc.y);
 	
 	vec4 xval = SCALED_tex(HOOKED_pos + vec2(d.x * xpos, 0));
 	vec4 yval = SCALED_tex(HOOKED_pos + vec2(0, d.y * ypos));
 	
-	float xyratio = abs(dx) / (abs(dx) + abs(dy));
-	if (dx + dy == 0) {
+	float xyratio = abs(dc.x) / (abs(dc.x) + abs(dc.y));
+	if (dc.x + dc.y == 0) {
 		xyratio = 0;
 	}
 	vec4 avg = xyratio * xval + (1-xyratio) * yval;
