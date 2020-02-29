@@ -62,7 +62,9 @@ float rcp(float x) {
 	return 1.0 / x;
 }
 
-vec4 hook() {	 
+vec4 hook() {	
+	float sharpval = clamp(SCALED_size.x / 3840, 0, 1) * SHARPNESS; 
+	
 	// fetch a 3x3 neighborhood around the pixel 'e',
 	//	a b c
 	//	d(e)f
@@ -125,7 +127,7 @@ vec4 hook() {
 	//	0 w 0
 	//	w 1 w
 	//	0 w 0  
-	float peak = -rcp(lerp(8.0, 5.0, saturate(SHARPNESS)));
+	float peak = -rcp(lerp(8.0, 5.0, saturate(sharpval)));
 
 	float wR = ampR * peak;
 	float wG = ampG * peak;

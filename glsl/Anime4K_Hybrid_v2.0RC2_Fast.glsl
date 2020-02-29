@@ -33,7 +33,7 @@
 /* ---------------------- CAS SETTINGS ---------------------- */
 
 //CAS Sharpness, initial sharpen filter strength (traditional sharpening)
-#define SHARPNESS 0.4
+#define SHARPNESS 0.8
 
 /* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
 
@@ -62,6 +62,8 @@ float rcp(float x) {
 }
 
 vec4 hook() {	 
+	float sharpval = clamp(LUMA_size.x / 3840, 0, 1) * SHARPNESS;
+	
 	// fetch a 3x3 neighborhood around the pixel 'e',
 	//	a b c
 	//	d(e)f
@@ -107,7 +109,7 @@ vec4 hook() {
 	//  0 w 0
 	//  w 1 w
 	//  0 w 0  
-	float peak = -rcp(lerp(8.0, 5.0, saturate(SHARPNESS)));
+	float peak = -rcp(lerp(8.0, 5.0, saturate(sharpval)));
 
 	float wR = ampR * peak;
 
