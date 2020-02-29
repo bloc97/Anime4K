@@ -24,12 +24,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+
+
 //!DESC Anime4K-Hybrid-CAS-v2.0RC
 //!HOOK SCALED
 //!BIND HOOKED
 
-//CAS Sharpness
+
+/* ---------------------- CAS SETTINGS ---------------------- */
+
+//CAS Sharpness, initial sharpen filter strength (traditional sharpening)
 #define SHARPNESS 1.0
+
+/* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
+
 
 float lerp(float x, float y, float a) {
 	return mix(x, y, a);
@@ -138,6 +146,7 @@ vec4 hook() {
 //!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC
 //!HOOK SCALED
 //!BIND HOOKED
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!SAVE LUMAD
 //!COMPONENTS 2
 
@@ -177,6 +186,7 @@ vec4 hook() {
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!SAVE LUMAD
 //!COMPONENTS 1
 
@@ -216,6 +226,7 @@ vec4 hook() {
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!SAVE LUMAMM
 //!COMPONENTS 4
 
@@ -268,6 +279,7 @@ vec4 hook() {
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAMM
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!SAVE LUMAMM
 //!COMPONENTS 4
 
@@ -341,8 +353,38 @@ vec4 hook() {
 //!DESC Anime4K-Refine-v1.0RC2
 //!HOOK SCALED
 //!BIND HOOKED
+//!BIND LUMA
 //!BIND LUMAD
 //!BIND LUMAMM
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
+
+
+/* --------------------- SETTINGS --------------------- */
+
+//Edge detection / derivative sensitivity values (higher = more sensitive) higher values will have the algorithm apply deblur on more blurry scenes
+#define EDGE_DETECT_STRENGTH 2
+#define DERIVATIVE_STRENGTH 4
+
+//Strength of antialiasing, (higher = algorithm will not deblur edges as much), good values are between 0.3 and 2, also depending on DEBLUR_MEAN and DEBLUR_SIGMA
+#define ANTIALIAS_STRENGTH 0.6
+
+
+/* --- MODIFY THESE SETTINGS BELOW AT YOUR OWN RISK --- */
+
+//A interactive version of this Gaussian curve used can be found on https://www.desmos.com/calculator/afqj2cgxag
+//'s' is DEBLUR_SIGMA, 'm' is DEBLUR_MEAN and 'a' is ANTIALIAS_STRENGTH
+
+//Mean of the gaussian curve used to determine which edges to deblur (higher = larger deblur on sharp edges, lower deblur on blurry edges)
+#define DEBLUR_MEAN 0.4
+
+//Variance of the gaussian curve used to determine which edges to deblur (higher = broader deblur filtering, will deblur very blurry edges and sharp edges alike, lower = will only deblur very specific edge types) 
+#define DEBLUR_SIGMA 0.43
+
+//Power curve used to ease in upscaling smaller than 2x upscaling factors.
+#define UPSCALE_RATIO_HYSTERESIS 2
+
+/* ----------------- END OF SETTINGS ----------------- */
+
 
 float gaussian(float x, float s, float m, float a) {
 	return (1 / (s * sqrt(2 * 3.14159))) * exp(-0.5 * pow((x - m) / s, 2.0)) / a;
@@ -351,11 +393,17 @@ float gaussian(float x, float s, float m, float a) {
 vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
-	float lval = clamp(abs(LUMAMM_tex(HOOKED_pos).z - LUMAMM_tex(HOOKED_pos).w) * 2, 0, 1) * clamp(LUMAD_tex(HOOKED_pos).x * 4, 0, 1);
+	float upratio = clamp(SCALED_size.x / LUMA_size.x - 1, 0, 6);
+	
+	
+	float lval = clamp(abs(LUMAMM_tex(HOOKED_pos).z - LUMAMM_tex(HOOKED_pos).w) * EDGE_DETECT_STRENGTH * upratio, 0, 1) * clamp(LUMAD_tex(HOOKED_pos).x * DERIVATIVE_STRENGTH * upratio, 0, 1);
+	if (upratio < 1) {
+		lval = lval * pow(upratio, UPSCALE_RATIO_HYSTERESIS);
+	}
 	
 	float dx = LUMAMM_tex(HOOKED_pos).x;
 	float dy = LUMAMM_tex(HOOKED_pos).y;
-	float dval = lval * clamp(gaussian(lval, 0.43, 0.4, 0.6), 0, 1);
+	float dval = lval * clamp(gaussian(lval, DEBLUR_SIGMA, DEBLUR_MEAN, ANTIALIAS_STRENGTH), 0, 1);
 	
 	
 	float xpos = -sign(dx);
