@@ -233,7 +233,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Refine-v1.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-Refine-v2.0RC2-UltraFast
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMA
