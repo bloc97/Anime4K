@@ -336,7 +336,7 @@ vec4 hook() {
 		lval = lval * pow(upratio, UPSCALE_RATIO_HYSTERESIS);
 	}
 	
-	float dval = lval * clamp(gaussian(lval, DEBLUR_SIGMA, DEBLUR_MEAN, ANTIALIAS_STRENGTH), 0, 1);
+	float dval = clamp(lval * gaussian(lval, DEBLUR_SIGMA, DEBLUR_MEAN, ANTIALIAS_STRENGTH), 0, 1);
 	
 	
 	float xpos = -sign(dx);
