@@ -2,7 +2,7 @@
 # Usage Instructions (GLSL / MPV)
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
-  1. Install [**mpv**](https://mpv.io/) (Make sure it is v0.31!, there is a GLSL bug in v0.32, see https://github.com/bloc97/Anime4K/issues/66)  
+  1. Install [**mpv**](https://mpv.io/) (Make sure it is **v0.31**, there is a GLSL bug in v0.32, see https://github.com/bloc97/Anime4K/issues/66)  
   2. Download the .glsl shader files [**here**](https://github.com/bloc97/Anime4K/releases)  
   3. Copy the .glsl files to `%AppData%\mpv\shaders` for Windows or `~/.config/mpv/shaders` for Linux.  
   4. If `mpv.conf` does not exist in `%AppData%\mpv\` or `~/.config/mpv`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
