@@ -293,7 +293,7 @@ vec4 hook() {
 #define DERIVATIVE_STRENGTH 2
 
 //Strength of antialiasing, (higher = algorithm will not deblur edges as much), good values are between 0.3 and 2, also depending on DEBLUR_MEAN and DEBLUR_SIGMA
-#define ANTIALIAS_STRENGTH 1.2
+#define ANTIALIAS_STRENGTH 0.6
 
 
 /* --- MODIFY THESE SETTINGS BELOW AT YOUR OWN RISK --- */
@@ -302,10 +302,10 @@ vec4 hook() {
 //'s' is DEBLUR_SIGMA, 'm' is DEBLUR_MEAN and 'a' is ANTIALIAS_STRENGTH
 
 //Mean of the gaussian curve used to determine which edges to deblur (higher = larger deblur on sharp edges, lower deblur on blurry edges)
-#define DEBLUR_MEAN 0.3
+#define DEBLUR_MEAN 0.19
 
 //Variance of the gaussian curve used to determine which edges to deblur (higher = broader deblur filtering, will deblur very blurry edges and sharp edges alike, lower = will only deblur very specific edge types) 
-#define DEBLUR_SIGMA 0.3
+#define DEBLUR_SIGMA 0.55
 
 //Power curve used to ease in upscaling smaller than 2x upscaling factors.
 #define UPSCALE_RATIO_HYSTERESIS 2
