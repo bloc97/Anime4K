@@ -26,13 +26,14 @@
 
 
 //!DESC Anime4K-Hybrid-Bilateral-v2.0RC4
-//!HOOK LUMA
+//!HOOK NATIVE
 //!BIND HOOKED
 
 /* ---------------------- BILATERAL FILTERING SETTINGS ---------------------- */
 
 //CAS Sharpness, initial sharpen filter strength (traditional sharpening)
-#define STRENGTH 0.1
+#define STRENGTH 0.05
+#define SPREAD_STRENGTH 1
 
 /* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
 
@@ -41,47 +42,61 @@ float gaussian(float x, float s, float m) {
 }
 
 vec4 hook() {
+	float sharpval = clamp(HOOKED_size.x / 1920, 0, 1); 
+	
 	vec2 d = HOOKED_pt;
 	
-	float v0 = LUMA_tex(HOOKED_pos + vec2(-d.x, -d.y)).x;
-	float v1 = LUMA_tex(HOOKED_pos + vec2(0, -d.y)).x;
-	float v2 = LUMA_tex(HOOKED_pos + vec2(d.x, -d.y)).x;
-	float v3 = LUMA_tex(HOOKED_pos + vec2(-d.x, 0)).x;
-	float v4 = LUMA_tex(HOOKED_pos).x;
-	float v5 = LUMA_tex(HOOKED_pos + vec2(d.x, 0)).x;
-	float v6 = LUMA_tex(HOOKED_pos + vec2(-d.x, d.y)).x;
-	float v7 = LUMA_tex(HOOKED_pos + vec2(0, d.y)).x;
-	float v8 = LUMA_tex(HOOKED_pos + vec2(d.x, d.y)).x;
+	vec2 d0 = vec2(-d.x, -d.y);
+	vec2 d1 = vec2(0, -d.y);
+	vec2 d2 = vec2(d.x, -d.y);
+	vec2 d3 = vec2(-d.x, 0);
+	vec2 d4 = vec2(0, 0);
+	vec2 d5 = vec2(d.x, 0);
+	vec2 d6 = vec2(-d.x, d.y);
+	vec2 d7 = vec2(0, d.y);
+	vec2 d8 = vec2(d.x, d.y);
+	
+	
+	float v0 = HOOKED_tex(HOOKED_pos + d0).x;
+	float v1 = HOOKED_tex(HOOKED_pos + d1).x;
+	float v2 = HOOKED_tex(HOOKED_pos + d2).x;
+	float v3 = HOOKED_tex(HOOKED_pos + d3).x;
+	float v4 = HOOKED_tex(HOOKED_pos + d4).x;
+	float v5 = HOOKED_tex(HOOKED_pos + d5).x;
+	float v6 = HOOKED_tex(HOOKED_pos + d6).x;
+	float v7 = HOOKED_tex(HOOKED_pos + d7).x;
+	float v8 = HOOKED_tex(HOOKED_pos + d8).x;
 	
 	float s = v4 * STRENGTH + 0.01;
+	float ds = SPREAD_STRENGTH * sharpval + 0.01;
 	float m = 0;
 	
-	float s0 = gaussian(v4 - v0, s, m);
-	float s1 = gaussian(v4 - v1, s, m);
-	float s2 = gaussian(v4 - v2, s, m);
-	float s3 = gaussian(v4 - v3, s, m);
-	float s4 = gaussian(0, s, m);
-	float s5 = gaussian(v4 - v5, s, m);
-	float s6 = gaussian(v4 - v6, s, m);
-	float s7 = gaussian(v4 - v7, s, m);
-	float s8 = gaussian(v4 - v8, s, m);
+	float s0 = gaussian(v4 - v0, s, m) * gaussian(distance(d4, d0), ds, 0);
+	float s1 = gaussian(v4 - v1, s, m) * gaussian(distance(d4, d1), ds, 0);
+	float s2 = gaussian(v4 - v2, s, m) * gaussian(distance(d4, d2), ds, 0);
+	float s3 = gaussian(v4 - v3, s, m) * gaussian(distance(d4, d3), ds, 0);
+	float s4 = gaussian(0, s, m) * gaussian(0, ds, 0);
+	float s5 = gaussian(v4 - v5, s, m) * gaussian(distance(d4, d5), ds, 0);
+	float s6 = gaussian(v4 - v6, s, m) * gaussian(distance(d4, d6), ds, 0);
+	float s7 = gaussian(v4 - v7, s, m) * gaussian(distance(d4, d7), ds, 0);
+	float s8 = gaussian(v4 - v8, s, m) * gaussian(distance(d4, d8), ds, 0);
 	
 	float ss = s0 + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8;
 	
 	float sv = (v0 * s0 + v1 * s1 + v2 * s2 + v3 * s3 + v4 * s4 + v5 * s5 + v6 * s6 + v7 * s7 + v8 * s8) / ss;
 	
-	return vec4(sv, 0, 0, 0);
+	return vec4(sv, HOOKED_tex(HOOKED_pos).y, HOOKED_tex(HOOKED_pos).z, 0);
 }
 
 //!DESC Anime4K-Hybrid-CAS-v2.0RC4
-//!HOOK SCALED
+//!HOOK MAINPRESUB
 //!BIND HOOKED
 
 
 /* ---------------------- CAS SETTINGS ---------------------- */
 
 //CAS Sharpness, initial sharpen filter strength (traditional sharpening)
-#define SHARPNESS 1.2
+#define SHARPNESS 0.8
 
 /* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
 
