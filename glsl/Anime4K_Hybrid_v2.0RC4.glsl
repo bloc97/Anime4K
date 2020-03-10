@@ -74,14 +74,14 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-Hybrid-CAS-v2.0RC4
-//!HOOK MAINPRESUB
+//!HOOK SCALED
 //!BIND HOOKED
 
 
 /* ---------------------- CAS SETTINGS ---------------------- */
 
 //CAS Sharpness, initial sharpen filter strength (traditional sharpening)
-#define SHARPNESS 0.8
+#define SHARPNESS 1.2
 
 /* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
 
