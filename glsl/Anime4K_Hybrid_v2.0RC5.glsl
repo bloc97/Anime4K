@@ -126,7 +126,7 @@ vec4 hook() {
 
 /* ---------------------- BILATERAL MODE FILTERING SETTINGS ---------------------- */
 
-#define STRENGTH 0.2
+#define STRENGTH 0.1
 #define SPREAD_STRENGTH 2.0
 #define MODE_REGULARIZATION 20.0
 
