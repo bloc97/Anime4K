@@ -12,7 +12,7 @@ Anime4K is a state-of-the-art*, open-source, high-quality real-time anime upscal
 
 ## Notice
 
-### This current README is outdated. I don't have the time to update the preprint and the comparisons for the major changes to the algorithm in the latest v2.0 RC version yet. Most issues related to aliasing and texture loss are solved in the latest version of the algorithm. A more rigorous and in-depth preprint is coming soon.
+### This current README is outdated. I don't have the time to update the preprint and the comparisons for the major changes to the algorithm in the latest stable v2.1 version yet. Most issues related to aliasing and texture loss are solved in the latest version of the algorithm. A more rigorous and in-depth preprint is coming soon.
 
 We understand that this algorithm is far from perfect, and are working towards a hybrid approach (using Machine Learning) to improve Anime4K. 
 
