@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Anime4K Comparison" />
+  <meta charset="utf-8">
+  <title>Anime4K Comparison</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Bloc97">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+<iframe frameborder="0" class="juxtapose" width="100%" height="2160" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=5aed0520-6d52-11ea-b9b8-0edaf8f81e27"></iframe>
+
+<script>
+</script>
+
+</body>
+</html>
