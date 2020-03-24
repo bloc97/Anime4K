@@ -1,4 +1,4 @@
-//Anime4K Hybrid + CAS GLSL v2.1
+//Anime4K Hybrid GLSL v2.1
 
 // MIT License
 
