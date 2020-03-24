@@ -12,6 +12,3 @@ Denoising is enabled when possible. (Anime4K, waifu2x and NGU)
 <iframe frameborder="0" class="juxtapose" width="90%" height="600" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=32042eb2-6d6c-11ea-b9b8-0edaf8f81e27"></iframe>
 
 <iframe frameborder="0" class="juxtapose" width="90%" height="600" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a4ff3e14-6d6e-11ea-b9b8-0edaf8f81e27"></iframe>
-
-<iframe frameborder="0" class="juxtapose" width="90%" height="600" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c3b18f4e-6d6c-11ea-b9b8-0edaf8f81e27"></iframe>
-
