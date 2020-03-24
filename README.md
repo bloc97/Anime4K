@@ -28,34 +28,6 @@ The greatest difficulties encountered right now are caused by these issues that 
 However, we still believe by shrinking the size of VDSR or FSRCNN and using an hybrid approach we can achieve good results.  
 Stay tuned for more info!
  
-
-## v1.0 Release Candidate 2
-
-Improved speed.
-
-Performance is back on par with v0.9 Beta, with only insignificant loss in quality compared to v1.0 RC1. (3ms on RX Vega 64)
-
-Two more versions are included for less powerful GPUs.  
- - Anime4K_Fast (1.5ms)  
- - Anime4K_UltraFast (1ms) (For potato PCs)
-
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/1.0/RC2_Comparison.png)
-*Please view in full size on a 4K display for a correct comparison.*
-
-## v1.0 Release Candidate
-
-Reduced texture loss, aliasing and banding in Anime4K v1.0 RC at the cost of performance. It now takes 6ms. +2ms for line detection and +1ms for line targeted FXAA.
-
-What's new:
- - A line detection algorithm.
- - Gradient maximization is only applied near lines using the line detector, instead of indiscriminately affecting the entire image. This has the effect of ignoring textures and out of focus elements.
-  - Finally, one iteration of targeted FXAA is applied on the lines using the line detector to reduce aliasing.
-
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/0_RC.png)
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/1_RC.png)
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/2_RC.png)
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/0.9-1.0/3_RC.png)
-
 ## GLSL Usage Instructions (MPV)
 
 This implementation is **cross platform**.
