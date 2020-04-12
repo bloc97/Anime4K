@@ -7,7 +7,7 @@
   3. Copy the .glsl files to `%AppData%\mpv\shaders` for Windows or `~/.config/mpv/shaders` for Linux.  
   4. If `mpv.conf` does not exist in `%AppData%\mpv\` or `~/.config/mpv`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
   5. Add this line to `mpv.conf` to enable the shaders: `glsl-shaders="~~/shaders/Anime4K_Hybrid_v2.0RC2.glsl"`  
-The file name might vary depending on the version, rename it accordingly.  
+The file name might vary depending on the version, rename it accordingly. Alternatively add the following binding to your `input.conf` to toggle the shader on or off at runtime using Ctrl+g: `Ctrl+g change-list glsl-shaders toggle ~~/shaders/Anime4K_Hybrid_v2.0RC2.glsl`
   6. To verify the installation was correctly done, use the MPV profiler to check if there are a few shaders with the name Anime4K running. To access the profiler, press Shift+I and then 2 on the keyboard's top row.  
 This is what you should see (for v2.0RC2):  
 ![Profiler](results/MPV_Profiler.png?raw=true)
