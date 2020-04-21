@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(X)
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-DoG-Kernel(X)
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
@@ -61,7 +61,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(Y)
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-DoG-Kernel(Y)
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
@@ -103,7 +103,7 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-DoG
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
@@ -111,11 +111,27 @@ vec4 hook() {
 //!WIDTH NATIVE.w 2 *
 //!HEIGHT NATIVE.h 2 *
 
+#define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
+#define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
+#define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
+
 #define L_tex HOOKED_tex
 
 vec4 hook() {
 	float c = (L_tex(HOOKED_pos).x - GAUSS_X2_tex(HOOKED_pos).x) * 0.8;
-	return vec4(clamp(c + L_tex(HOOKED_pos).x, GAUSS_X2_tex(HOOKED_pos).y, GAUSS_X2_tex(HOOKED_pos).z), HOOKED_tex(HOOKED_pos).yz, 0);
+	
+	float t_range = BLUR_THRESHOLD - NOISE_THRESHOLD;
+	
+	float c_t = abs(c);
+	if (c_t > NOISE_THRESHOLD && c_t < BLUR_THRESHOLD) {
+		c_t = (c_t - NOISE_THRESHOLD) / t_range;
+		c_t = pow(c_t, BLUR_CURVE);
+		c_t = c_t * t_range + NOISE_THRESHOLD;
+		c_t = c_t * sign(c);
+	} else {
+		c_t = c;
+	}
+	return vec4(clamp(c_t + L_tex(HOOKED_pos).x, GAUSS_X2_tex(HOOKED_pos).y, GAUSS_X2_tex(HOOKED_pos).z), HOOKED_tex(HOOKED_pos).yz, 0);
 }
 
 
