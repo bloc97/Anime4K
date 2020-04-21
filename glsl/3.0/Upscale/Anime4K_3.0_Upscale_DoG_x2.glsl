@@ -23,10 +23,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE GAUSS_X2
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(X)
 //!COMPONENTS 3
 
 #define L_tex HOOKED_tex
@@ -47,11 +48,11 @@ vec2 minmax3(vec2 pos, vec2 d) {
 }
 
 float lumGaussian7(vec2 pos, vec2 d) {
-	float g = (L_tex(pos - (d * 2)).x + L_tex(pos + (d * 2)).x) * 0.06136;
-	g = g + (L_tex(pos - (d * 1)).x + L_tex(pos + (d * 1)).x) * 0.24477;
+	float g = (L_tex(pos - (d + d)).x + L_tex(pos + (d + d)).x) * 0.06136;
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * 0.24477;
 	g = g + (L_tex(pos).x) * 0.38774;
 	
-	return clamp(g, 0, 1); //Clamp for sanity check
+	return g;
 }
 
 
@@ -60,11 +61,12 @@ vec4 hook() {
 }
 
 
+//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
 //!SAVE GAUSS_X2
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(Y)
 //!COMPONENTS 3
 
 #define L_tex GAUSS_X2_tex
@@ -89,11 +91,11 @@ vec2 minmax3(vec2 pos, vec2 d) {
 }
 
 float lumGaussian7(vec2 pos, vec2 d) {
-	float g = (L_tex(pos - (d * 2)).x + L_tex(pos + (d * 2)).x) * 0.06136;
-	g = g + (L_tex(pos - (d * 1)).x + L_tex(pos + (d * 1)).x) * 0.24477;
+	float g = (L_tex(pos - (d + d)).x + L_tex(pos + (d + d)).x) * 0.06136;
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * 0.24477;
 	g = g + (L_tex(pos).x) * 0.38774;
 	
-	return clamp(g, 0, 1); //Clamp for sanity check
+	return g;
 }
 
 
@@ -101,13 +103,13 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-
+//!DESC Anime4K-v3.0-Upscale(x2)-DoG
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
 //!WIDTH NATIVE.w 2 *
 //!HEIGHT NATIVE.h 2 *
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG
 
 #define L_tex HOOKED_tex
 
