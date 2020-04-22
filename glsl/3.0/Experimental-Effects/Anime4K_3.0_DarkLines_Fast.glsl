@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-DarkLines-Kernel(X)
+//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
@@ -61,7 +61,7 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines-Kernel(Y)
+//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -100,7 +100,7 @@ vec4 hook() {
     return vec4(min(HOOKED_tex(HOOKED_pos).x - lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0));
 }
 
-//!DESC Anime4K-v3.0-DarkLines-Kernel(X)
+//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -139,7 +139,7 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines-Kernel(Y)
+//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -178,7 +178,7 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines
+//!DESC Anime4K-v3.0-DarkLines(Fast)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
