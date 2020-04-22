@@ -23,10 +23,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x1
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x1
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!SAVE LUMAN0
 //!COMPONENTS 4
 
@@ -55,10 +54,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN0
 //!SAVE LUMAN1
 //!COMPONENTS 4
@@ -137,10 +135,9 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN1
 //!SAVE LUMAN2
 //!COMPONENTS 4
@@ -219,10 +216,9 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN2
 //!SAVE LUMAN3
 //!COMPONENTS 4
@@ -301,10 +297,9 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN3
 //!SAVE LUMAN4
 //!COMPONENTS 4
@@ -382,10 +377,9 @@ vec4 hook() {
 	
 	return vec4(o, p, q, r);
 }
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN4
 //!SAVE LUMAN5
 //!COMPONENTS 4
@@ -464,10 +458,9 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Conv-Reduce
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN1
 //!BIND LUMAN2
 //!BIND LUMAN3
@@ -504,10 +497,9 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Kernel(X)
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!SAVE MMKERNEL
 //!COMPONENTS 2
 
@@ -532,10 +524,9 @@ vec4 hook() {
     return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)-Kernel(Y)
+//!DESC Anime4K-v3.0-Deblur-CNN(M)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
 //!COMPONENTS 2
@@ -565,39 +556,34 @@ vec4 hook() {
     return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND MMKERNEL
 //!BIND LUMAN0
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!DESC Anime4K-v3.0-Deblur-CNN(M)
 
 #define STRENGTH 1 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
 #define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
 #define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
 #define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
 
+#define L_tex HOOKED_tex
+
 vec4 hook() {
-	vec2 f = fract(LUMAN0_pos * LUMAN0_size);
-	ivec2 i = ivec2(f * vec2(2));
-	float c0 = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
-	float c = c0 * STRENGTH;
-	
-	vec2 mm = MMKERNEL_tex((vec2(0.5) - f) * MMKERNEL_pt + MMKERNEL_pos).xy;
+	vec4 r = LUMAN0_tex(LUMAN0_pos);
+	float c = (r.x + r.y + r.z + r.w) / 4 * STRENGTH;
 	
 	float t_range = BLUR_THRESHOLD - NOISE_THRESHOLD;
 	
 	float c_t = abs(c);
-	if (c_t > NOISE_THRESHOLD && c_t < BLUR_THRESHOLD) {
+	if (c_t > NOISE_THRESHOLD) {
 		c_t = (c_t - NOISE_THRESHOLD) / t_range;
 		c_t = pow(c_t, BLUR_CURVE);
 		c_t = c_t * t_range + NOISE_THRESHOLD;
 		c_t = c_t * sign(c);
-		return vec4(clamp(c_t + HOOKED_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y), HOOKED_tex(HOOKED_pos).yz, 0);
 	} else {
-		return vec4(c + HOOKED_tex(HOOKED_pos).x, HOOKED_tex(HOOKED_pos).yz, 0);
+		c_t = c;
 	}
 	
+	return vec4(clamp(c_t + L_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y), HOOKED_tex(HOOKED_pos).yz, 0);
 }

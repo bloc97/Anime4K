@@ -3982,14 +3982,77 @@ vec4 hook() {
     return vec4(o, p, q, r);
 }
 
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(UL)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!SAVE MMKERNEL
+//!COMPONENTS 2
+
+#define L_tex HOOKED_tex
+
+float max3v(float a, float b, float c) {
+	return max(max(a, b), c);
+}
+float min3v(float a, float b, float c) {
+	return min(min(a, b), c);
+}
+
+vec2 minmax3(vec2 pos, vec2 d) {
+	float a = L_tex(pos - d).x;
+	float b = L_tex(pos).x;
+	float c = L_tex(pos + d).x;
+	
+	return vec2(min3v(a, b, c), max3v(a, b, c));
+}
+
+vec4 hook() {
+    return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
+}
+
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(UL)-Kernel(Y)
+//!HOOK NATIVE
+//!BIND HOOKED
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!BIND MMKERNEL
+//!SAVE MMKERNEL
+//!COMPONENTS 2
+
+#define L_tex MMKERNEL_tex
+
+float max3v(float a, float b, float c) {
+	return max(max(a, b), c);
+}
+float min3v(float a, float b, float c) {
+	return min(min(a, b), c);
+}
+
+vec2 minmax3(vec2 pos, vec2 d) {
+	float a0 = L_tex(pos - d).x;
+	float b0 = L_tex(pos).x;
+	float c0 = L_tex(pos + d).x;
+	
+	float a1 = L_tex(pos - d).y;
+	float b1 = L_tex(pos).y;
+	float c1 = L_tex(pos + d).y;
+	
+	return vec2(min3v(a0, b0, c0), max3v(a1, b1, c1));
+}
+
+vec4 hook() {
+    return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
+}
+
+//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(UL)
+//!HOOK NATIVE
+//!BIND HOOKED
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!BIND MMKERNEL
 //!BIND LUMAN0
 //!WIDTH NATIVE.w 2 *
 //!HEIGHT NATIVE.h 2 *
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(UL)
 
+#define STRENGTH 1 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
 #define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
 #define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
 #define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
@@ -3997,7 +4060,10 @@ vec4 hook() {
 vec4 hook() {
 	vec2 f = fract(LUMAN0_pos * LUMAN0_size);
 	ivec2 i = ivec2(f * vec2(2));
-	float c = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
+	float c0 = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
+	float c = c0 * STRENGTH;
+	
+	vec2 mm = MMKERNEL_tex((vec2(0.5) - f) * MMKERNEL_pt + MMKERNEL_pos).xy;
 	
 	float t_range = BLUR_THRESHOLD - NOISE_THRESHOLD;
 	
@@ -4007,9 +4073,9 @@ vec4 hook() {
 		c_t = pow(c_t, BLUR_CURVE);
 		c_t = c_t * t_range + NOISE_THRESHOLD;
 		c_t = c_t * sign(c);
+		return vec4(clamp(c_t + HOOKED_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y), HOOKED_tex(HOOKED_pos).yz, 0);
 	} else {
-		c_t = c;
+		return vec4(c + HOOKED_tex(HOOKED_pos).x, HOOKED_tex(HOOKED_pos).yz, 0);
 	}
 	
-	return vec4(c_t + HOOKED_tex(HOOKED_pos).x, HOOKED_tex(HOOKED_pos).yz, 0);
 }
