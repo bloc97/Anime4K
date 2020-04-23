@@ -30,6 +30,8 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 
 ![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
+* FSRCNNX-56 failed to launch when playing back 1080p video.
+
 ## Notice
 
 ### This current README is outdated. I don't have the time to update the preprint and the comparisons for the major changes to the algorithm in the latest stable v2.1 version yet. Most issues related to aliasing and texture loss are solved in the latest version of the algorithm. A more rigorous and in-depth preprint is coming soon.
