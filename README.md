@@ -24,6 +24,10 @@ What's new:
 Please consider the rest of the README outdated until it is updated.
 The files are already available for anyone to play with, but usage instructions are not yet done.
 
+## Real-Time Upscalers Comparison
+
+The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.com/bloc97/SYNLA-Dataset). They were designed to be extremely efficient at using GPU shader cores (extremely thin, densely connected CNNs). All three versions outperform NGU and FSRCNNX both in upscale quality and speed while also keeping the number of parameters low, as seen in the test image below. This test image was not part of the training dataset.
+
 ![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
 ## Notice
