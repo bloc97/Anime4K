@@ -17,13 +17,16 @@ What's new:
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
 
 Please consider the rest of the README outdated until it is updated.
+The files are already available for anyone to play with, but usage instructions are not yet done.
 
 
 ![Thumbnail Image](results/Main.png?raw=true)
 
 ***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
-![Comparison](results/Comparisons/1_time.png?raw=true)
+
+
+![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
 ## Notice
 
