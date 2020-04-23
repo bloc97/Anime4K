@@ -21,7 +21,6 @@ What's new:
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
 
-Please consider the rest of the README outdated until it is updated.
 The files are already available for anyone to play with, but usage instructions are not yet done.
 
 ## Real-Time Upscalers Comparison
@@ -31,6 +30,8 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 ![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
 \*FSRCNNX-56 failed to launch when playing back 1080p video.
+
+Please consider the rest of the README outdated until it is updated.
 
 ## Notice
 
@@ -58,13 +59,11 @@ This implementation is **cross platform**.
 
 ### [GLSL Installation](GLSL_Instructions.md)
 
-Note for developers: For performance, the GLSL shaders use the `POSTKERNEL` texture to store the gradient. You might need to make a backup of the `POSTKERNEL` texture before applying these shaders and restore it after if your other shaders or rendering engine uses the `POSTKERNEL` texture for other purposes. (In MPV's case, it gets ignored.)
-
 ## HLSL Usage Instructions (MPC-BE with madVR)
 
 This implementation is **only for Windows**.
 
-This implementation is also **outdated**, the latest version is developped on GLSL.
+This implementation is **outdated**, the latest version is developped on GLSL.
 
 ### [HLSL Installation](HLSL_Instructions.md)  
 
@@ -72,7 +71,7 @@ Note for developers: For performance, the HLSL shaders use the Alpha channel to 
 
 ## Java Usage Instructions (Standalone)
 
-This implementation is **outdated**, the latest version is developped on GLSL.
+This implementation is also **outdated**, the latest version is developped on GLSL.
 
 ### [Java Installation](Java_Instructions.md)
 
@@ -84,74 +83,3 @@ Click on the link above to read Java version installation and usage instructions
  - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
  - https://github.com/andraantariksa/Anime4K-rs (Anime4K Re-Implemented in Rust)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
-
-
-## Pseudo-Preprint Preview
-
-### [Read Full Pseudo-Preprint](Preprint.md)
-
-B. Peng  
-August 2019
-
-*Ad perpetuam memoriam of all who perished in the Kyoto Animation arson attack.*
-
-### Table of Contents
-
-- [Abstract](Preprint.md#abstract)  
-- [Introduction](Preprint.md#introduction)  
-- [Proposed Method](Preprint.md#proposed-method)  
-- [Results and Upscale Examples](Preprint.md#results)  
-- [Discussion](Preprint.md#discussion)  
-- [Analysis and Comparison to Other Algorithms](Preprint.md#analysis)  
-
-### Abstract
-
-We present a state-of-the-art high-quality real-time SISR algorithm designed to work with Japanese animation and cartoons that is extremely fast *(~3ms with Vega 64 GPU)*, temporally coherent, simple to implement *(~100 lines of code)*, yet very effective. We find it surprising that this method is not currently used 'en masse', since the intuition leading us to this algorithm is very straightforward.  
-Remarkably, the proposed method does not use any machine-learning or statistical approach, and is tailored to content that puts importance to well defined lines/edges while tolerates a sacrifice of the finer textures. The proposed algorithm can be quickly described as an iterative algorithm that treats color information as a heightmap and 'pushes' pixels towards probable edges using gradient-ascent. This is very likely what learning-based approaches are already doing under the hood (eg. VDSR<sup>**[1]**</sup>, waifu2x<sup>**[2]**</sup>).
-
-### How does it *actually actually* work?
-
-There's an excellent write-up by [shi-yan](https://github.com/shi-yan) that describes the (original v0.9) algorithm in detail (in fact better than in the preprint), with interactive sliders. See for yourself! https://epiphany.pub/@shi-yan/anime4k
-
-## FAQ
-
-### Why not just use waifu2x
-
-waifu2x is too slow for real time applications.
-
-### Why not just use madVR with NGU
-
-NGU is proprietary, this algorithm is licensed under MIT.
-
-### How does FSRCNNX compare to this
-
-Since it performs poorly (perceptually, for anime) compared to other algorithms, it was left out of our visual comparisons.
-
-![ComparisonRC](https://raw.githubusercontent.com/bloc97/Anime4K/master/results/Comparisons/FSRCNNX.png)
-
-*Note: FSRCNNX was not specifically trained/designed for anime. It is however a good general-purpose SISR algorithm for video.*
-
-### Where are the PSNR/SSIM metrics
-
-There are no ground truths of 4K anime.
-
-### Why not do PSNR/SSIM on 480p->720p upscaling
-
-[Story Time](FAQ_Detail.md)
-
-Comparing PSNR/SSIM on 480p->720p upscales does not prove and is not a good indicator of 1080p->2160p upscaling quality. (Eg. poor performance of waifu2x on 1080p anime) 480p anime images have a lot of high frequency information (lines might be thinner than 1 pixel), while 1080p anime images have a lot of redundant information. 1080p->2160p upscaling on anime is thus objectively easier than 480p->720p.
-
-### I think the results are worse than \<x>
-
-Surely some people like sharper edges, some like softer ones. Do try it yourself on a few anime before reaching a definite conclusion. People *tend* to prefer sharper edges. Also, seeing the comparisons on a 1080p screen is not representative of the final results on a 4K screen, the pixel density and sharpness of the final image is simply not comparable.
-
-### Note for those who think this is not a 'upscaling' algorithm.
-
-[Explanation](Upscaling.md)
-
-TL;DR
-
-Sharpening, De-Blurring and Super-Resolution are equivalent.  
-Anime4K can de-blur, and is equivalent to a SR algorithm.  
-A Super-Resolution algorithm can do upscaling.  
-Thus, Anime4K is an upscaling algorithm.
