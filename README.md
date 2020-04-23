@@ -21,7 +21,6 @@ What's new:
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
 
-Please consider the rest of the README outdated until it is updated.
 The files are already available for anyone to play with, but usage instructions are not yet done.
 
 ## Real-Time Upscalers Comparison
@@ -31,6 +30,8 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 ![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
 \*FSRCNNX-56 failed to launch when playing back 1080p video.
+
+Please consider the rest of the README outdated until it is updated.
 
 ## Notice
 
