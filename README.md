@@ -10,8 +10,8 @@ The simplicity and speed of Anime4K allows the user to watch upscaled anime in r
 ***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
 
-## Upcoming v3.0
-The monolithic Anime4K shader will be broken into modular components, allowing customization for specific types of anime and/or personal taste.
+## v3.0
+The monolithic Anime4K shader is broken into modular components, allowing customization for specific types of anime and/or personal taste.
 
 What's new:
  - A complete overhaul of the algorithm(s) for speed, quality and efficiency.
@@ -20,8 +20,10 @@ What's new:
  - Denoising algorithms. *(Bilateral Mode and CNN variants)*
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
+ 
+**[Installation Instructions for GLSL/MPV (v3.0)](https://github.com/bloc97/Anime4K/blob/master/GLSL_Instructions_3.0.md)**  
 
-The files are already available for anyone to play with, but usage instructions are not yet done.
+Further details about each shader and its purpose will be released soon.
 
 ## Real-Time Upscalers Comparison
 
