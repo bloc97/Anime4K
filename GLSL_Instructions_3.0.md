@@ -20,7 +20,7 @@ For 1080p videos:
 The file name might vary depending on the version, rename it accordingly. You can also replace the upscalers variant (M, L, UL) for better speed or quality. But please note that MPV does not allow the same shader to be activated twice, so if you want to use the same shader twice, you must make a copy of the file and rename one of them.
 
 Alternatively add the following bindings to your `input.conf` to toggle the shader on or off at runtime using Ctrl+1, Ctrl+2, etc. 
-Ctrl-0 will disable all the shaders.
+Ctrl-0 will disable all the shaders. The order presented here is the same as above.
 ```
 CTRL+1 change-list glsl-shaders set "~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"
 CTRL+2 change-list glsl-shaders set "~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"
