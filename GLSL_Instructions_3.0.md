@@ -8,12 +8,12 @@
   5. For Anime4K v3.0, instead of activating a single shader, you should use a combination of shaders. Add one of the following lines to `mpv.conf` to enable the shaders:
   
 For 480/720p videos:
- - Remain as faithful to the original: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
+ - Remain as faithful to the original while enhancing details: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
  - Improve perceptual quality: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
  - Improve perceptual quality + deblur: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_Deblur_DoG.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
 
 For 1080p videos:
- - Remain as faithful to the original: `glsl-shaders="~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
+ - Remain as faithful to the original while enhancing details: `glsl-shaders="~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
  - Improve perceptual quality: `glsl-shaders="~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
  - Improve perceptual quality + deblur: `glsl-shaders="~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_Deblur_DoG.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
   
