@@ -32,6 +32,7 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 ![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
 
 \*FSRCNNX-56 failed to launch when playing back 1080p video.
+Erratum: The original comparison had the wrong amount of parameters for Anime4K L and UL variants. The correct number is 2.9K and 15.9K respectively.
 
 Please consider the rest of the README outdated until it is updated.
 
