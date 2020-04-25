@@ -7,6 +7,10 @@
   4. If `mpv.conf` does not exist in `%AppData%\mpv\` or `~/.config/mpv`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
   5. For Anime4K v3.0, instead of activating a single shader, you should use a combination of shaders. Add one of the following lines to `mpv.conf` to enable the shaders:
   
+**Note for Unix based OSes, ";" separators must be replaced with ":" as stated in the [mpv manual](https://mpv.io/manual/stable/#string-list-and-path-list-options).**
+  
+Here's a few shader combinations as a recommended starting point:
+  
 For 480/720p videos:
  - Remain as faithful to the original while enhancing details: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
  - Improve perceptual quality: `glsl-shaders="~~/shaders/Anime4K_3.0_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_3.0_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
