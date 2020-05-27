@@ -1,7 +1,7 @@
 # Usage Instructions (GLSL / MPV) (v3.0)
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
-  1. Install [**mpv**](https://mpv.io/) (Make sure it is **v0.31** if you are using windows/d3d11, there is a GLSL bug in v0.32, see https://github.com/bloc97/Anime4K/issues/66)  
+  1. Install [**mpv**](https://mpv.io/)  
   2. Download the .glsl shader files [**here**](https://github.com/bloc97/Anime4K/releases)  
   3. Copy the .glsl files to `%AppData%\mpv\shaders` for Windows or `~/.config/mpv/shaders` for Linux.  
   4. If `mpv.conf` does not exist in `%AppData%\mpv\` or `~/.config/mpv`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
@@ -41,6 +41,8 @@ CTRL+5 change-list glsl-shaders set "~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mo
 CTRL+6 change-list glsl-shaders set "~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_Deblur_DoG.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"
 CTRL+0 change-list glsl-shaders clr ""
 ```
+  
+Note: If you wish to use the Upscale_Original and/or Deblur_Original shaders, make sure your mpv version is **v0.31** if you are using Windows and must use the D3D11 API, as there is a GLSL bug in v0.32, see https://github.com/bloc97/Anime4K/issues/66. Linux users are not affected. Windows users on the OpenGL or Vulkan API are not affected.
   
   6. To verify the installation was correctly done, use the MPV profiler to check if there are a few shaders with the name Anime4K running. To access the profiler, press Shift+I and then 2 on the keyboard's top row.  
 This is what you should see (for v2.0RC2):  
