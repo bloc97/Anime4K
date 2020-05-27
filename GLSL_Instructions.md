@@ -28,7 +28,7 @@ For 1080p videos:
  `glsl-shaders="~~/shaders/Anime4K_3.0_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_3.0_Deblur_DoG.glsl;~~/shaders/Anime4K_3.0_DarkLines_HQ.glsl;~~/shaders/Anime4K_3.0_ThinLines_HQ.glsl;~~/shaders/Anime4K_3.0_Upscale_CNN_M_x2_Deblur.glsl"`
   
 The file name might vary depending on the version, rename it accordingly. You can also replace the upscalers variant (M, L, UL) for better speed or quality. But please note that MPV does not allow the same shader to be activated twice, so if you want to use the same shader twice, you must make a copy of the file and rename one of them.  
-Note: Due to some unknown cause (or intentional behaviour?) in mpv, using two exact upscaling shaders variant causes the first pass to slow down significantly. Performance loss is especially noticeable at higher resolutions.
+Note: Due to some unknown cause (or intentional behaviour?) in mpv, using the exact same upscaling shaders variant twice or more causes the first pass to slow down significantly. Performance loss is especially noticeable at higher resolutions.
 
 Alternatively add the following bindings to your `input.conf` to toggle the shader on or off at runtime using Ctrl+1, Ctrl+2, etc. 
 Ctrl-0 will disable all the shaders. The order presented here is the same as above.
