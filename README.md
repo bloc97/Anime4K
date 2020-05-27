@@ -21,7 +21,7 @@ What's new:
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
  
-**[Installation Instructions for GLSL/MPV (v3.0)](https://github.com/bloc97/Anime4K/blob/master/GLSL_Instructions_3.0.md)**  
+**[Installation Instructions for GLSL/MPV (v3.0)](GLSL_Instructions_3.0.md)**  
 
 Further details about each shader and its purpose will be released soon.
 
