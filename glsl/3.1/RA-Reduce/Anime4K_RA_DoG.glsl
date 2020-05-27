@@ -43,7 +43,6 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.0-RA-DoG-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE GAUSS_X2
@@ -81,7 +80,6 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.0-RA-DoG-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
@@ -123,7 +121,6 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.0-RA-DoG
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
