@@ -33,28 +33,6 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 
 \*FSRCNNX-56 failed to launch when playing back 1080p video.  
 Erratum: The original comparison had the wrong amount of parameters for Anime4K L and UL variants. The correct number is 2.9K and 15.9K respectively.
-
-Please consider the rest of the README outdated until it is updated.
-
-## Notice
-
-### This current README is outdated. I don't have the time to update the preprint and the comparisons for the major changes to the algorithm in the latest stable v2.1 version yet. Most issues related to aliasing and texture loss are solved in the latest version of the algorithm. A more rigorous and in-depth preprint is coming soon.
-
-We understand that this algorithm is far from perfect, and are working towards a hybrid approach (using Machine Learning) to improve Anime4K. 
-
-The greatest difficulties encountered right now are caused by these issues that other media does not suffer from:
-
- - Lack of ground truth (No True 4K Anime)
- - Few true 1080p anime (Even some anime mastered at 1080p have sprites that were downsampled)
- - Non-1080p anime are upsampled to 1080p using simple algorithms, resulting in a blurry 1080p image. Our algorithm has to detect this. (Main reason why waifu2x does not work well on anime)
- - UV channels of anime are subsampled (4:2:0), which means the color channels of 1080p anime are in fact 540p, thus there is a lack of 1080p ground truth for the UV channels.
- - Simulating H.264/H.265 compression artifacts (for analysis and denoising) is not trivial and is relatively time-consuming.
- - Due to the workflow of animation studios and their lack of time/budget, resampling artifacts of individual sprites are present in many modern anime.
- - Speed (preferably real-time) is paramount, since we do not want to re-encode video each time the algorithm improves. There is also less risk of permanently altering original content.
- - So on...
-
-However, we still believe by shrinking the size of VDSR or FSRCNN and using an hybrid approach we can achieve good results.  
-Stay tuned for more info!
  
 ## GLSL Usage Instructions (MPV)
 
@@ -62,25 +40,8 @@ This implementation is **cross platform**.
 
 ### [GLSL Installation](GLSL_Instructions.md)
 
-## HLSL Usage Instructions (MPC-BE with madVR)
-
-This implementation is **only for Windows**.
-
-This implementation is **outdated**, the latest version is developped on GLSL.
-
-### [HLSL Installation](HLSL_Instructions.md)  
-
-Note for developers: For performance, the HLSL shaders use the Alpha channel to store the gradient. You might need to make a backup of the alpha channel before applying these shaders and restore it after if your rendering engine uses the alpha channel for other purposes. (In MPC-BE's case, it gets ignored.)
-
-## Java Usage Instructions (Standalone)
-
-This implementation is also **outdated**, the latest version is developped on GLSL.
-
-### [Java Installation](Java_Instructions.md)
-
-Click on the link above to read Java version installation and usage instructions.
-
 ## Projects that use Anime4K
+Note that they might be using the outdated version of Anime4K (pre v3.x). There have been significant quality improvements in v3.
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
  - https://github.com/keijiro/UnityAnime4K (Anime4K for Unity)
  - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
