@@ -562,7 +562,7 @@ vec2 minmax3(vec2 pos, vec2 d) {
 }
 
 vec4 hook() {
-    return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
+    return vec4(minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0, 0);
 }
 
 //!DESC Anime4K-v3.0-Upscale(x2)+Deblur-CNN(M)
