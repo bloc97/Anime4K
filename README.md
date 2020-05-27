@@ -35,7 +35,7 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 Erratum: The original comparison had the wrong amount of parameters for Anime4K L and UL variants. The correct number is 2.9K and 15.9K respectively.
 
 ## Projects that use Anime4K
-*Note that they might be using the outdated version of Anime4K (pre v3.x). There have been significant quality improvements in v3.*
+*Note that they might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
  - https://github.com/keijiro/UnityAnime4K (Anime4K for Unity)
  - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
