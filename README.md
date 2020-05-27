@@ -21,15 +21,15 @@ What's new:
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
  
-**[Installation Instructions for GLSL/MPV (v3.0)](https://github.com/bloc97/Anime4K/blob/master/GLSL_Instructions_3.0.md)**  
+**[Installation Instructions for GLSL/MPV (v3.0)](https://github.com/bloc97/Anime4K/blob/master/GLSL_Instructions.md)**  
 
 Further details about each shader and its purpose will be released soon.
 
 ## Real-Time Upscalers Comparison
 
 The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.com/bloc97/SYNLA-Dataset). They were designed to be extremely efficient at using GPU shader cores (extremely thin, densely connected CNNs). All three versions outperform NGU and FSRCNNX both in upscale quality and speed while also keeping the number of parameters low, as seen in the test image below. This test image was not part of the training dataset. Performance benchmarks are based on 1080p->4K upscaling and were performed using an AMD Vega 64 GPU.
-
-![Comparison](results/Comparisons_3.0/Bird/Compare.png?raw=true)
+The complete images from this comparison can be found under [results/Comparisons/Bird](https://github.com/bloc97/Anime4K/tree/master/results/Comparisons/Bird).
+![Comparison](results/Comparisons/Bird/Compare.png?raw=true)
 
 \*FSRCNNX-56 failed to launch when playing back 1080p video.  
 Erratum: The original comparison had the wrong amount of parameters for Anime4K L and UL variants. The correct number is 2.9K and 15.9K respectively.
