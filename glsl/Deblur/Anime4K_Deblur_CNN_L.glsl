@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x1
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x1
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -47,7 +47,7 @@ vec4 hook() {
     return vec4(s, t, u, v);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -127,7 +127,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -207,7 +207,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -287,7 +287,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -367,7 +367,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -447,7 +447,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -527,7 +527,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -607,7 +607,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -687,7 +687,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!COMPONENTS 4
@@ -767,7 +767,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN-(L)-Conv-Reduce
+//!DESC Anime4K-v3.1-Deblur-CNN-(L)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WIDTH LUMA.w
@@ -819,7 +819,7 @@ vec4 hook() {
     return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN(L)-Kernel(X)
+//!DESC Anime4K-v3.1-Deblur-CNN(L)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
@@ -846,7 +846,7 @@ vec4 hook() {
     return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-CNN(L)-Kernel(Y)
+//!DESC Anime4K-v3.1-Deblur-CNN(L)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -882,7 +882,7 @@ vec4 hook() {
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!BIND LUMAN0
-//!DESC Anime4K-v3.0-Deblur-CNN(L)
+//!DESC Anime4K-v3.1-Deblur-CNN(L)
 
 #define STRENGTH 1 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
 #define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;

@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Downsample
+//!DESC Anime4K-v3.1-RA-CNN(M)-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE BACKUP
@@ -32,7 +32,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Downsample
+//!DESC Anime4K-v3.1-RA-CNN(M)-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WIDTH NATIVE.w 2 /
@@ -42,7 +42,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x1
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x1
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE LUMAN0
@@ -73,7 +73,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN0
@@ -154,7 +154,7 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN1
@@ -235,7 +235,7 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN2
@@ -316,7 +316,7 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN3
@@ -396,7 +396,7 @@ vec4 hook() {
 	
 	return vec4(o, p, q, r);
 }
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN4
@@ -477,7 +477,7 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Conv-Reduce
+//!DESC Anime4K-v3.1-RA-CNN(M)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN1
@@ -516,7 +516,7 @@ vec4 hook() {
 	return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)
+//!DESC Anime4K-v3.1-RA-CNN(M)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAN0
@@ -532,7 +532,7 @@ vec4 hook() {
 	return vec4(c);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(M)-Resample
+//!DESC Anime4K-v3.1-RA-CNN(M)-Resample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND BACKUP

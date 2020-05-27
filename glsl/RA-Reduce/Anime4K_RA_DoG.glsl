@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-RA-DoG-Downsample
+//!DESC Anime4K-v3.1-RA-DoG-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE BACKUP
@@ -32,7 +32,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG-Downsample
+//!DESC Anime4K-v3.1-RA-DoG-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WIDTH NATIVE.w 2 /
@@ -42,7 +42,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG-Kernel(X)
+//!DESC Anime4K-v3.1-RA-DoG-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE GAUSS_X2
@@ -79,7 +79,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-RA-DoG-Kernel(Y)
+//!DESC Anime4K-v3.1-RA-DoG-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
@@ -120,7 +120,7 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG
+//!DESC Anime4K-v3.1-RA-DoG
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
@@ -139,7 +139,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-RA-DoG-Resample
+//!DESC Anime4K-v3.1-RA-DoG-Resample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND BACKUP

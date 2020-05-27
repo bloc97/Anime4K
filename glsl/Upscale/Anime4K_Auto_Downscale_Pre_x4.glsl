@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // This is free and unencumbered software released into the public domain.
 
@@ -25,7 +25,7 @@
 
 // For more information, please refer to <https://unlicense.org>
 
-//!DESC Anime4K-v3.0-Auto-Downscale-Pre-x4
+//!DESC Anime4K-v3.1-Auto-Downscale-Pre-x4
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w LUMA.w / 4 < OUTPUT.h LUMA.h / 4 < * OUTPUT.w LUMA.w / 2.400 > OUTPUT.h LUMA.h / 2.400 > * *

@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(X)
+//!DESC Anime4K-v3.1-Upscale(x2)-DoG-Kernel(X)
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
@@ -61,7 +61,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG-Kernel(Y)
+//!DESC Anime4K-v3.1-Upscale(x2)-DoG-Kernel(Y)
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
@@ -103,7 +103,7 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-DoG
+//!DESC Anime4K-v3.1-Upscale(x2)-DoG
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED

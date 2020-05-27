@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Deblur-DoG-Kernel(X)
+//!DESC Anime4K-v3.1-Deblur-DoG-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
@@ -60,7 +60,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Deblur-DoG-Kernel(Y)
+//!DESC Anime4K-v3.1-Deblur-DoG-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -101,7 +101,7 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.0-Deblur-DoG
+//!DESC Anime4K-v3.1-Deblur-DoG
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
