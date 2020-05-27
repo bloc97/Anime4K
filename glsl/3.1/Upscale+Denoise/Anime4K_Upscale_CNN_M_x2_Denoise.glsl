@@ -511,8 +511,8 @@ vec4 hook() {
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN0
-//!WIDTH LUMA.w 2 *
-//!HEIGHT LUMA.h 2 *
+//!WIDTH NATIVE.w 2 *
+//!HEIGHT NATIVE.h 2 *
 
 
 vec4 hook() {
