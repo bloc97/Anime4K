@@ -23,7 +23,7 @@ What's new:
  
 **[Installation Instructions for GLSL/MPV](GLSL_Instructions.md)**  
 
-Further details about each shader and its purpose will be released soon.
+[More information about each shader](https://github.com/bloc97/Anime4K/wiki).
 
 ## Real-Time Upscalers Comparison
 
