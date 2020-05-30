@@ -25,6 +25,7 @@
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
@@ -61,6 +62,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -98,6 +100,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -135,6 +138,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -172,6 +176,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -187,6 +192,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE LUMAD
@@ -223,6 +229,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -264,6 +271,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -295,6 +303,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -330,6 +339,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -365,6 +375,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD2
@@ -404,6 +415,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -434,6 +446,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(X)
+//!WHEN OUTPUT.w LUMAD2.w / 1.200 > OUTPUT.h LUMAD2.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
@@ -473,6 +486,7 @@ vec4 hook() {
 
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD-Kernel(Y)
+//!WHEN OUTPUT.w LUMAD2.w / 1.200 > OUTPUT.h LUMAD2.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -516,6 +530,7 @@ vec4 hook() {
 }
 
 //!DESC Anime4K-v3.1-Upscale(x2)-DTD
+//!WHEN OUTPUT.w LUMAD2.w / 1.200 > OUTPUT.h LUMAD2.h / 1.200 > *
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
