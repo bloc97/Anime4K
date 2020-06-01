@@ -16,7 +16,7 @@ The monolithic Anime4K shader is broken into modular components, allowing custom
 What's new:
  - A complete overhaul of the algorithm(s) for speed, quality and efficiency.
  - Real-time, high quality line art CNN upscalers. *(6 variants)*
- - Line art deblurring shaders. *("blind deconvolution")*
+ - Line art deblurring shaders. *("blind deconvolution" and DTD shader)*
  - Denoising algorithms. *(Bilateral Mode and CNN variants)*
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
