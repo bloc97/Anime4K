@@ -33,14 +33,14 @@ First in each category is highlighted in brackets.
 
 Algorithm | x2 PSNR (dB) | Runtime (ms) | Parameters
 -- | -- | -- | --
-Bilinear | 23.03 | 0 | 0
-ravu-r4 | 24.09 | 3.6 | 41.4k
-FSRCNNX-16 | 24.57 | 30.4 | 10.5k
-NGU-Sharp-High | 24.69 | 11 | ?
-Anime4K-M | 24.73 | **[1.5]** | **[1.6k]**
-Anime4K-L | 24.94 | 2.5 | 2.9k
-Anime4K-UL | **[25.14]** | 10.7 | 15.9k
-waifu2x-CUNet | **[25.61]**\* | >1000 | 1283.3k
+[Bilinear](results/Comparisons/Bird/Bilinear.png) | 23.03 | 0 | 0
+[ravu-r4](results/Comparisons/Bird/Ravu-r4.png) | 24.09 | 3.6 | 41.4k
+[FSRCNNX-16](results/Comparisons/Bird/FSRCNNX-16.png) | 24.57 | 30.4 | 10.5k
+[NGU-Sharp-High](results/Comparisons/Bird/NGU-Sharp-High.png) | 24.69 | 11 | ?
+[Anime4K-M](results/Comparisons/Bird/Anime4K-M.png) | 24.73 | **[1.5]** | **[1.6k]**
+[Anime4K-L](results/Comparisons/Bird/Anime4K-L.png) | 24.94 | 2.5 | 2.9k
+[Anime4K-UL](results/Comparisons/Bird/Anime4K-UL.png) | **[25.14]** | 10.7 | 15.9k
+[waifu2x-CUNet](results/Comparisons/Bird/waifu2x-CUNet.png) | **[25.61]**\* | >1000 | 1283.3k
 
 \**waifu2x is technically first in PSNR, but it is not a realtime algorithm and is 80 times larger than Anime4K-UL. It is included only for comparison purposes.*
 
