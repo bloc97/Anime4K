@@ -42,7 +42,7 @@ Anime4K-L | 24.94 | 2.5 | 2.9k
 Anime4K-UL | **[25.14]** | 10.7 | 15.9k
 waifu2x-CUNet | **[25.61]**\* | >1000 | 1283.3k
 
-\**waifu2x is technically first in PSNR, but it is not a realtime algorithm. It is included only for comparison purposes.*
+\**waifu2x is technically first in PSNR, but it is not a realtime algorithm and is 80 times larger than Anime4K-UL. It is included only for comparison purposes.*
 
 *The complete images from this comparison can be found under [results/Comparisons/Bird](results/Comparisons/Bird).*
 
