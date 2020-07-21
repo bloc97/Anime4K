@@ -38,7 +38,8 @@ FSRCNNX-16 | 24.57 | 30.4 | 10.5k
 NGU-Sharp-High | 24.69 | 11 | ?
 Anime4K-M | 24.73 | **[1.5]** | **[1.6k]**
 Anime4K-L | 24.94 | 2.5 | 2.9k
-Anime4K-UL | **[25.14]** | 10.7 | 15.9k
+Anime4K-UL | 25.14 | 10.7 | 15.9k
+waifu2x-CUNet | **[25.61]** | >1000 | 1283.3k
 
 *The complete images from this comparison can be found under [results/Comparisons/Bird](results/Comparisons/Bird).*
 
