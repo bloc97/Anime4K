@@ -41,4 +41,5 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
  - https://github.com/keijiro/UnityAnime4K (Anime4K for Unity)
  - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
  - https://github.com/andraantariksa/Anime4K-rs (Anime4K Re-Implemented in Rust)
+ - https://github.com/TianZerL/Anime4KCPP (Anime4K & more algorithms implemented in C++)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
