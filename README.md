@@ -34,11 +34,11 @@ Algorithm | x2 PSNR (dB) | Runtime (ms) | Parameters
 -- | -- | -- | --
 Bilinear | 23.03 | 0 | 0
 ravu-r4 | 24.09 | 3.6 | 41.4k
-FSRCNNX-16 | 24.57 | 30.4 | 10.5K
-NGU-Sharp-High | 24.69 | 11.0 | ?
+FSRCNNX-16 | 24.57 | 30.4 | 10.5k
+NGU-Sharp-High | 24.69 | 11 | ?
 Anime4K-M | 24.73 | **[1.5]** | **[1.6k]**
-Anime4K-L | 24.94 | 2.5 | 2.9K
-Anime4K-UL | **[25.14]** | 10.7 | 15.9K
+Anime4K-L | 24.94 | 2.5 | 2.9k
+Anime4K-UL | **[25.14]** | 10.7 | 15.9k
 
 *The complete images from this comparison can be found under [results/Comparisons/Bird](results/Comparisons/Bird).*
 
