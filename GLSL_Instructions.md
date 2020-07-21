@@ -27,11 +27,11 @@ For 1080p videos:
  - Improve perceptual quality + deblur:  
  `glsl-shaders="~~/shaders/Anime4K_Denoise_Bilateral_Mode.glsl;~~/shaders/Anime4K_Deblur_DoG.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"`
   
-The file name might vary depending on the version, rename it accordingly. You can also replace the upscalers variant (M, L, UL) for better speed or quality. But please note that MPV does not allow the same shader to be activated twice, so if you want to use the same shader twice, you must make a copy of the file and rename one of them.  
+The file name might vary depending on the version, rename it accordingly. You can also replace the upscalers variant (M, L, UL) for better speed or quality. But please note that mpv does not allow the same shader to be activated twice, so if you want to use the same shader twice, you must make a copy of the file and rename one of them.  
 Note: Due to some unknown cause (or intentional behaviour?) in mpv, using the exact same upscaling shaders variant twice or more causes the first pass to slow down significantly. Performance loss is especially noticeable at higher resolutions.
 
 Alternatively add the following bindings to your `input.conf` to toggle the shader on or off at runtime using Ctrl+1, Ctrl+2, etc. 
-Ctrl-0 will disable all the shaders. The order presented here is the same as above.
+Ctrl+0 will disable all the shaders. The order presented here is the same as above.
 ```
 CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 480/720p (Faithful)"
 CTRL+2 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Upscale_CNN_L_x2_Denoise.glsl;~~/shaders/Anime4K_Auto_Downscale_Pre_x4.glsl;~~/shaders/Anime4K_DarkLines_HQ.glsl;~~/shaders/Anime4K_ThinLines_HQ.glsl;~~/shaders/Anime4K_Upscale_CNN_M_x2_Deblur.glsl"; show-text "Anime4k: 480/720p (Perceptual Quality)"
