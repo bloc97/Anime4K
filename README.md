@@ -30,6 +30,7 @@ What's new:
 The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.com/bloc97/SYNLA-Dataset). They were designed to be extremely efficient at using GPU shader cores (extremely thin, densely connected CNNs). All three versions outperform NGU and FSRCNNX both in upscale quality and speed while also keeping the number of parameters low, as seen in the test image below. This test image was not part of the training dataset. Performance benchmarks are based on 1080p->4K upscaling and were performed using an AMD Vega 64 GPU.
 
 First in each category is highlighted in brackets.
+
 Algorithm | x2 PSNR (dB) | Runtime (ms) | Parameters
 -- | -- | -- | --
 Bilinear | 23.03 | 0 | 0
@@ -38,8 +39,10 @@ FSRCNNX-16 | 24.57 | 30.4 | 10.5k
 NGU-Sharp-High | 24.69 | 11 | ?
 Anime4K-M | 24.73 | **[1.5]** | **[1.6k]**
 Anime4K-L | 24.94 | 2.5 | 2.9k
-Anime4K-UL | 25.14 | 10.7 | 15.9k
-waifu2x-CUNet | **[25.61]** | >1000 | 1283.3k
+Anime4K-UL | **[25.14]** | 10.7 | 15.9k
+waifu2x-CUNet | **[25.61]**\* | >1000 | 1283.3k
+
+\**waifu2x is technically first in PSNR, but it is not a realtime algorithm. It is included only for comparison purposes.*
 
 *The complete images from this comparison can be found under [results/Comparisons/Bird](results/Comparisons/Bird).*
 
