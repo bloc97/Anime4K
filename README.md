@@ -31,7 +31,7 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 
 First in each category is highlighted in brackets.
 
-Algorithm | x2 PSNR (dB) | Runtime @4K (ms) | Parameters
+Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
 -- | -- | -- | --
 [Bilinear](results/Comparisons/Bird/Bilinear.png) | 23.03 | 0 | 0
 [ravu-r4](results/Comparisons/Bird/Ravu-r4.png) | 24.09 | 3.6 | 41.4k
