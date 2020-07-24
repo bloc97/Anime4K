@@ -46,7 +46,7 @@ First in each category is highlighted in brackets.
 Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
 -- | -- | -- | --
 [Bilinear](results/Comparisons/Bird/Bilinear.png) | 23.03 | 0 | 0
-[ravu-r4](results/Comparisons/Bird/Ravu-r4.png) | 24.09 | 3.6 | 41.4k
+[ravu-r4](results/Comparisons/Bird/ravu-r4.png) | 24.09 | 3.6 | 41.4k
 [FSRCNNX-16](results/Comparisons/Bird/FSRCNNX-16.png) | 24.57 | 30.4 | 10.5k
 [NGU-Sharp-High](results/Comparisons/Bird/NGU-Sharp-High.png) | 24.69 | 11 | ?
 [Anime4K-M](results/Comparisons/Bird/Anime4K-M.png) | 24.73 | **[1.5]** | **[1.6k]**
