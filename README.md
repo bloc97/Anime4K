@@ -34,7 +34,7 @@ The new denoisers are/will be trained using a mix of the [SYNLA Dataset](https:/
 
 ![Comparison](results/Comparisons/Bird_Denoise/Compare.png?raw=true)
 
-\**Note: Here it is evident that PSNR is not always the best indicator of perceived image quality. The waifu2x denoiser looks shaper, but hallucinates many artifacts, especially near the edges.*
+\**Note: Here it is evident that PSNR is not always the best indicator of perceived image quality. The waifu2x denoiser looks shaper, but hallucinates many artifacts, especially near line edges.*
 
 
 ## Real-Time Upscalers Comparison
