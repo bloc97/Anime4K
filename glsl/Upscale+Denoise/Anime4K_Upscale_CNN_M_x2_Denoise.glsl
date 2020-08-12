@@ -78,25 +78,25 @@ vec4 hook() {
 	vec4 h = L_tex(HOOKED_pos + vec2(dp.x, 0));
 	vec4 i = L_tex(HOOKED_pos + vec2(dp.x, dp.y));
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
-	vec4 nf = -min(f, 0);
-	vec4 ng = -min(g, 0);
-	vec4 nh = -min(h, 0);
-	vec4 ni = -min(i, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
+	vec4 nf = -min(f, vec4(0));
+	vec4 ng = -min(g, vec4(0));
+	vec4 nh = -min(h, vec4(0));
+	vec4 ni = -min(i, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
-	f = max(f, 0);
-	g = max(g, 0);
-	h = max(h, 0);
-	i = max(i, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
+	f = max(f, vec4(0));
+	g = max(g, vec4(0));
+	h = max(h, vec4(0));
+	i = max(i, vec4(0));
 	
 	float s = -0.015687061*a.x + -0.005086804*b.x + -0.08009774*c.x + 0.4036132*d.x + -0.55772984*e.x + -0.2755099*f.x + -0.1277555*g.x + 0.48264486*h.x + -0.039350368*i.x;
 	float t = -0.1956287*a.y + 0.24631155*b.y + -0.1362055*c.y + -0.017237768*d.y + -0.31328484*e.y + 0.32078618*f.y + 0.17252642*g.y + 1.288781*h.y + 0.6368975*i.y;
@@ -160,25 +160,25 @@ vec4 hook() {
 	vec4 h = L_tex(HOOKED_pos + vec2(dp.x, 0));
 	vec4 i = L_tex(HOOKED_pos + vec2(dp.x, dp.y));
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
-	vec4 nf = -min(f, 0);
-	vec4 ng = -min(g, 0);
-	vec4 nh = -min(h, 0);
-	vec4 ni = -min(i, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
+	vec4 nf = -min(f, vec4(0));
+	vec4 ng = -min(g, vec4(0));
+	vec4 nh = -min(h, vec4(0));
+	vec4 ni = -min(i, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
-	f = max(f, 0);
-	g = max(g, 0);
-	h = max(h, 0);
-	i = max(i, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
+	f = max(f, vec4(0));
+	g = max(g, vec4(0));
+	h = max(h, vec4(0));
+	i = max(i, vec4(0));
 
 	float s = 0.018682314*a.x + 0.44203937*b.x + 0.011201117*c.x + 0.1707163*d.x + -0.13163331*e.x + 0.10832957*f.x + -0.25094667*g.x + -0.37710962*h.x + -0.099689476*i.x;
 	float t = -0.0066981018*a.y + 0.26694995*b.y + 0.057795994*c.y + 0.045658633*d.y + 0.86929697*e.y + -0.8076145*f.y + 0.048658714*g.y + -0.082118966*h.y + -0.45287862*i.y;
@@ -242,25 +242,25 @@ vec4 hook() {
 	vec4 h = L_tex(HOOKED_pos + vec2(dp.x, 0));
 	vec4 i = L_tex(HOOKED_pos + vec2(dp.x, dp.y));
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
-	vec4 nf = -min(f, 0);
-	vec4 ng = -min(g, 0);
-	vec4 nh = -min(h, 0);
-	vec4 ni = -min(i, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
+	vec4 nf = -min(f, vec4(0));
+	vec4 ng = -min(g, vec4(0));
+	vec4 nh = -min(h, vec4(0));
+	vec4 ni = -min(i, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
-	f = max(f, 0);
-	g = max(g, 0);
-	h = max(h, 0);
-	i = max(i, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
+	f = max(f, vec4(0));
+	g = max(g, vec4(0));
+	h = max(h, vec4(0));
+	i = max(i, vec4(0));
 
 	float s = -0.11332997*a.x + -0.030096909*b.x + 0.08148866*c.x + -0.010003128*d.x + -0.3719025*e.x + 0.42076835*f.x + -0.054107253*g.x + 0.38734847*h.x + -0.11231825*i.x;
 	float t = 0.025680946*a.y + -0.024454257*b.y + 0.014810714*c.y + 0.036770396*d.y + -0.0070939185*e.y + -0.0018907397*f.y + -0.0069138035*g.y + 0.042922944*h.y + -0.026554981*i.y;
@@ -324,25 +324,25 @@ vec4 hook() {
 	vec4 h = L_tex(HOOKED_pos + vec2(dp.x, 0));
 	vec4 i = L_tex(HOOKED_pos + vec2(dp.x, dp.y));
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
-	vec4 nf = -min(f, 0);
-	vec4 ng = -min(g, 0);
-	vec4 nh = -min(h, 0);
-	vec4 ni = -min(i, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
+	vec4 nf = -min(f, vec4(0));
+	vec4 ng = -min(g, vec4(0));
+	vec4 nh = -min(h, vec4(0));
+	vec4 ni = -min(i, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
-	f = max(f, 0);
-	g = max(g, 0);
-	h = max(h, 0);
-	i = max(i, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
+	f = max(f, vec4(0));
+	g = max(g, vec4(0));
+	h = max(h, vec4(0));
+	i = max(i, vec4(0));
 	
 	float s = -0.11336011*a.x + -0.5546093*b.x + -0.1980563*c.x + -0.09243965*d.x + -0.30328315*e.x + 0.002288521*f.x + -0.1719883*g.x + -0.25393653*h.x + -0.106638394*i.x;
 	float t = 0.060408574*a.y + -0.4343821*b.y + -0.09417895*c.y + 0.04474836*d.y + 0.66423136*e.y + -0.16684487*f.y + -0.046044365*g.y + 0.1707526*h.y + 0.13041699*i.y;
@@ -405,25 +405,25 @@ vec4 hook() {
 	vec4 h = L_tex(HOOKED_pos + vec2(dp.x, 0));
 	vec4 i = L_tex(HOOKED_pos + vec2(dp.x, dp.y));
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
-	vec4 nf = -min(f, 0);
-	vec4 ng = -min(g, 0);
-	vec4 nh = -min(h, 0);
-	vec4 ni = -min(i, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
+	vec4 nf = -min(f, vec4(0));
+	vec4 ng = -min(g, vec4(0));
+	vec4 nh = -min(h, vec4(0));
+	vec4 ni = -min(i, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
-	f = max(f, 0);
-	g = max(g, 0);
-	h = max(h, 0);
-	i = max(i, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
+	f = max(f, vec4(0));
+	g = max(g, vec4(0));
+	h = max(h, vec4(0));
+	i = max(i, vec4(0));
 	
 	float s = 0.038567036*a.x + 0.0705653*b.x + -0.08456429*c.x + 0.17830919*d.x + 0.15700413*e.x + -0.48310483*f.x + -0.13568404*g.x + 0.38844487*h.x + -0.24666616*i.x;
 	float t = -0.022864863*a.y + -0.09708212*b.y + 0.080999635*c.y + 0.10234689*d.y + -0.9441054*e.y + 0.37205943*f.y + 0.023142772*g.y + -0.30508518*h.y + 0.23074047*i.y;
@@ -486,17 +486,17 @@ vec4 hook() {
 	vec4 d = LUMAN4_tex(HOOKED_pos);
 	vec4 e = LUMAN5_tex(HOOKED_pos);
 	
-	vec4 na = -min(a, 0);
-	vec4 nb = -min(b, 0);
-	vec4 nc = -min(c, 0);
-	vec4 nd = -min(d, 0);
-	vec4 ne = -min(e, 0);
+	vec4 na = -min(a, vec4(0));
+	vec4 nb = -min(b, vec4(0));
+	vec4 nc = -min(c, vec4(0));
+	vec4 nd = -min(d, vec4(0));
+	vec4 ne = -min(e, vec4(0));
 	
-	a = max(a, 0);
-	b = max(b, 0);
-	c = max(c, 0);
-	d = max(d, 0);
-	e = max(e, 0);
+	a = max(a, vec4(0));
+	b = max(b, vec4(0));
+	c = max(c, vec4(0));
+	d = max(d, vec4(0));
+	e = max(e, vec4(0));
 
 	float o = 0.048128415*a.x + -0.10200983*a.y + 0.0026888845*a.z + 0.03718083*a.w + 0.0038677044*na.x + 0.19192158*na.y + -0.07810309*na.z + 0.010487845*na.w + 0.03670921*b.x + -0.038882297*b.y + -0.037679777*b.z + -0.012084925*b.w + 0.090262465*nb.x + -0.004547179*nb.y + 0.0059687584*nb.z + 0.051256124*nb.w + -0.11432519*c.x + -0.25872356*c.y + 0.0054702796*c.z + -0.012581099*c.w + 0.015949834*nc.x + 0.21601027*nc.y + 0.035843574*nc.z + 0.017208261*nc.w + -0.056919403*d.x + -0.18486539*d.y + -0.02737798*d.z + -0.3186765*d.w + -0.13511881*nd.x + 0.35757625*nd.y + -0.07571729*nd.z + -0.11691222*nd.w + -0.2406404*e.x + -0.18846813*e.y + -0.090694115*e.z + 0.08896013*e.w + 0.16347*ne.x + 0.099284545*ne.y + 0.16371554*ne.z + -0.042760517*ne.w + -0.014356738;
 	float p = 0.034463048*a.x + -0.10106072*a.y + 0.0153113*a.z + 0.013266783*a.w + -0.0050172983*na.x + 0.15015306*na.y + -0.1432366*na.z + -0.0013678991*na.w + 0.008594857*b.x + 0.004623611*b.y + -0.059459336*b.z + -0.013174561*b.w + 0.021199493*nb.x + -0.025345081*nb.y + 0.083974496*nb.z + 0.08165798*nb.w + -0.09537475*c.x + -0.08943068*c.y + -0.02914935*c.z + 0.010825835*c.w + -0.04871495*nc.x + 0.21459627*nc.y + -0.0050241314*nc.z + -0.008088038*nc.w + -0.0045245662*d.x + -0.053880397*d.y + 0.04765565*d.z + -0.06589436*d.w + 0.031551003*nd.x + -0.02856088*nd.y + -0.21330751*nd.z + 0.14608456*nd.w + -0.12683192*e.x + 0.15810186*e.y + 0.11550806*e.z + -0.058062166*e.w + 0.037682347*ne.x + -0.03632457*ne.y + -0.021607846*ne.z + 0.09143093*ne.w + -0.0076093744;
