@@ -40,5 +40,7 @@ echo video-sync=display-resample >> mpv.conf
 echo interpolation               >> mpv.conf
 echo tscale=oversample           >> mpv.conf
 
-echo .
+echo.
 echo Please delete the "%confDIR%" folder manually if you dont need it anymore.
+
+pause
