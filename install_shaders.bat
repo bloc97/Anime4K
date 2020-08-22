@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 
 set "confMPV=%~dp0"
 set "confDIR=Anime4K"
-:: git clone https://github.com/bloc97/Anime4K.git %confDIR%
+git clone https://github.com/bloc97/Anime4K.git %confDIR%
 
 cd /d "%AppData%"
 
