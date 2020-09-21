@@ -10,9 +10,9 @@ FSRCNNX-8-LINEART - 24.46/6.1/2.9K
 NGU-SHARP-LOW - 24.46/3.9/?
 NGU-SHARP-MEDIUM - 24.51/5.3/?
 NGU-STANDARD-VERYHIGH - 24.51/37.7/?
-ACNet - 24.55/7.9/4.7K
+ACNet - 24.55*/7.9/4.7K
 FSRCNNX-16 - 24.57/30.4/10.5K
-FSRCNNX-56 - 24.60/52.4*/15.2K
+FSRCNNX-56 - 24.60/52.4**/15.2K
 NGU-SHARP-HIGH - 24.69/11.0/?
 ANIME4K-M - 24.73/1.5/1.6K
 NGU-SHARP-VERYHIGH - 24.80/37.7/?
@@ -20,5 +20,5 @@ ANIME4K-L - 24.94/2.5/2.9K
 ANIME4K-UL - 25.14/10.7/15.9K
 WAIFU2X-CUNET - 25.61/>1000/1283.3K
 
-
-* FSRCNNX-56 runtime is estimated based on the number of multiply-add operations compared to FSRCNNX-16
+* ACNet performs joint super resolution with denoising. This has a larger negative impact on PSNR compared to perceptual quality.
+** FSRCNNX-56 runtime is estimated based on the number of multiply-add operations compared to FSRCNNX-16.
