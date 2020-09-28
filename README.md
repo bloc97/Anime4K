@@ -41,6 +41,8 @@ The new denoisers are/will be trained using a mix of the [SYNLA Dataset](https:/
 
 The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.com/bloc97/SYNLA-Dataset). They were designed to be extremely efficient at using GPU shader cores (extremely thin, densely connected CNNs). All three versions outperform NGU and FSRCNNX both in upscale quality and speed while also keeping the number of parameters low, as seen in the test image below. This test image was not part of the training dataset, nor is it used as validation for hyperparameter tuning. Performance benchmarks are based on 1080p->4K upscaling and were performed using an AMD Vega 64 GPU.
 
+The low resolution (LR) images are generated using the average area downscaling operation, which is the correct downscaling operation when we want to avoid using low pass filtering. Low pass filtering works well for natural images, but will destroy fine details in line art. This is equivalent to `interpolation = INTER_AREA` in OpenCV and `-sws_flags area` in ffmpeg. <ins>Note that this operation is only equivalent to bilinear if and only if the image size dividied by the ratio has no remainder.</ins>
+
 First in each category is highlighted in brackets.
 
 Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
