@@ -43,6 +43,8 @@ The new Anime4K upscalers were trained using the [SYNLA Dataset](https://github.
 
 The low resolution (LR) images are generated using the average area downscaling operation, which is the correct downscaling operation when we want to avoid using low pass filtering. Low pass filtering with bicubic/lanczos downscaling works well for natural images, but will destroy fine details in line art. The operation used is equivalent to `interpolation = INTER_AREA` in **OpenCV** and `-sws_flags area` in **FFmpeg**. <ins>Note that this operation is only equivalent to bilinear if and only if the downscaling ratio is exactly 2.</ins>
 
+It has also come to our attention that many anime might have been suboptimally downscaled using the aformentionned low pass + bicubic method, as it is the default operation of FFmpeg. We will tackle this problem in v3.3 (after the v3.2 denoising update) by training the neural network with many different downscaling operations.
+
 First in each category is highlighted in brackets.
 
 Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
