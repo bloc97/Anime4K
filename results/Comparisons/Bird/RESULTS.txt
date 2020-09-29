@@ -5,14 +5,14 @@ NGU-SOFT-VERYHIGH - 23.86/37.7/?
 LANCZOS - 23.88/1.1/0
 NNEDI3-256 - 24.07/62.4/49.6K
 RAVU-R4 - 24.09/3.6/41.4K
-FSRCNNX-8 - 24.32/6.1/2.9K
-FSRCNNX-8-LINEART - 24.46/6.1/2.9K
+FSRCNNX-8 - 24.32^/6.1/2.9K
+FSRCNNX-8-LINEART - 24.46^/6.1/2.9K
 NGU-SHARP-LOW - 24.46/3.9/?
 NGU-SHARP-MEDIUM - 24.51/5.3/?
 NGU-STANDARD-VERYHIGH - 24.51/37.7/?
 ACNet - 24.55*/7.9/4.7K
-FSRCNNX-16 - 24.57/30.4/10.5K
-FSRCNNX-56 - 24.60/52.4**/15.2K
+FSRCNNX-16 - 24.57^/30.4/10.5K
+FSRCNNX-56 - 24.60^/52.4**/15.2K
 NGU-SHARP-HIGH - 24.69/11.0/?
 ANIME4K-M - 24.73/1.5/1.6K
 NGU-SHARP-VERYHIGH - 24.80/37.7/?
@@ -20,5 +20,8 @@ ANIME4K-L - 24.94/2.5/2.9K
 ANIME4K-UL - 25.14/10.7/15.9K
 WAIFU2X-CUNET - 25.61/>1000/1283.3K
 
+^ FSRCNNX is not trained on the area averaging downscaling degradation[1], this has a negative effect on PSNR.
 * ACNet performs joint super resolution with denoising. This has a larger negative impact on PSNR compared to perceptual quality.
-** FSRCNNX-56 runtime is estimated based on the number of multiply-add operations compared to FSRCNNX-16.
+** FSRCNNX-56 runtime is estimated based on the number of multiply-add operations compared to FSRCNNX-16, as it fails to run on 4K upscaling tasks.
+
+[1] The area averaging downscaling operation is the correct downscaling operation for all natural images and line art images. Bicubic interpolation and Lanczos introduces gradient overshoot when downscaling if used without a lowpass filter. Lowpass filtering adds blur to the image, which degrades fine detail present in line art.
