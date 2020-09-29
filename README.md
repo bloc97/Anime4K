@@ -99,3 +99,5 @@ I also wish to express my sincere gratitude to the people of [Université de Mon
 I would also like to thank the greater open source community, in which the assortment of concrete examples and code were of great help.
 
 Finally, but not least, infinite thanks to my family, friends and professors for providing financial, technical, social support and expertise for my ongoing learning journey during these hard times. Your help has been beyond description, really.
+
+*This list is not final, as the project is far from done. Any future acknowledgements will be promptly added.*
