@@ -18,9 +18,9 @@ ANIME4K-M - 24.73/1.5/1.6K
 NGU-SHARP-VERYHIGH - 24.80/37.7/?
 ANIME4K-L - 24.94/2.5/2.9K
 ANIME4K-UL - 25.14/10.7/15.9K
-WAIFU2X-CUNET - 25.61/>1000/1283.3K
+WAIFU2X-CUNET - 25.61^/>1000/1283.3K
 
-^ FSRCNNX is not trained on the area averaging downscaling degradation[1], this has a negative effect on PSNR.
+^ hese algorithms have not been trained on the area averaging downscaling degradation[1], this has a negative effect on PSNR.
 * ACNet performs joint super resolution with denoising. This has a larger negative impact on PSNR compared to perceptual quality.
 ** FSRCNNX-56 runtime is estimated based on the number of multiply-add operations compared to FSRCNNX-16, as it fails to run on 4K upscaling tasks.
 

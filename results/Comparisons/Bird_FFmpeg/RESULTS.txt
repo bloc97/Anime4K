@@ -1,0 +1,21 @@
+ALGORITHM - PSNR(LUMA)/RUNTIME(MS)/PARAMETERS
+FSRCNNX-8-Area - 24.33^/6.1/2.9K
+FSRCNNX-8-LineArt-Area - 24.47^/6.1/2.9K
+ANIME4K-L-Lanczos - 24.81*/2.5/2.9K
+FSRCNNX-8-LineArt-Lanczos - 24.82/6.1/2.9K
+FSRCNNX-8-Lanczos - 24.85/6.1/2.9K
+ANIME4K-L-Bicubic - 24.90*/2.5/2.9K
+FSRCNNX-8-LineArt-Bicubic - 24.93/6.1/2.9K
+ANIME4K-L-Area - 24.94/2.5/2.9K
+ANIME4K-UL-Lanczos - 24.94*/10.7/15.9K
+FSRCNNX-8-Bicubic - 24.98/6.1/2.9K
+ANIME4K-UL-Bicubic - 25.06*/10.7/15.9K
+ANIME4K-UL-Area - 25.14/10.7/15.9K
+WAIFU2X-CUNet-Area - 25.61^/>1000/1283.3K
+WAIFU2X-CUNet-Bicubic - 25.92/>1000/1283.3K
+WAIFU2X-CUNet-Lanczos - 26.02/>1000/1283.3K
+
+^ These algorithms have not been trained on the area averaging downscaling degradation[1], this has a negative effect on PSNR.
+* These algorithms have not been trained on the Bicubic/Lanczos + Low pass filtering degradation, this has a negative effect on PSNR.
+
+[1] The area averaging downscaling operation is the correct downscaling operation for all natural images and line art images. Bicubic interpolation and Lanczos introduces gradient overshoot when downscaling if used without a lowpass filter. Lowpass filtering adds blur to the image, which degrades fine detail present in line art.
