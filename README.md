@@ -79,3 +79,23 @@ Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
  - https://github.com/andraantariksa/Anime4K-rs (Anime4K Re-Implemented in Rust)
  - https://github.com/TianZerL/Anime4KCPP (Anime4K & more algorithms implemented in C++)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
+ 
+## Acknowledgements
+![CV](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/180px-OpenCV_Logo_with_text_svg_version.svg.png)
+![TF](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/220px-TensorFlowLogo.svg.png)
+![Keras](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/180px-Keras_logo.svg.png)
+![Torch](https://upload.wikimedia.org/wikipedia/en/f/f5/Torch_2014_logo.png)
+
+![mpv](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Mpv_icon.png/100px-Mpv_icon.png)
+![MPC](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Media_Player_Classic_logo.png/64px-Media_Player_Classic_logo.png)
+
+Many thanks to the [OpenCV](https://github.com/opencv/opencv), [TensorFlow](https://github.com/tensorflow/tensorflow), [Keras](https://github.com/keras-team/keras) and [Torch](https://github.com/torch/torch7) groups and contributors. This project would not have been possible without the existence of high quality, open source machine learning libraries.
+
+I would also want to specially thank the open source projects [waifu2x](https://github.com/nagadomi/waifu2x), [VDSR](https://cv.snu.ac.kr/research/VDSR/), [FSRCNN](http://mmlab.ie.cuhk.edu.hk/projects/FSRCNN.html) and [FSRCNNX](https://github.com/igv/FSRCNN-TensorFlow) for sparking my interest in creating this project. I am also extending my gratitude to the contributors of [mpv](https://github.com/mpv-player/mpv) and [MPC-HC](https://mpc-hc.org/)/[BE](https://sourceforge.net/projects/mpcbe/) for their efforts on creating excellent media players with endless customization options.  
+Furthermore, I want to thank the people who contributed to this project in any form, be it by reporting bugs, submitting suggestions, helping others' issues or submitting code. I will forever hold you in high regard.
+
+I also wish to express my sincere gratitude to the people of [Université de Montréal](https://www.umontreal.ca/), [DIRO](https://diro.umontreal.ca/accueil/), [LIGUM](http://www.ligum.umontreal.ca/) and [MILA](https://mila.quebec/en/) for providing so many opportunities to students (including me), providing the necessary infrastructure and fostering an excellent learning environment for students.
+
+I would also like to thank the greater open source community, in which the assortment of concrete examples and code were of great help.
+
+Finally, but not least, infinite thanks to my family, friends and professors for providing financial, technical, social support and expertise for my ongoing learning journey during these hard times. Your help has been beyond description, really.
