@@ -72,13 +72,13 @@ vec4 hook() {
 /* --------------------- SETTINGS --------------------- */
 
 //Strength of edge refinement, good values are between 0.2 and 4
-#define REFINE_STRENGTH 1
+#define REFINE_STRENGTH 1.0
 
 
 /* --- MODIFY THESE SETTINGS BELOW AT YOUR OWN RISK --- */
 
 //Bias of the refinement function, good values are between 0 and 1
-#define REFINE_BIAS 0
+#define REFINE_BIAS 0.0
 
 //Polynomial fit obtained by minimizing MSE error on image
 #define P5 ( 11.68129591)
@@ -128,9 +128,9 @@ vec4 hook() {
 	float ygrad = (-ty + by);
 	
 	//Computes the luminance's gradient
-	float sobel_norm = clamp(sqrt(xgrad * xgrad + ygrad * ygrad), 0, 1);
+	float sobel_norm = clamp(sqrt(xgrad * xgrad + ygrad * ygrad), 0.0, 1.0);
 	
-	float dval = clamp(power_function(clamp(sobel_norm, 0, 1)) * REFINE_STRENGTH + REFINE_BIAS, 0, 1);
+	float dval = clamp(power_function(clamp(sobel_norm, 0.0, 1.0)) * REFINE_STRENGTH + REFINE_BIAS, 0.0, 1.0);
 	
 	return vec4(sobel_norm, dval, 0, 0);
 }
@@ -218,9 +218,9 @@ vec4 hook() {
 	
 	float norm = sqrt(xgrad * xgrad + ygrad * ygrad);
 	if (norm <= 0.001) {
-		xgrad = 0;
-		ygrad = 0;
-		norm = 1;
+		xgrad = 0.0;
+		ygrad = 0.0;
+		norm = 1.0;
 	}
 	
 	return vec4(xgrad/norm, ygrad/norm, 0, 0);
@@ -257,8 +257,8 @@ vec4 hook() {
 	
 	float xyratio = abs(dc.x) / (abs(dc.x) + abs(dc.y));
 	
-	vec4 avg = xyratio * xval + (1-xyratio) * yval;
+	vec4 avg = xyratio * xval + (1.0-xyratio) * yval;
 	
-	return avg * dval + HOOKED_tex(HOOKED_pos) * (1 - dval);
+	return avg * dval + HOOKED_tex(HOOKED_pos) * (1.0 - dval);
 	
 }

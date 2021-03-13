@@ -147,14 +147,14 @@ vec4 hook() {
 //!WIDTH BACKUP.w
 //!HEIGHT BACKUP.h
 
-#define STRENGTH 1 //Strength of artifact reduction, high values might blur some edges.
+#define STRENGTH 1.0 //Strength of artifact reduction, high values might blur some edges.
 
 vec4 hook() {
-	float alpha = clamp(abs(RESID_tex(HOOKED_pos).x) * 20 * STRENGTH, 0, 1);
+	float alpha = clamp(abs(RESID_tex(HOOKED_pos).x) * 20.0 * STRENGTH, 0.0, 1.0);
 	float u = HOOKED_tex(HOOKED_pos).x + RESID_tex(HOOKED_pos).x;
 	float o = BACKUP_tex(HOOKED_pos).x;
 	
-	return vec4(u * alpha + o * (1 - alpha), BACKUP_tex(HOOKED_pos).yz, 0);
+	return vec4(u * alpha + o * (1.0 - alpha), BACKUP_tex(HOOKED_pos).yz, 0);
 }
 
 

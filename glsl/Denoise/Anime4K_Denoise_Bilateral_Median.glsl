@@ -47,8 +47,8 @@ float gaussian(float x, float s, float m) {
 vec4 getMedian(vec4 v[KERNELLEN], float w[KERNELLEN], float n) {
 	
 	for (int i=0; i<KERNELLEN; i++) {
-		float w_above = 0;
-		float w_below = 0;
+		float w_above = 0.0;
+		float w_below = 0.0;
 		for (int j=0; j<KERNELLEN; j++) {
 			if (v[j].x > v[i].x) {
 				w_above += w[j];
@@ -66,7 +66,7 @@ vec4 getMedian(vec4 v[KERNELLEN], float w[KERNELLEN], float n) {
 vec4 hook() {
 	vec4 histogram_v[KERNELLEN];
 	float histogram_w[KERNELLEN];
-	float n = 0;
+	float n = 0.0;
 	
 	float vc = HOOKED_tex(HOOKED_pos).x;
 	
@@ -76,20 +76,20 @@ vec4 hook() {
 	for (int i=0; i<KERNELLEN; i++) {
 		vec2 ipos = GETOFFSET(i);
 		histogram_v[i] = HOOKED_texOff(ipos);
-		histogram_w[i] = gaussian(histogram_v[i].x, is, vc) * gaussian(length(ipos), ss, 0);
+		histogram_w[i] = gaussian(histogram_v[i].x, is, vc) * gaussian(length(ipos), ss, 0.0);
 		n += histogram_w[i];
 	}
 	
-	if (HISTOGRAM_REGULARIZATION > 0) {
+	if (HISTOGRAM_REGULARIZATION > 0.0) {
 		float histogram_wn[KERNELLEN];
-		n = 0;
+		n = 0.0;
 		
 		for (int i=0; i<KERNELLEN; i++) {
-			histogram_wn[i] = 0;
+			histogram_wn[i] = 0.0;
 		}
 		
 		for (int i=0; i<KERNELLEN; i++) {
-			histogram_wn[i] += gaussian(0, HISTOGRAM_REGULARIZATION, 0) * histogram_w[i];
+			histogram_wn[i] += gaussian(0.0, HISTOGRAM_REGULARIZATION, 0.0) * histogram_w[i];
 			for (int j=(i+1); j<KERNELLEN; j++) {
 				float d = gaussian(histogram_v[j].x, HISTOGRAM_REGULARIZATION, histogram_v[i].x);
 				histogram_wn[j] += d * histogram_w[i];

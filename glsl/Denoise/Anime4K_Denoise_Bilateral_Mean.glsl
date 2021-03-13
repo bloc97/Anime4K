@@ -46,7 +46,7 @@ float gaussian(float x, float s, float m) {
 
 vec4 hook() {
 	vec4 sum = vec4(0);
-	float n = 0;
+	float n = 0.0;
 	
 	float vc = HOOKED_tex(HOOKED_pos).x;
 	
@@ -56,7 +56,7 @@ vec4 hook() {
 	for (int i=0; i<KERNELLEN; i++) {
 		vec2 ipos = GETOFFSET(i);
 		vec4 v = HOOKED_texOff(ipos);
-		float d = gaussian(v.x, is, vc) * gaussian(length(ipos), ss, 0);
+		float d = gaussian(v.x, is, vc) * gaussian(length(ipos), ss, 0.0);
 		sum += d * v;
 		n += d;
 	}

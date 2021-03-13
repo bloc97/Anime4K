@@ -46,7 +46,7 @@ float gaussian(float x, float s, float m) {
 
 vec4 getMode(vec4 v[KERNELLEN], float w[KERNELLEN]) {
 	vec4 maxv = vec4(0);
-	float maxw = 0;
+	float maxw = 0.0;
 	
 	for (int i=0; i<KERNELLEN; i++) {
 		if (w[i] >= maxw) {
@@ -71,12 +71,12 @@ vec4 hook() {
 	for (int i=0; i<KERNELLEN; i++) {
 		vec2 ipos = GETOFFSET(i);
 		histogram_v[i] = HOOKED_texOff(ipos);
-		histogram_w[i] = gaussian(histogram_v[i].x, is, vc) * gaussian(length(ipos), ss, 0);
-		histogram_wn[i] = 0;
+		histogram_w[i] = gaussian(histogram_v[i].x, is, vc) * gaussian(length(ipos), ss, 0.0);
+		histogram_wn[i] = 0.0;
 	}
 	
 	for (int i=0; i<KERNELLEN; i++) {
-		histogram_wn[i] += gaussian(0, HISTOGRAM_REGULARIZATION, 0) * histogram_w[i];
+		histogram_wn[i] += gaussian(0.0, HISTOGRAM_REGULARIZATION, 0.0) * histogram_w[i];
 		for (int j=(i+1); j<KERNELLEN; j++) {
 			float d = gaussian(histogram_v[j].x, HISTOGRAM_REGULARIZATION, histogram_v[i].x);
 			histogram_wn[j] += d * histogram_w[i];
