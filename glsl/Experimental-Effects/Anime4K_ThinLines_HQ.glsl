@@ -86,13 +86,13 @@ vec4 hook() {
 	//[-1  0  1]
 	//[-2  0  2]
 	//[-1  0  1]
-	float xgrad = (tx + cx + cx + bx) / 8;
+	float xgrad = (tx + cx + cx + bx) / 8.0;
 	
 	//Vertical Gradient
 	//[-1 -2 -1]
 	//[ 0  0  0]
 	//[ 1  2  1]
-	float ygrad = (-ty + by) / 8;
+	float ygrad = (-ty + by) / 8.0;
 	
 	//Computes the luminance's gradient
 	float norm = sqrt(xgrad * xgrad + ygrad * ygrad);
@@ -109,18 +109,18 @@ vec4 hook() {
 
 #define L_tex LUMAD_tex
 
-#define SIGMA (HOOKED_size.y / 1080) * 2
-#define KERNELSIZE (SIGMA * 2 + 1)
+#define SIGMA (HOOKED_size.y / 1080.0) * 2.0
+#define KERNELSIZE (SIGMA * 2.0 + 1.0)
 
 float gaussian(float x, float s, float m) {
-	return (1 / (s * sqrt(2 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
-	float g = (L_tex(pos).x) * gaussian(0, SIGMA, 0);
-	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, SIGMA, 0);
-	for (int i=2; i<KERNELSIZE; i++) {
-		g = g + (L_tex(pos - (d * i)).x + L_tex(pos + (d * i)).x) * gaussian(i, SIGMA, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, SIGMA, 0.0);
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, SIGMA, 0.0);
+	for (int i=2; float(i)<KERNELSIZE; i++) {
+		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), SIGMA, 0.0);
 	}
 	
 	return g;
@@ -141,18 +141,18 @@ vec4 hook() {
 
 #define L_tex LUMADG_tex
 
-#define SIGMA (HOOKED_size.y / 1080) * 2
-#define KERNELSIZE (SIGMA * 2 + 1)
+#define SIGMA (HOOKED_size.y / 1080.0) * 2.0
+#define KERNELSIZE (SIGMA * 2.0 + 1.0)
 
 float gaussian(float x, float s, float m) {
-	return (1 / (s * sqrt(2 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
-	float g = (L_tex(pos).x) * gaussian(0, SIGMA, 0);
-	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, SIGMA, 0);
-	for (int i=2; i<KERNELSIZE; i++) {
-		g = g + (L_tex(pos - (d * i)).x + L_tex(pos + (d * i)).x) * gaussian(i, SIGMA, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, SIGMA, 0.0);
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, SIGMA, 0.0);
+	for (int i=2; float(i)<KERNELSIZE; i++) {
+		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), SIGMA, 0.0);
 	}
 	
 	return g;
@@ -228,13 +228,13 @@ vec4 hook() {
 	//[-1  0  1]
 	//[-2  0  2]
 	//[-1  0  1]
-	float xgrad = (tx + cx + cx + bx) / 8;
+	float xgrad = (tx + cx + cx + bx) / 8.0;
 	
 	//Vertical Gradient
 	//[-1 -2 -1]
 	//[ 0  0  0]
 	//[ 1  2  1]
-	float ygrad = (-ty + by) / 8;
+	float ygrad = (-ty + by) / 8.0;
 	
 	//Computes the luminance's gradient
 	return vec4(xgrad, ygrad, 0, 0);
@@ -254,7 +254,7 @@ vec4 hook() {
 vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
-	float relstr = HOOKED_size.y / 1080 * STRENGTH;
+	float relstr = HOOKED_size.y / 1080.0 * STRENGTH;
 	
 	vec2 pos = HOOKED_pos;
 	for (int i=0; i<ITERATIONS; i++) {
