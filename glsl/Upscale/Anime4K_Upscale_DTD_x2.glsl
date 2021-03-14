@@ -35,23 +35,23 @@
 
 #define SIGMA 1.0
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
 	float s = SIGMA * HOOKED_size.y / 1080.0;
 	float kernel_size = s * 2.0 + 1.0;
 	
-	float g = (L_tex(pos).x) * gaussian(0, s, 0);
-	float gn = gaussian(0, s, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, s, 0.0);
+	float gn = gaussian(0.0, s, 0.0);
 	
-	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, s, 0);
-	gn += gaussian(1, s, 0) * 2.0;
+	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, s, 0.0);
+	gn += gaussian(1.0, s, 0.0) * 2.0;
 	
 	for (int i=2; float(i)<kernel_size; i++) {
-		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, s, 0);
-		gn += gaussian(i, s, 0) * 2.0;
+		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), s, 0.0);
+		gn += gaussian(float(i), s, 0.0) * 2.0;
 	}
 	
 	return g / gn;
@@ -73,23 +73,23 @@ vec4 hook() {
 
 #define SIGMA 1.0
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
 	float s = SIGMA * HOOKED_size.y / 1080.0;
 	float kernel_size = s * 2.0 + 1.0;
 	
-	float g = (L_tex(pos).x) * gaussian(0, s, 0);
-	float gn = gaussian(0, s, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, s, 0.0);
+	float gn = gaussian(0.0, s, 0.0);
 	
-	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, s, 0);
-	gn += gaussian(1, s, 0) * 2.0;
+	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, s, 0.0);
+	gn += gaussian(1.0, s, 0.0) * 2.0;
 	
 	for (int i=2; float(i)<kernel_size; i++) {
-		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, s, 0);
-		gn += gaussian(i, s, 0) * 2.0;
+		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), s, 0.0);
+		gn += gaussian(float(i), s, 0.0) * 2.0;
 	}
 	
 	return g / gn;
@@ -111,23 +111,23 @@ vec4 hook() {
 
 #define SIGMA 0.4
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
 	float s = SIGMA * HOOKED_size.y / 1080.0;
 	float kernel_size = s * 2.0 + 1.0;
 	
-	float g = (L_tex(pos).x) * gaussian(0, s, 0);
-	float gn = gaussian(0, s, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, s, 0.0);
+	float gn = gaussian(0.0, s, 0.0);
 	
-	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, s, 0);
-	gn += gaussian(1, s, 0) * 2.0;
+	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, s, 0.0);
+	gn += gaussian(1.0, s, 0.0) * 2.0;
 	
 	for (int i=2; float(i)<kernel_size; i++) {
-		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, s, 0);
-		gn += gaussian(i, s, 0) * 2.0;
+		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), s, 0.0);
+		gn += gaussian(float(i), s, 0.0) * 2.0;
 	}
 	
 	return g / gn;
@@ -149,23 +149,23 @@ vec4 hook() {
 
 #define SIGMA 0.4
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
 	float s = SIGMA * HOOKED_size.y / 1080.0;
 	float kernel_size = s * 2.0 + 1.0;
 	
-	float g = (L_tex(pos).x) * gaussian(0, s, 0);
-	float gn = gaussian(0, s, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, s, 0.0);
+	float gn = gaussian(0.0, s, 0.0);
 	
-	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, s, 0);
-	gn += gaussian(1, s, 0) * 2.0;
+	g += (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, s, 0.0);
+	gn += gaussian(1.0, s, 0.0) * 2.0;
 	
 	for (int i=2; float(i)<kernel_size; i++) {
-		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, s, 0);
-		gn += gaussian(i, s, 0) * 2.0;
+		g += (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), s, 0.0);
+		gn += gaussian(float(i), s, 0.0) * 2.0;
 	}
 	
 	return g / gn;
@@ -283,15 +283,15 @@ vec4 hook() {
 #define SIGMA (HOOKED_size.y / 1080.0) * 2.0
 #define KERNELSIZE (SIGMA * 2.0 + 1.0)
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
-	float g = (L_tex(pos).x) * gaussian(0, SIGMA, 0);
-	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, SIGMA, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, SIGMA, 0.0);
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, SIGMA, 0.0);
 	for (int i=2; float(i)<KERNELSIZE; i++) {
-		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, SIGMA, 0);
+		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), SIGMA, 0.0);
 	}
 	
 	return g;
@@ -316,15 +316,15 @@ vec4 hook() {
 #define SIGMA (HOOKED_size.y / 1080.0) * 2.0
 #define KERNELSIZE (SIGMA * 2.0 + 1.0)
 
-float gaussian(int x, float s, int m) {
-	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(float(x - m)) / s, 2.0));
+float gaussian(float x, float s, float m) {
+	return (1.0 / (s * sqrt(2.0 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
 }
 
 float lumGaussian(vec2 pos, vec2 d) {
-	float g = (L_tex(pos).x) * gaussian(0, SIGMA, 0);
-	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1, SIGMA, 0);
+	float g = (L_tex(pos).x) * gaussian(0.0, SIGMA, 0.0);
+	g = g + (L_tex(pos - d).x + L_tex(pos + d).x) * gaussian(1.0, SIGMA, 0.0);
 	for (int i=2; float(i)<KERNELSIZE; i++) {
-		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(i, SIGMA, 0);
+		g = g + (L_tex(pos - (d * float(i))).x + L_tex(pos + (d * float(i))).x) * gaussian(float(i), SIGMA, 0.0);
 	}
 	
 	return g;
