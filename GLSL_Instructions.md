@@ -36,6 +36,7 @@ For example:
  - `Clamp_Highlights -> Restore_CNN_Moderate -> Upscale_CNN -> Restore_CNN_Moderate -> Upscale_CNN -> Restore_CNN_Moderate`
 
 You are free to choose the CNN variant (S, M, L, VL, UL) for better speed or quality. But please note that activating the same shader variant two times or more causes performance problems when upscaling, it is recommended to add each shader only once.
+
 Each step in size for CNN shaders doubles the processing time. For example, if the M version takes 5ms to run, the L version should take approximately 10ms to run, 20ms for VL and so on.
 
 Shaders applied after a x2 upscaling step will take four times the processing time. For example, if a shader takes 10ms to run when placed before a upscaler, it will need 40ms if placed after the upscaler. This can be counteracted by using a smaller CNN variant two steps below. (eg. S instead of L)
