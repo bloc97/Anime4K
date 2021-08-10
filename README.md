@@ -81,13 +81,9 @@ Algorithm | x2 PSNR (dB) ↑ | Runtime @4K (ms) ↓ | Parameters ↓
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
  
 ## Acknowledgements
-![CV](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/180px-OpenCV_Logo_with_text_svg_version.svg.png)
-![TF](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/220px-TensorFlowLogo.svg.png)
-![Keras](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/180px-Keras_logo.svg.png)
-![Torch](https://upload.wikimedia.org/wikipedia/en/f/f5/Torch_2014_logo.png)
-
-![mpv](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Mpv_icon.png/100px-Mpv_icon.png)
-![MPC](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Media_Player_Classic_logo.png/64px-Media_Player_Classic_logo.png)
+| OpenCV | TensorFlow | Keras | Torch | MPV | MPC |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|![OpenCV](https://github.com/opencv.png)|![TensorFlow](https://github.com/tensorflow.png)|![Keras](https://github.com/keras-team.png)|![Torch](https://github.com/torch.png)|![MPV](https://github.com/mpv-player.png)|![MPC](https://github.com/mpc-hc.png)|
 
 Many thanks to the [OpenCV](https://github.com/opencv/opencv), [TensorFlow](https://github.com/tensorflow/tensorflow), [Keras](https://github.com/keras-team/keras) and [Torch](https://github.com/torch/torch7) groups and contributors. This project would not have been possible without the existence of high quality, open source machine learning libraries.
 
