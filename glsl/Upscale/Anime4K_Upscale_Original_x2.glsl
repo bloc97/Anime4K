@@ -1,8 +1,6 @@
-//Anime4K v3.1 GLSL
-
 // MIT License
 
-// Copyright (c) 2019-2020 bloc97
+// Copyright (c) 2019-2021 bloc97
 // All rights reserved.
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,12 +21,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(X)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Luma
+//!HOOK MAIN
 //!BIND HOOKED
+//!SAVE LINELUMA
+//!COMPONENTS 1
+
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
+}
+
+vec4 hook() {
+    return vec4(get_luma(HOOKED_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
+}
+
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Kernel-X
+//!HOOK MAIN
+//!BIND HOOKED
+//!BIND LINELUMA
 //!SAVE LUMAD
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 //!COMPONENTS 2
 
 vec4 hook() {
@@ -37,9 +50,9 @@ vec4 hook() {
 	//[tl  t tr]
 	//[ l  c  r]
 	//[bl  b br]
-	float l = HOOKED_tex(HOOKED_pos + vec2(-d.x, 0)).x;
-	float c = HOOKED_tex(HOOKED_pos).x;
-	float r = HOOKED_tex(HOOKED_pos + vec2(d.x, 0)).x;
+	float l = LINELUMA_tex(HOOKED_pos + vec2(-d.x, 0.0)).x;
+	float c = LINELUMA_tex(HOOKED_pos).x;
+	float r = LINELUMA_tex(HOOKED_pos + vec2(d.x, 0.0)).x;
 	
 	
 	//Horizontal Gradient
@@ -55,17 +68,17 @@ vec4 hook() {
 	float ygrad = (l + c + c + r);
 	
 	//Computes the luminance's gradient
-	return vec4(xgrad, ygrad, 0, 0);
+	return vec4(xgrad, ygrad, 0.0, 0.0);
 }
 
 
-//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(Y)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Kernel-Y
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAD
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 //!COMPONENTS 2
 
 
@@ -105,14 +118,14 @@ vec4 hook() {
 	//[tl  t tr]
 	//[ l cc  r]
 	//[bl  b br]
-	float tx = LUMAD_tex(HOOKED_pos + vec2(0, -d.y)).x;
+	float tx = LUMAD_tex(HOOKED_pos + vec2(0.0, -d.y)).x;
 	float cx = LUMAD_tex(HOOKED_pos).x;
-	float bx = LUMAD_tex(HOOKED_pos + vec2(0, d.y)).x;
+	float bx = LUMAD_tex(HOOKED_pos + vec2(0.0, d.y)).x;
 	
 	
-	float ty = LUMAD_tex(HOOKED_pos + vec2(0, -d.y)).y;
+	float ty = LUMAD_tex(HOOKED_pos + vec2(0.0, -d.y)).y;
 	//float cy = LUMAD_tex(HOOKED_pos).y;
-	float by = LUMAD_tex(HOOKED_pos + vec2(0, d.y)).y;
+	float by = LUMAD_tex(HOOKED_pos + vec2(0.0, d.y)).y;
 	
 	
 	//Horizontal Gradient
@@ -132,16 +145,16 @@ vec4 hook() {
 	
 	float dval = clamp(power_function(clamp(sobel_norm, 0.0, 1.0)) * REFINE_STRENGTH + REFINE_BIAS, 0.0, 1.0);
 	
-	return vec4(sobel_norm, dval, 0, 0);
+	return vec4(sobel_norm, dval, 0.0, 0.0);
 }
 
-//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(X)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Kernel-X
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAMM
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 //!COMPONENTS 2
 
 
@@ -149,15 +162,15 @@ vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
 	if (LUMAD_tex(HOOKED_pos).y < 0.1) {
-		return vec4(0);
+		return vec4(0.0);
 	}
 	
 	//[tl  t tr]
 	//[ l  c  r]
 	//[bl  b br]
-	float l = LUMAD_tex(HOOKED_pos + vec2(-d.x, 0)).x;
+	float l = LUMAD_tex(HOOKED_pos + vec2(-d.x, 0.0)).x;
 	float c = LUMAD_tex(HOOKED_pos).x;
-	float r = LUMAD_tex(HOOKED_pos + vec2(d.x, 0)).x;
+	float r = LUMAD_tex(HOOKED_pos + vec2(d.x, 0.0)).x;
 	
 	//Horizontal Gradient
 	//[-1  0  1]
@@ -172,37 +185,37 @@ vec4 hook() {
 	float ygrad = (l + c + c + r);
 	
 	
-	return vec4(xgrad, ygrad, 0, 0);
+	return vec4(xgrad, ygrad, 0.0, 0.0);
 }
 
 
-//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(Y)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Kernel-Y
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!BIND LUMAMM
 //!SAVE LUMAMM
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 //!COMPONENTS 2
 
 vec4 hook() {
 	vec2 d = HOOKED_pt;
 	
 	if (LUMAD_tex(HOOKED_pos).y < 0.1) {
-		return vec4(0);
+		return vec4(0.0);
 	}
 	
 	//[tl  t tr]
 	//[ l cc  r]
 	//[bl  b br]
-	float tx = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y)).x;
+	float tx = LUMAMM_tex(HOOKED_pos + vec2(0.0, -d.y)).x;
 	float cx = LUMAMM_tex(HOOKED_pos).x;
-	float bx = LUMAMM_tex(HOOKED_pos + vec2(0, d.y)).x;
+	float bx = LUMAMM_tex(HOOKED_pos + vec2(0.0, d.y)).x;
 	
-	float ty = LUMAMM_tex(HOOKED_pos + vec2(0, -d.y)).y;
+	float ty = LUMAMM_tex(HOOKED_pos + vec2(0.0, -d.y)).y;
 	//float cy = LUMAMM_tex(HOOKED_pos).y;
-	float by = LUMAMM_tex(HOOKED_pos + vec2(0, d.y)).y;
+	float by = LUMAMM_tex(HOOKED_pos + vec2(0.0, d.y)).y;
 	
 	//Horizontal Gradient
 	//[-1  0  1]
@@ -223,17 +236,17 @@ vec4 hook() {
 		norm = 1.0;
 	}
 	
-	return vec4(xgrad/norm, ygrad/norm, 0, 0);
+	return vec4(xgrad/norm, ygrad/norm, 0.0, 0.0);
 }
 
 
-//!DESC Anime4K-v3.1-Upscale(x2)-Original
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Original-x2-Apply
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!BIND LUMAMM
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 
 
 vec4 hook() {
@@ -252,12 +265,12 @@ vec4 hook() {
 	float xpos = -sign(dc.x);
 	float ypos = -sign(dc.y);
 	
-	vec4 xval = HOOKED_tex(HOOKED_pos + vec2(d.x * xpos, 0));
-	vec4 yval = HOOKED_tex(HOOKED_pos + vec2(0, d.y * ypos));
+	vec4 xval = HOOKED_tex(HOOKED_pos + vec2(d.x * xpos, 0.0));
+	vec4 yval = HOOKED_tex(HOOKED_pos + vec2(0.0, d.y * ypos));
 	
 	float xyratio = abs(dc.x) / (abs(dc.x) + abs(dc.y));
 	
-	vec4 avg = xyratio * xval + (1.0-xyratio) * yval;
+	vec4 avg = xyratio * xval + (1.0 - xyratio) * yval;
 	
 	return avg * dval + HOOKED_tex(HOOKED_pos) * (1.0 - dval);
 	

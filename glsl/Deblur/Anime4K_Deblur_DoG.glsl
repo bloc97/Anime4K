@@ -1,8 +1,6 @@
-//Anime4K v3.1 GLSL
-
 // MIT License
 
-// Copyright (c) 2019-2020 bloc97
+// Copyright (c) 2019-2021 bloc97
 // All rights reserved.
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,13 +21,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.1-Deblur-DoG-Kernel(X)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Deblur-DoG-(HQ)-Luma
+//!HOOK MAIN
 //!BIND HOOKED
+//!SAVE LINELUMA
+//!COMPONENTS 1
+
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
+}
+
+vec4 hook() {
+    return vec4(get_luma(HOOKED_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
+}
+
+//!DESC Anime4K-v3.2-Deblur-DoG-Kernel-X
+//!HOOK MAIN
+//!BIND HOOKED
+//!BIND LINELUMA
 //!SAVE MMKERNEL
 //!COMPONENTS 3
 
-#define L_tex HOOKED_tex
+#define L_tex LINELUMA_tex
 
 float max3v(float a, float b, float c) {
 	return max(max(a, b), c);
@@ -56,12 +69,12 @@ float lumGaussian7(vec2 pos, vec2 d) {
 
 
 vec4 hook() {
-    return vec4(lumGaussian7(HOOKED_pos, vec2(HOOKED_pt.x, 0)), minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0);
+    return vec4(lumGaussian7(HOOKED_pos, vec2(HOOKED_pt.x, 0.0)), minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0.0)), 0.0);
 }
 
 
-//!DESC Anime4K-v3.1-Deblur-DoG-Kernel(Y)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Deblur-DoG-Kernel-Y
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
@@ -98,12 +111,13 @@ float lumGaussian7(vec2 pos, vec2 d) {
 
 
 vec4 hook() {
-    return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
+    return vec4(lumGaussian7(HOOKED_pos, vec2(0.0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0.0, HOOKED_pt.y)), 0.0);
 }
 
-//!DESC Anime4K-v3.1-Deblur-DoG
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Deblur-DoG-Apply
+//!HOOK MAIN
 //!BIND HOOKED
+//!BIND LINELUMA
 //!BIND MMKERNEL
 
 #define STRENGTH 0.6 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
@@ -111,7 +125,7 @@ vec4 hook() {
 #define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
 #define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
 
-#define L_tex HOOKED_tex
+#define L_tex LINELUMA_tex
 
 vec4 hook() {
 	float c = (L_tex(HOOKED_pos).x - MMKERNEL_tex(HOOKED_pos).x) * STRENGTH;
@@ -127,7 +141,12 @@ vec4 hook() {
 	} else {
 		c_t = c;
 	}
-	return vec4(clamp(c_t + L_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y, MMKERNEL_tex(HOOKED_pos).z), HOOKED_tex(HOOKED_pos).yz, 0);
+	
+	float cc = clamp(c_t + L_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y, MMKERNEL_tex(HOOKED_pos).z) - L_tex(HOOKED_pos).x;
+	
+	//This trick is only possible if the inverse Y->RGB matrix has 1 for every row... (which is the case for BT.709)
+	//Otherwise we would need to convert RGB to YUV, modify Y then convert back to RGB.
+	return HOOKED_tex(HOOKED_pos) + cc;
 }
 
 

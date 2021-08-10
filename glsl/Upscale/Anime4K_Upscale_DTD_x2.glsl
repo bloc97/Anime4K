@@ -1,8 +1,6 @@
-//Anime4K v3.2 GLSL
-
 // MIT License
 
-// Copyright (c) 2019-2020 bloc97
+// Copyright (c) 2019-2021 bloc97
 // All rights reserved.
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,15 +21,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Luma
+//!HOOK MAIN
 //!BIND HOOKED
+//!SAVE LINELUMA
+//!COMPONENTS 1
+
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
+}
+
+vec4 hook() {
+    return vec4(get_luma(HOOKED_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
+}
+
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
+//!BIND HOOKED
+//!BIND LINELUMA
 //!SAVE MMKERNEL
 //!COMPONENTS 1
 
-#define L_tex HOOKED_tex
+#define L_tex LINELUMA_tex
 
 #define SIGMA 1.0
 
@@ -61,10 +73,11 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
+//!BIND LINELUMA
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
 //!COMPONENTS 1
@@ -96,12 +109,12 @@ float lumGaussian(vec2 pos, vec2 d) {
 }
 
 vec4 hook() {
-    return vec4(min(HOOKED_tex(HOOKED_pos).x - lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0.0));
+    return vec4(min(LINELUMA_tex(HOOKED_pos).x - lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0.0));
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
@@ -137,9 +150,9 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
@@ -175,30 +188,44 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)));
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND MMKERNEL
 
 #define STRENGTH 1.8 //Line darken proportional strength, higher is darker.
-#define L_tex HOOKED_tex
 
 vec4 hook() {
 	float c = (MMKERNEL_tex(HOOKED_pos).x) * STRENGTH;
-	return vec4(clamp(c + L_tex(HOOKED_pos).x, 0.0, L_tex(HOOKED_pos).x), HOOKED_tex(HOOKED_pos).yz, 0);
+	//This trick is only possible if the inverse Y->RGB matrix has 1 for every row... (which is the case for BT.709)
+	//Otherwise we would need to convert RGB to YUV, modify Y then convert back to RGB.
+    return HOOKED_tex(HOOKED_pos) + c;
 }
 
-
-
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Luma
+//!HOOK MAIN
 //!BIND HOOKED
+//!SAVE LINELUMA
+//!COMPONENTS 1
+
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
+}
+
+vec4 hook() {
+    return vec4(get_luma(HOOKED_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
+}
+
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
+//!BIND HOOKED
+//!BIND LINELUMA
 //!SAVE LUMAD
 //!COMPONENTS 2
 
-#define L_tex NATIVE_tex
+#define L_tex LINELUMA_tex
 
 vec4 hook() {
 	vec2 d = HOOKED_pt;
@@ -228,9 +255,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAD
@@ -270,9 +297,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMADG
@@ -302,9 +329,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!BIND LUMADG
@@ -338,9 +365,9 @@ vec4 hook() {
 
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAD2
@@ -374,9 +401,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD2
 //!SAVE LUMAD2
@@ -414,15 +441,15 @@ vec4 hook() {
 	return vec4(xgrad, ygrad, 0, 0);
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND LUMAD
 //!BIND LUMAD2
-//!SAVE NATIVETEMP
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!SAVE MAINTEMPTHIN
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 
 #define STRENGTH 0.4 //Strength of warping for each iteration
 #define ITERATIONS 1 //Number of iterations for the forwards solver, decreasing strength and increasing iterations improves quality at the cost of speed.
@@ -445,16 +472,32 @@ vec4 hook() {
 	
 }
 
-
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Luma
+//!HOOK MAIN
 //!BIND HOOKED
-//!BIND NATIVETEMP
+//!BIND MAINTEMPTHIN
+//!COMPONENTS 1
+//!SAVE MAINTEMP
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
+
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
+}
+
+vec4 hook() {
+    return vec4(get_luma(MAINTEMPTHIN_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
+}
+
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
+//!BIND HOOKED
+//!BIND MAINTEMP
 //!SAVE MMKERNEL
 //!COMPONENTS 3
 
-#define L_tex NATIVETEMP_tex
+#define L_tex MAINTEMP_tex
 
 float max3v(float a, float b, float c) {
 	return max(max(a, b), c);
@@ -485,9 +528,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
@@ -527,21 +570,22 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.2-Upscale(x2)-DTD
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-DTD-x2
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
-//!BIND NATIVETEMP
+//!BIND MAINTEMPTHIN
+//!BIND MAINTEMP
 //!BIND MMKERNEL
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 
 #define STRENGTH 0.5 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
 #define BLUR_CURVE 0.8 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
 #define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
 #define NOISE_THRESHOLD 0.004 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
 
-#define L_tex NATIVETEMP_tex
+#define L_tex MAINTEMP_tex
 
 vec4 hook() {
 	float c = (L_tex(HOOKED_pos).x - MMKERNEL_tex(HOOKED_pos).x) * STRENGTH;
@@ -558,7 +602,11 @@ vec4 hook() {
 		c_t = c;
 	}
 	
-	return vec4(clamp(c_t + L_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y, MMKERNEL_tex(HOOKED_pos).z), HOOKED_tex(HOOKED_pos).yz, 0);
+	float cc = clamp(c_t + L_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y, MMKERNEL_tex(HOOKED_pos).z) - L_tex(HOOKED_pos).x;
+	
+	//This trick is only possible if the inverse Y->RGB matrix has 1 for every row... (which is the case for BT.709)
+	//Otherwise we would need to convert RGB to YUV, modify Y then convert back to RGB.
+	return MAINTEMPTHIN_tex(HOOKED_pos) + cc;
 }
 
 
