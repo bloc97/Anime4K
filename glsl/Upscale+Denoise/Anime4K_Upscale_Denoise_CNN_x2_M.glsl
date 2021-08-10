@@ -283,9 +283,9 @@ vec4 hook() {
 }
 //!DESC Anime4K-v3.2-Upscale-Denoise-CNN-x2-(M)-Depth-to-Space
 //!HOOK MAIN
+//!BIND MAIN
 //!BIND conv2d_last_tf
-//!SAVE depth_to_space2_tf
-//!COMPONENTS 4
+//!SAVE MAIN
 //!WIDTH conv2d_last_tf.w 2 *
 //!HEIGHT conv2d_last_tf.h 2 *
 //!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
@@ -296,5 +296,5 @@ vec4 hook() {
     float c1 = c0;
     float c2 = c1;
     float c3 = c2;
-    return vec4(c0, c1, c2, c3);
+    return vec4(c0, c1, c2, c3) + MAIN_tex(MAIN_pos);
 }
