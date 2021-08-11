@@ -57,6 +57,13 @@ The target for 24fps video is usually ~41ms. Frame drops will appear if the GPU 
 Alternatively add the following bindings to your `input.conf` to toggle the shader on or off at runtime using Ctrl+1, Ctrl+2, etc. 
 Ctrl+0 will disable all the shaders. The order presented here is the same as above.
 
+ - Ctrl+1 - 1080p anime
+ - Ctrl+2 - 1080p anime that has been downscaled to 720p
+ - Ctrl+3 - 1080p anime that has been downscaled to 540p/480p
+ - Ctrl+4 - older standard definition (720p/560p/480p) anime
+ - Ctrl+5-Ctrl+8 - Same as Ctrl+1-Ctrl+4, but better perceptual quality for 4K monitors.
+
+
 For 4K screens with less powerful GPUs:
 ```
 CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl;~~/shaders/Anime4K_Restore_CNN_Moderate_M.glsl;~~/shaders/Anime4K_Upscale_CNN_x2_S.glsl"; show-text "Anime4K: Modern 1080p->4K (Fast)"
