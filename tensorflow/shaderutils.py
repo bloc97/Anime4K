@@ -215,7 +215,6 @@ def parse_expression_recur(node, with_offset=False):
         return parse_expression(subnode)
             
 def parse_expression(node, feature_no, with_offset=False):
-    #define maxX int(floor(float(taps)/2.0))
     if with_offset:
         return "#define go_" + str(feature_no) + "(x_off, y_off) " + parse_expression_recur(node, with_offset)
     else:

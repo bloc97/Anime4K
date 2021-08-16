@@ -110,7 +110,7 @@ def preview_dataset_list(dataset_list, show_max, scale, target_size, val_range):
 
     
 def get_gaussian_kernel(shape=(7, 7), sigma=1.0):
-    m,n = [(sh - 1.0) / 2.0 for sh in shape]
+    m, n = [(sh - 1.0) / 2.0 for sh in shape]
     x = tf.expand_dims(tf.range(-n, n + 1,dtype=tf.float32), 1)
     y = tf.expand_dims(tf.range(-m, m + 1,dtype=tf.float32), 0)
     
@@ -119,7 +119,7 @@ def get_gaussian_kernel(shape=(7, 7), sigma=1.0):
     return h
 
 def get_lanczos_kernel(shape=(7, 7), sigma=1.0):
-    m,n = [(sh - 1.0) / 2.0 for sh in shape]
+    m, n = [(sh - 1.0) / 2.0 for sh in shape]
     x = tf.expand_dims(tf.range(-n, n + 1,dtype=tf.float32), 1)
     y = tf.expand_dims(tf.range(-m, m + 1,dtype=tf.float32), 0)
     
