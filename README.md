@@ -11,7 +11,7 @@ The simplicity and speed of Anime4K allows the user to watch upscaled anime in r
 
 **[Installation Instructions for GLSL/MPV](GLSL_Instructions.md)**  
 
-We introduce a line reconstruction algorithm that aims to tackle the distribution shift problem. In the wild anime exhibit a surprising amount of variance caused by low quality compositing due to budget and time constraints that traditional super-resolution algorithms cannot handle. GANs can implicitely encode this distribution shift but are slow to use and hard to train. Our algorithm corrects this distribution shift and allows traditional "MSE" SR algorithms to work with a wide variety of anime.
+We introduce a line reconstruction algorithm that aims to tackle the distribution shift problem. In the wild anime exhibit a surprising amount of variance caused by low quality compositing due to budget and time constraints that traditional super-resolution algorithms cannot handle. GANs can implicitely encode this distribution shift but are slow to use and hard to train. Our algorithm explicitely corrects this distribution shift and allows traditional "MSE" SR algorithms to work with a wide variety of anime.
 
 Source: https://fancaps.net/anime/picture.php?/14728493 | Correction: `Restore_Moderate_Soft`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Maxed.png?raw=true)
