@@ -20,6 +20,7 @@ Source: https://fancaps.net/anime/picture.php?/13365760 | Correction: `Restore_M
 ![Comparison](results/Comparisons/Cropped_Screenshots/Slime.png?raw=true)
 
 Performance numbers are obtained using a Vega64 GPU.
+*Note that CUDA accelerated SRGANs/Waifu2x can be much faster and close to realtime, but their large size severely hampers non-CUDA implementations.
 
 ## v3
 The monolithic Anime4K shader is broken into modular components, allowing customization for specific types of anime and/or personal taste.
