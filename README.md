@@ -19,6 +19,8 @@ Source: https://fancaps.net/anime/picture.php?/14728493 | Correction: `Restore_M
 Source: https://fancaps.net/anime/picture.php?/13365760 | Correction: `Restore_Moderate`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Slime.png?raw=true)
 
+Performance numbers are obtained using a Vega64 GPU.
+
 ## v3
 The monolithic Anime4K shader is broken into modular components, allowing customization for specific types of anime and/or personal taste.
 What's new:
