@@ -19,7 +19,7 @@ Source: https://fancaps.net/anime/picture.php?/14728493 | Correction: `Restore_M
 Source: https://fancaps.net/anime/picture.php?/13365760 | Correction: `Restore_Moderate`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Slime.png?raw=true)
 
-Performance numbers are obtained using a Vega64 GPU.  
+Performance numbers are obtained using a Vega64 GPU and are tested using `VL` shader variants. The fast version is for `M` variants.  
 *Note that CUDA accelerated SRGANs/Waifu2x using tensor cores can be much faster and close to realtime (~80ms), but their large size severely hampers non-CUDA implementations.*
 
 ## v3
