@@ -95,7 +95,7 @@ Quick explanation of each shader type:
 | Denoise | Applies a denoising filter to the image. |
 | Deblur | Applies a deblur filter to the image. Sharpens details without overshoot or ringing. |
 | AutoDownscalePre_x4 | Downscales an image after a first upscaling step, so that the second x2 upscaling step exactly matches screen size. This improves performance without noticeably impacting quality as you will not be working with images larger than the screen size. Should be placed between two Upscale shaders. Without this shader, the default behaviour is to downscale to the screen size after running all shaders. |
-| AutoDownscalePre_x2 | Downscales an image after a first upscaling step to match screen size. This improves performance without noticeably impacting quality as you will not be working with images larger than the screen size. Should be placed after the first Upscale shaders. Without this shader, the default behaviour is to downscale to the screen size after running all shaders. |
+| AutoDownscalePre_x2 | Downscales an image after a first upscaling step to match screen size. This improves performance without noticeably impacting quality as you will not be working with images larger than the screen size. Should be placed after the first Upscale shader. Without this shader, the default behaviour is to downscale to the screen size after running all shaders. |
 ____
 Overview of default modes:
 | Mode         | Shaders |
@@ -114,7 +114,7 @@ How the modes are defined:
   -  Mode A is defined initially as: `Restore -> Upscale`
   -  Mode B is defined initially as: `Restore_Soft -> Upscale`
   -  Mode C is defined initially as: `Upscale`
-  -  If the mode does not start with a `Restore` shader, it must start with a `Upscale_Denoise` or `Denoise` shader, as almost 100% of video use lossy compression.
+  -  If the mode does not start with a `Restore` shader, it must start with a `Upscale_Denoise` or `Denoise` shader, as almost every video compression algorithm is lossy.
   -  All modes have to add upscale shaders until the entire shader pipeline upscales at least 4x. A reasonable assumption is the smallest reasonable video size being 480p and the largest screen being 4K, upscaling at 4x is close to the 4.5x of 480p->4K.
 ____
 With the definitions above, we can see for example, what C+A+B is.
@@ -122,7 +122,7 @@ With the definitions above, we can see for example, what C+A+B is.
   1. Initial definition:<br/>`C (Upscale) -> A (Restore -> Upscale) -> B (Restore_Soft -> Upscale)`
   2. All modes have to start with restore/denoise:<br/>`C (Denoise_Upscale) -> A (Restore -> Upscale) -> B (Restore_Soft -> Upscale)`
   3. Upscale ratio of 4x is already met.
-  4. C+A+B is:<br/>`Denoise_Upscale -> Restore -> Upscale -> Restore_Soft -> Upscale`
+  4. C+A+B is:<br/>`Upscale_Denoise -> Restore -> Upscale -> Restore_Soft -> Upscale`
   5. Shader variants (S/M/L/VL/UL) can be chosen at will.
 
 ## Best Practices
