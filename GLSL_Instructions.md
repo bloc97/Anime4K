@@ -27,7 +27,7 @@ CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
 ____
 **Optimized shaders for lower-end GPU:**  
 *(Eg. GTX 980, GTX 1060, RX 570)  
-These specs are approximated (and overestimated just in case) using TFLOPS, community benchmarks are be needed...*  
+These specs are approximated (and overestimated just in case) using TFLOPS, community benchmarks are needed...*  
 *If upscaling to resolutions smaller than 4K, lower end GPUs can be used.*  
 ```
 CTRL+1 no-osd change-list glsl-shaders set "~~/shaders/Anime4K_Clamp_Highlights.glsl;~~/shaders/Anime4K_Restore_CNN_M.glsl;~~/shaders/Anime4K_Upscale_CNN_x2_M.glsl;~~/shaders/Anime4K_AutoDownscalePre_x2.glsl;~~/shaders/Anime4K_AutoDownscalePre_x4.glsl;~~/shaders/Anime4K_Upscale_CNN_x2_S.glsl"; show-text "Anime4K: Mode A (Fast)"
