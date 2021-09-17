@@ -8,7 +8,7 @@
   5. If `input.conf` does not exist in `%AppData%\mpv\` or `~/.config/mpv`, create an empty file.
   6. For Anime4K v4.x, instead of activating a single shader, you should use a combination of shaders.<br/>Add one of the following code blocks to `input.conf` to allow enabling the shaders:
   
-**Note for Unix based OSes, ";" separators must be replaced with ":" as stated in the [mpv manual](https://mpv.io/manual/stable/#string-list-and-path-list-options).**
+**Note for Unix based OSes, `;` (file name separators) inside quotes must be replaced with `:` as stated in the [mpv manual](https://mpv.io/manual/stable/#string-list-and-path-list-options).**<br/>*The last `;` outside of quotes should not be changed.*
 
 ----
 #### **Optimized shaders for higher-end GPU:**  
