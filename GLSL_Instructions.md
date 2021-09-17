@@ -120,7 +120,7 @@ ____
 With the definitions above, we can see for example, what C+A+B is.
 
   1. Initial definition:<br/>`C (Upscale) -> A (Restore -> Upscale) -> B (Restore_Soft -> Upscale)`
-  2. All modes have to start with restore/denoise:<br/>`C (Denoise_Upscale) -> A (Restore -> Upscale) -> B (Restore_Soft -> Upscale)`
+  2. All modes have to start with restore/denoise:<br/>`C (Upscale_Denoise) -> A (Restore -> Upscale) -> B (Restore_Soft -> Upscale)`
   3. Upscale ratio of 4x is already met.
   4. C+A+B is:<br/>`Upscale_Denoise -> Restore -> Upscale -> Restore_Soft -> Upscale`
   5. Shader variants (S/M/L/VL/UL) can be chosen at will.
