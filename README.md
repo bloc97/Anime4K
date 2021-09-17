@@ -13,10 +13,10 @@ The simplicity and speed of Anime4K allows the user to watch upscaled anime in r
 
 We introduce a line reconstruction algorithm that aims to tackle the distribution shift problem seen in 1080p anime. In the wild anime exhibit a surprising amount of variance caused by low quality compositing due to budget and time constraints that traditional super-resolution algorithms cannot handle. GANs can implicitly encode this distribution shift but are slow to use and hard to train. Our algorithm explicitly corrects this distribution shift and allows traditional "MSE" SR algorithms to work with a wide variety of anime.
 
-Source: https://fancaps.net/anime/picture.php?/14728493 | Mode: `B`  
+Source: https://fancaps.net/anime/picture.php?/14728493 | [Mode](GLSL_Instructions.md#modes): `B`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Maxed.png?raw=true)
 
-Source: https://fancaps.net/anime/picture.php?/13365760 | Mode: `A`  
+Source: https://fancaps.net/anime/picture.php?/13365760 | [Mode](GLSL_Instructions.md#modes): `A`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Slime.png?raw=true)
 
 Performance numbers are obtained using a Vega64 GPU and are tested using `VL` shader variants. The fast version is for `M` variants.  
