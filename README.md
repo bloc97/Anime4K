@@ -34,6 +34,14 @@ What's new:
 
 [More information about each shader (OUTDATED)](https://github.com/bloc97/Anime4K/wiki).
 
+## Visitors
+
+<p align="center">
+  <img src="https://count.getloli.com/get/@72276803-0571-4e62-b0a7-9880fcd0244f?theme=gelbooru"/>
+</p>
+
+Counting since `2021-09-19T16:02:06Z` (ISO 8601)
+
 ## Projects that use Anime4K
 *Note that they might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
