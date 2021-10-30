@@ -44,7 +44,7 @@ What's new:
 
 [More information about each shader (OUTDATED)](https://github.com/bloc97/Anime4K/wiki).
 
-## Visitors
+## Visits
 
 <p align="center">
   <a href="https://count.getloli.com/"><img src="https://count.getloli.com/get/@72276803-0571-4e62-b0a7-9880fcd0244f?theme=gelbooru"/></a>
