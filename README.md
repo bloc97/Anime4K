@@ -55,7 +55,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
  
 ## Acknowledgements
-| OpenCV | TensorFlow | Keras | Torch | MPV | MPC |
+| OpenCV | TensorFlow | Keras | Torch | mpv | MPC |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |![OpenCV](https://github.com/opencv.png)|![TensorFlow](https://github.com/tensorflow.png)|![Keras](https://github.com/keras-team.png)|![Torch](https://github.com/torch.png)|![mpv](https://github.com/mpv-player.png)|![MPC](https://github.com/mpc-hc.png)|
 
