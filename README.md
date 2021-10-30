@@ -6,6 +6,16 @@ The simplicity and speed of Anime4K allows the user to watch upscaled anime in r
 
 ***Disclaimer: All art assets used are for demonstration and educational purposes. All rights are reserved to their original owners. If you (as a person or a company) own the art and do not wish it to be associated with this project, please contact us at 	anime4k.upscale@gmail.com and we will gladly take it down.***
 
+## Foreword
+Anime4K is optimized for **native 1080p anime encoded with h.264, h.265 or VC-1**. 
+
+Even if it might work, it is **not** optimized for downscaled 720p, 480p or standard definition anime (eg. DVDs). Older anime (especially pre-digital era production) have artifacts that are very difficult to remove, such as bad deinterlacing, camera blur during production, severe ringing, film grain, older MPEG compression artifacts, etc.
+
+This is also not replacement for SRGANs, as they perform much better on low-resolution images or images with lots of degradation (albeit not in real time).
+
+What Anime4K does provide is a way to upscale, in real time, 1080p anime for 4K screens while providing a similar *effect* to SRGANs and being much better than waifu2x (See [comparisons](https://github.com/bloc97/Anime4K/tree/master/results/Comparisons/Screenshots)).
+
+Currently, research is being done on better real-time upscaling for lower resolution or older content.
 
 ## v4
 
