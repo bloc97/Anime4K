@@ -43,7 +43,10 @@ What's new:
 Counting since `2021-09-19T16:02:06Z` (ISO 8601)
 
 ## Projects that use Anime4K
-*Note that they might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
+ - https://github.com/Blinue/Magpie (General-purpose real-time upscaler for any program/game running on Windows 10)
+
+
+*Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
  - https://github.com/keijiro/UnityAnime4K (Anime4K for Unity)
  - https://github.com/net2cn/Anime4KSharp (Anime4K Re-Implemented in C#)
@@ -54,7 +57,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
 ## Acknowledgements
 | OpenCV | TensorFlow | Keras | Torch | MPV | MPC |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|![OpenCV](https://github.com/opencv.png)|![TensorFlow](https://github.com/tensorflow.png)|![Keras](https://github.com/keras-team.png)|![Torch](https://github.com/torch.png)|![MPV](https://github.com/mpv-player.png)|![MPC](https://github.com/mpc-hc.png)|
+|![OpenCV](https://github.com/opencv.png)|![TensorFlow](https://github.com/tensorflow.png)|![Keras](https://github.com/keras-team.png)|![Torch](https://github.com/torch.png)|![mpv](https://github.com/mpv-player.png)|![MPC](https://github.com/mpc-hc.png)|
 
 Many thanks to the [OpenCV](https://github.com/opencv/opencv), [TensorFlow](https://github.com/tensorflow/tensorflow), [Keras](https://github.com/keras-team/keras) and [Torch](https://github.com/torch/torch7) groups and contributors. This project would not have been possible without the existence of high quality, open source machine learning libraries.
 
