@@ -17,6 +17,14 @@ What Anime4K does provide is a way to upscale, in real time, 1080p anime for 4K 
 
 Currently, research is being done on better real-time upscaling for lower resolution or older content.
 
+## Low resolution experiment
+Results from the [experimental SRGAN shaders](https://github.com/bloc97/Anime4K/commit/5f9294d847e724b67f941d1742e3565a0a106291) for 360p -> 4K: (zoom in to view details)
+
+The images are sorted by algorithm speed. [FSRCNNX](https://github.com/igv/FSRCNN-TensorFlow) and Anime4K are real-time while [waifu2x](https://github.com/nagadomi/waifu2x) and [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) are not.
+![Comparison](results/Comparisons/Cropped_Screenshots/Magia_360p_4K.png?raw=true)
+![Comparison](results/Comparisons/Cropped_Screenshots/Higurashi_360p_4K.png?raw=true)
+
+
 ## v4
 
 **[Installation Instructions for GLSL/MPV](GLSL_Instructions.md)**  
