@@ -11,7 +11,7 @@
  
   4. (Optional) If `mpv.conf` does not exist in `%AppData%\mpv\`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
 
-  5. If `input.conf` does not exist in `%AppData%\mpv\`, create an empty file.
+  5. If `input.conf` does not exist in `%AppData%\mpv\`, create an empty file and follow what suits your needs below the Linux Guide
   
 ## For Linux-based Distributions (and other Unix-like OS)
 
