@@ -17,6 +17,11 @@ What Anime4K does provide is a way to upscale, in real time, 1080p anime for 4K 
 
 Currently, research is being done on better real-time upscaling for lower resolution or older content.
 
+## **Installation Instructions**  
+### [Windows (GLSL/MPV)](md/GLSL_Instructions_Windows.md)  
+### [Linux (GLSL/MPV)](md/GLSL_Instructions_Linux.md)  
+
+
 ## v4.1 Low resolution experiment
 Results from the [experimental SRGAN shaders](https://github.com/bloc97/Anime4K/commit/5f9294d847e724b67f941d1742e3565a0a106291) for 360p -> 4K: (zoom in to view details)
 
@@ -25,10 +30,8 @@ The images are sorted by algorithm speed, bicubic being the fastest. [FSRCNNX](h
 ![Comparison](results/Comparisons/Cropped_Screenshots/Higurashi_360p_4K.png?raw=true)
 
 
-## v4
 
-**[Windows Installation Instructions for GLSL/MPV](md/GLSL_Instructions_Windows.md)**  
-**[Linux Installation Instructions for GLSL/MPV](md/GLSL_Instructions_Linux.md)**  
+## v4
 
 We introduce a line reconstruction algorithm that aims to tackle the distribution shift problem seen in 1080p anime. In the wild anime exhibit a surprising amount of variance caused by low quality compositing due to budget and time constraints that traditional super-resolution algorithms cannot handle. GANs can implicitly encode this distribution shift but are slow to use and hard to train. Our algorithm explicitly corrects this distribution shift and allows traditional "MSE" SR algorithms to work with a wide variety of anime.
 
