@@ -35,10 +35,10 @@
   3. Create a new `shaders` directory in `~/.config/mpv` and move the the `.glsl` shaders there
       `mv path/to/glsl/stuff ~/.config/mpv/shaders`
 
-    ![image](https://user-images.githubusercontent.com/45941793/162597836-22de46b1-fd04-4054-a5ec-f83452ed4e13.png)
+   ![image](https://user-images.githubusercontent.com/45941793/162597836-22de46b1-fd04-4054-a5ec-f83452ed4e13.png)
 
 
-  4. Create an `mpv.conf` file in `~/.config/mpv` if not already present (Use [this guide](https://wiki.archlinux.org/title/mpv#General_settings) to fill it out
+  4. Create an `mpv.conf` file in `~/.config/mpv` if not already present (Use [this guide](https://wiki.archlinux.org/title/mpv#General_settings) to fill it out)
 
   5. Create an `input.conf` file in `~/.config/mpv` if not already present and paste what suits your needs as given below
 
