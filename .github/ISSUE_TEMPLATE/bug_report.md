@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Desktop (please complete the following information):**
  - OS: [e.g. Windows 10]
  - Version [e.g. v2.1]
- - GPU (If applicable) [e.g. GTX 1080]
+ - GPU/Version (If applicable)(If using Linux, specify Mesa, nouveau, or otherwise) [e.g. GTX 1080/510.60.02]
  - Media Player and Version (If applicable) [e.g. MPV v0.30]
  - Browser (If applicable) [e.g. chrome, safari]
 
