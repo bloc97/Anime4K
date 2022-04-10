@@ -16,7 +16,7 @@
 ## For Linux-based Distributions (and other Unix-like OS)
 
   1. Install `mpv` from repositories of your distribtion, some of the common ones are mentioned here
-      **Fedora Silverblue** 
+      ### Fedora Silverblue
         1. Install the RPM-Fusion "free" repository, if not already installed, paste in the command below
 
             `sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
@@ -25,10 +25,17 @@
         
         3. Reboot and continue to step 2
        
-        **Fedora** `sudo dnf install mpv`
-        **Ubuntu and Derivatives** `sudo apt install mpv`
-        **Arch and Derivatives** `pacman -S mpv`
-        **Gentoo** `sudo emerge --ask media-video/mpv` (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
+        ### Fedora
+         `sudo dnf install mpv`
+
+        ### Ubuntu and Derivatives
+         `sudo apt install mpv`
+
+        ### Arch and Derivatives
+         `pacman -S mpv`
+
+        ### Gentoo
+         `sudo emerge --ask media-video/mpv` (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
 
   2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git` , or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
 
