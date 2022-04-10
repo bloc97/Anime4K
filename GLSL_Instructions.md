@@ -26,16 +26,16 @@
         3. Reboot and continue to step 2
        
         ### Fedora
-         `sudo dnf install mpv`
+         sudo dnf install mpv
 
         ### Ubuntu and Derivatives
-         `sudo apt install mpv`
+         sudo apt install mpv
 
         ### Arch and Derivatives
-         `pacman -S mpv`
+         pacman -S mpv
 
-        ### Gentoo
-         `sudo emerge --ask media-video/mpv` (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
+        ### Gentoo (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
+         sudo emerge --ask media-video/mpv` 
 
   2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git` , or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
 
