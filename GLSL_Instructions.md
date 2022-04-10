@@ -32,7 +32,7 @@
          sudo apt install mpv
 
         ### Arch and Derivatives
-         pacman -S mpv
+         sudo pacman -S mpv
 
         ### Gentoo (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
          sudo emerge --ask media-video/mpv` 
