@@ -36,7 +36,7 @@
 
   4. Create an `mpv.conf` file in `~/.config/mpv` if not already present (Follow [this guide](https://wiki.archlinux.org/title/mpv#General_settings) to optimize your configuration.)
 
-  5. Create an `input.conf` file in `~/.config/mpv` if not already present and paste what suits your needs as given below.
+  5. Create an `input.conf` file in `~/.config/mpv` if not already present and paste one of the following code blocks inside the file:
 
 ----
 #### **Optimized shaders for higher-end GPU:**  
