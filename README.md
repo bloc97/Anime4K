@@ -27,14 +27,15 @@ The images are sorted by algorithm speed, bicubic being the fastest. [FSRCNNX](h
 
 ## v4
 
-**[Installation Instructions for GLSL/MPV](md/GLSL_Instructions.md)**  
+**[Windows Installation Instructions for GLSL/MPV](md/GLSL_Instructions_Windows.md)**  
+**[Linux Installation Instructions for GLSL/MPV](md/GLSL_Instructions_Linux.md)**  
 
 We introduce a line reconstruction algorithm that aims to tackle the distribution shift problem seen in 1080p anime. In the wild anime exhibit a surprising amount of variance caused by low quality compositing due to budget and time constraints that traditional super-resolution algorithms cannot handle. GANs can implicitly encode this distribution shift but are slow to use and hard to train. Our algorithm explicitly corrects this distribution shift and allows traditional "MSE" SR algorithms to work with a wide variety of anime.
 
-Source: https://fancaps.net/anime/picture.php?/14728493 | [Mode](md/GLSL_Instructions.md#modes): `B`  
+Source: https://fancaps.net/anime/picture.php?/14728493 | [Mode](md/GLSL_Instructions_Advanced.md#modes): `B`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Maxed.png?raw=true)
 
-Source: https://fancaps.net/anime/picture.php?/13365760 | [Mode](md/GLSL_Instructions.md#modes): `A`  
+Source: https://fancaps.net/anime/picture.php?/13365760 | [Mode](md/GLSL_Instructions_Advanced.md#modes): `A`  
 ![Comparison](results/Comparisons/Cropped_Screenshots/Slime.png?raw=true)
 
 Performance numbers are obtained using a Vega64 GPU and are tested using `UL` shader variants. The fast version is for `M` variants.  
