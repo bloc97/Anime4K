@@ -22,8 +22,10 @@
    - Note: RPM Fusion command for both Fedora Workstation and Fedora Silverblue will add both "free" and "non-free" repository.  
          To know more about these you can check this [link](https://rpmfusion.org/Configuration)
          
-        ### Ubuntu and Derivatives
+        ### Debian/Ubuntu and Derivatives
          sudo apt install mpv
+         
+   - Note: Debian and Ubuntu usually ships with the older version of mpv player in their official repositories. It is advised to check flatpak guide below as it stays upto date with the upstream. 
 
         ### Arch and Derivatives
          sudo pacman -S mpv
@@ -31,7 +33,7 @@
         ### Gentoo (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
          sudo emerge --ask media-video/mpv` 
 
-  - Note: make sure to install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134).
+  - Note: make sure to install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134).  
   
   2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git` , or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
 
@@ -46,6 +48,8 @@
   5. Create an `input.conf` file in `~/.config/mpv` if not already present and paste one of the following code blocks inside the file:
 
 ### Flatpak
+Setting up flatpak if not already configured, from [here](https://www.flatpak.org/setup/) 
+
 On flatpak mpv, all config files, shaders and scripts have different directories:-  
 
  `~/.var/app/io.mpv.Mpv/config/mpv`  
