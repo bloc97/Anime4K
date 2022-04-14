@@ -44,7 +44,7 @@ CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
 ____
 ## Usage Instructions for Anime4K
 
-  1. Anime4K v4.x has 3 major modes: A, B and C. To enable one of the modes, press CTRL+1 for mode A, CTRL+2 for B and so on. CTRL+0 will clear and disable all the shaders. Each mode is optimized for a different class of anime degradations, explanations are further down (soon in the wiki). For now you can just try each mode (starting from A) and use the one that looks the best.
+  1. Anime4K v4.x has 3 major modes: A, B and C. To enable one of the modes, press CTRL+1 for mode A, CTRL+2 for B and so on. CTRL+0 will clear and disable all the shaders. Each mode is optimized for a different class of anime degradations, explanations are in [Advanced Usage Instructions#modes](GLSL_Instructions_Advanced.md#modes) (soon in the wiki). For now you can just try each mode (starting from A) and use the one that looks the best.
   2. To verify the installation was correctly done, enable one of the Anime4K modes and use the MPV profiler to check if there are a few shaders with the name Anime4K running. To access the profiler, press Shift+I and then 2 on the keyboard's top row.  
 This is what you should see (this example is from v2.0RC2, but also applies to newer versions):  
 ![Profiler](../results/MPV_Profiler.png?raw=true)
