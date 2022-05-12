@@ -29,6 +29,9 @@
 
         ### Arch and Derivatives
          sudo pacman -S mpv
+         
+        ### OpenSUSE Tumbleweed
+         sudo zypper install mpv
 
         ### Gentoo (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
          sudo emerge --ask media-video/mpv` 
