@@ -1,4 +1,5 @@
 # Anime4K
+<a href="https://huggingface.co/spaces/kadirnar/Anime4k"><img src="https://img.shields.io/badge/%20HuggingFace%20-Demo-blue.svg" alt="HuggingFace Spaces"></a>
 
 Anime4K is a set of open-source, high-quality real-time anime upscaling/denoising algorithms that can be implemented in any programming language.
 
