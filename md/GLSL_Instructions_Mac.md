@@ -31,6 +31,7 @@ CTRL+0 no-osd change-list glsl-shaders clr ""; show-text "GLSL shaders cleared"
 ```
 ____
 #### **Optimized shaders for higher-end GPU:**  
+(Untested, might still have performance issues at higher resolutions)  
 *(Eg. M1 Pro, M1 Max, M1 Ultra, M2 Pro, M2 Max)*  
 *If upscaling to resolutions smaller than 4K, lower end GPUs can be used.*  
 ```
