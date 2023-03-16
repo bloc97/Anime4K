@@ -1,4 +1,4 @@
-# Usage Instructions (GLSL / PLEX) (v4.x)
+# Usage Instructions (GLSL / PLEX MPV) (v4.x)
 
 ## Installing and setting up Anime4K for Plex Media Player/Plex HTPC
 
