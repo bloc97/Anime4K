@@ -17,4 +17,4 @@
 ----
 ## Follow Device Specific Installation
 
-  - Installation Instructions can be found [**here**](https://github.com/bloc97/Anime4K#installation-instructions)
+  - Installation Instructions can be found [**here**](GLSL_Instructions.md)
