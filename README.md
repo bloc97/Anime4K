@@ -1,3 +1,5 @@
+## [**Installation Instructions**](md/GLSL_Instructions.md)  
+
 # Anime4K
 
 Anime4K is a set of open-source, high-quality real-time anime upscaling/denoising algorithms that can be implemented in any programming language.
@@ -16,12 +18,6 @@ This is also not replacement for SRGANs, as they perform much better on low-reso
 What Anime4K does provide is a way to upscale, in real time, 1080p anime for 4K screens while providing a similar *effect* to SRGANs and being much better than waifu2x (See [comparisons](https://github.com/bloc97/Anime4K/tree/master/results/Comparisons/Screenshots)).
 
 Currently, research is being done on better real-time upscaling for lower resolution or older content.
-
-## **Installation Instructions**  
-### [Windows (GLSL/MPV)](md/GLSL_Instructions_Windows.md)  
-### [Linux (GLSL/MPV)](md/GLSL_Instructions_Linux.md)  
-### [Mac (GLSL/MPV)](md/GLSL_Instructions_Mac.md)  
-### [Plex (GLSL/MPV)](md/GLSL_Instructions_Plex.md)  
 
 ## v4.1 Low resolution experiment
 Results from the [experimental SRGAN shaders](https://github.com/bloc97/Anime4K/commit/5f9294d847e724b67f941d1742e3565a0a106291) for 360p -> 4K: (zoom in to view details)
