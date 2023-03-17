@@ -3,7 +3,7 @@
 ## Installing and setting up Anime4K for Windows 
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
-  1. Install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134). 
+  1. Download the latest release of mpv [**here**](https://sourceforge.net/projects/mpv-player-windows/files/latest/download). 
  
   2. Download the .glsl shader files [**here**](https://github.com/bloc97/Anime4K/releases)  
 
