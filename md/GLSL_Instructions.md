@@ -1,7 +1,7 @@
 ## **Installation Instructions**  
 
   ### Windows
-  - [(GLSL/MPV)](GLSL_Instructions_Windows.md)  
+  - [(GLSL/MPV)](GLSL_Instructions_Windows_MPV.md)  
   - [(GLSL/Plex)](GLSL_Instructions_Windows_Plex.md)  
 
   ### Linux
