@@ -5,13 +5,19 @@
 
   1. Install mpv via [**Homebrew**](https://formulae.brew.sh/formula/mpv) or download the latest release [**here**](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz)
  
-  2. Download the .glsl shader files [**here**](https://github.com/bloc97/Anime4K/releases)  
+  2. Open mpv (this will create the mpv config file location for you)
 
-  3. Copy the .glsl files to `~/.config/mpv/shaders`
- 
-  4. (Optional) If `mpv.conf` does not exist in `~/.config/mpv/`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
+  3. Download the template files [**here**](Template/GLSL_Mac_Linux_Low-end.zip?raw=true), and extract it
+  High-end GPU [**here**](Template/GLSL_Mac_Linux_High-end.zip?raw=true) and for Low-end GPU
 
-  5. If `input.conf` does not exist in `~/.config/mpv/`, create an empty file and paste one of the following code blocks inside the file:
+  4. In the Finder on your Mac, choose Go > Go to Folder.<br>
+     <img width="400" src="Screenshots/Mac/Finder.png">
+     
+  5. Paste `~/.config/mpv/` and hit Enter<br>
+     <img width="800" src="Screenshots/Mac/Go to Folder.png">
+     
+  6. Move the template files here
+     <img width="800" src="Screenshots/Mac/Config.png">
   
   - Note: Only the Homebrew version are built for Native Apple Silicon.
 
