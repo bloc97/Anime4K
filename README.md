@@ -1,17 +1,3 @@
-## [**Installation Instructions**](md/GLSL_Instructions.md)  
-
-  ### Windows
-  - [(GLSL/MPV)](GLSL_Instructions_Windows_MPV.md)  
-  - [(GLSL/Plex)](GLSL_Instructions_Windows_Plex.md)  
-
-  ### Linux
-  - [(GLSL/MPV)](GLSL_Instructions_Linux.md)  
-
-  ### Mac
-  - [(GLSL/MPV)](GLSL_Instructions_Mac_MPV.md)  
-  - [(GLSL/IINA)](GLSL_Instructions_Mac_IINA.md)  
-  - [(GLSL/Plex)](GLSL_Instructions_Mac_Plex.md)  
-
 # Anime4K
 
 Anime4K is a set of open-source, high-quality real-time anime upscaling/denoising algorithms that can be implemented in any programming language.
@@ -38,7 +24,19 @@ The images are sorted by algorithm speed, bicubic being the fastest. [FSRCNNX](h
 ![Comparison](results/Comparisons/Cropped_Screenshots/Magia_360p_4K.png?raw=true)
 ![Comparison](results/Comparisons/Cropped_Screenshots/Higurashi_360p_4K.png?raw=true)
 
+## [**Installation Instructions**]
 
+  ### Windows
+  - [(GLSL/MPV)](GLSL_Instructions_Windows_MPV.md)  
+  - [(GLSL/Plex)](GLSL_Instructions_Windows_Plex.md)  
+
+  ### Linux
+  - [(GLSL/MPV)](GLSL_Instructions_Linux.md)  
+
+  ### Mac
+  - [(GLSL/MPV)](GLSL_Instructions_Mac_MPV.md)  
+  - [(GLSL/IINA)](GLSL_Instructions_Mac_IINA.md)  
+  - [(GLSL/Plex)](GLSL_Instructions_Mac_Plex.md)  
 
 ## v4
 
