@@ -24,7 +24,7 @@ The images are sorted by algorithm speed, bicubic being the fastest. [FSRCNNX](h
 ![Comparison](results/Comparisons/Cropped_Screenshots/Magia_360p_4K.png?raw=true)
 ![Comparison](results/Comparisons/Cropped_Screenshots/Higurashi_360p_4K.png?raw=true)
 
-## [**Installation Instructions**]
+## **Installation Instructions**
 
   ### Windows
   - [(GLSL/MPV)](GLSL_Instructions_Windows_MPV.md)  
