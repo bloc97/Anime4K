@@ -4,11 +4,14 @@
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
   1. Install mpv via [**Homebrew**](https://formulae.brew.sh/formula/mpv) or download the latest release [**here**](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz)
- 
+     - Note: Only the Homebrew version are built for Native Apple Silicon.
   2. Open mpv (this will create the mpv config file location for you)
 
-  3. Download the template files [**here**](Template/GLSL_Mac_Linux_Low-end.zip?raw=true), and extract it
-  High-end GPU [**here**](Template/GLSL_Mac_Linux_High-end.zip?raw=true) and for Low-end GPU
+  3. Download the template files, and extract it (double-click on the .zip file)
+     - Optimized shaders for lower-end GPU: [**here**](Template/GLSL_Mac_Linux_Low-end.zip?raw=true)
+       - *Eg. M1, M2*
+     - Optimized shaders for higher-end GPU: [**here**](Template/GLSL_Mac_Linux_High-end.zip?raw=true)  
+       - *Eg. M1 Pro, M1 Max, M1 Ultra, M2 Pro, M2 Max*<br>(Untested, might still have performance issues)
 
   4. In the Finder on your Mac, choose Go > Go to Folder.<br>
      <img width="400" src="Screenshots/Mac/Finder.png">
@@ -18,8 +21,6 @@
      
   6. Move the template files here
      <img width="800" src="Screenshots/Mac/Config.png">
-  
-  - Note: Only the Homebrew version are built for Native Apple Silicon.
 
 ----
 **Optimized shaders for lower-end GPU:**  
