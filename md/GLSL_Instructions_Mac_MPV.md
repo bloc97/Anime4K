@@ -1,10 +1,11 @@
 # Usage Instructions (GLSL / MPV) (v4.x)
 
-## Installing and setting up Anime4K for Intel-based and Apple Silicon Mac
+## Installing and setting up Anime4K for mpv on Apple Silicon and Intel-based Mac
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
   1. Install mpv via [**Homebrew**](https://formulae.brew.sh/formula/mpv) or download the latest release [**here**](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz)
      - Note: Only the Homebrew version are built for Native Apple Silicon
+
   2. Open mpv (this will create the mpv config file location for you)
 
   3. Download the template files, and extract it (open the .zip file)
@@ -19,15 +20,17 @@
   5. Paste `~/.config/mpv/` and hit Enter.<br>
      <img width="600" src="Screenshots/Mac/mpv/Go to mpv.png">
      
-  6. Move the template files here.
+  6. Move the template files (input.conf, mpv.conf and the shaders folder) to the mpv folder.
      <img width="800" src="Screenshots/Mac/mpv/Config.png">
      
-  7. That's it, Anime4K is now ready to use!
+  7. That's it, Anime4K is now installed and ready to use!
      ____
+     
 ## Quick Usage Instructions
 
   1. Anime4K has 3 Major Modes: A, B and C. For more Advanced Explanation and Usage Instructions, click [**here**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x).<br>
      - By Default, Mode A is automatically enabled in our template (this can be change in mpv.conf)
+
   2. To enable each Mode Manually
      - Press CTRL+1 to enable Mode A (Recommended for 1080p)
      - Press CTRL+2 to enable Mode B (Recommended for 720p)
