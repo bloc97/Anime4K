@@ -17,10 +17,10 @@
      <img width="400" src="Screenshots/Mac/Finder.png">
      
   5. Paste `~/.config/mpv/` and hit Enter.<br>
-     <img width="800" src="Screenshots/Mac/Go to Folder.png">
+     <img width="600" src="Screenshots/Mac/mpv/Go to mpv.png">
      
   6. Move the template files here.
-     <img width="800" src="Screenshots/Mac/Config.png">
+     <img width="800" src="Screenshots/Mac/mpv/Config.png">
      
   7. That's it, Anime4K is now ready to use!
      ____
