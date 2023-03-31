@@ -26,7 +26,7 @@
    <img width="500" src="Screenshots/Mac/Plex/location.png"><br>
    <img width="500" src="Screenshots/Mac/Plex HTPC/location.png">
      
-6. Move the template files (input.conf, mpv.conf, and the shaders folder) to the Plex or Plex HTPC folder.
+6. Move the `input.conf`, `mpv.conf`, and the `shaders` folder into the `Plex` or `Plex HTPC` folder.
 
    <img width="800" src="Screenshots/Mac/Plex/config.png"><br>
    <img width="800" src="Screenshots/Mac/Plex HTPC/config.png">
