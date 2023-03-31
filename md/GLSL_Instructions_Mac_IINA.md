@@ -1,6 +1,6 @@
 # Usage Instructions (GLSL / IINA) (v4.x)
 
-## Installing and Setting up Anime4K for IINA on Apple Silicon and Intel-based Mac
+## Installing and Setting Up Anime4K for IINA on Apple Silicon and Intel-based Mac
 
 The easiest way to use Anime4K with IINA is to follow our `mpv` guide [**here**](GLSL_Instructions_Mac_MPV.md).
 - *Note: you may need to create the `mpv` folder, if you did not install mpv.*
