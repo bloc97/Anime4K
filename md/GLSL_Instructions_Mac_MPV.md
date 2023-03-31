@@ -6,7 +6,7 @@
   1. Install mpv via [**Homebrew**](https://formulae.brew.sh/formula/mpv) or download the latest release [**here**](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz)
      - *Note: Only the Homebrew version are built for Native Apple Silicon*
 
-  2. Open mpv (this will create the mpv config file location for you)
+  2. Open mpv (this will create the mpv .config file location for you)
 
   3. Download the template files, and extract it (open the .zip file)
      - Optimized shaders for lower-end GPU: *Eg. M1, M2, Intel Chips*
