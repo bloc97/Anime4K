@@ -35,4 +35,4 @@
      - Press CTRL+1 to enable Mode A (best for 1080p anime)
      - Press CTRL+2 to enable Mode B (best for 720p anime)
      - Press CTRL+3 to enable Mode C (best for 480p anime)
-     - Press CTRL+0 to clear and disable all the shaders
+     - Press CTRL+0 to clear all shaders (disable Anime4K)
