@@ -24,7 +24,7 @@ Then follow these steps:
      - By Default, Mode A is automatically enabled in our template (this can be change in mpv.conf)
 
   2. To enable each Mode manually
-     - Press CTRL+1 to enable Mode A (best for 1080p anime)
-     - Press CTRL+2 to enable Mode B (best for 720p anime)
-     - Press CTRL+3 to enable Mode C (best for 480p anime)
-     - Press CTRL+0 to clear all shaders (disable Anime4K)
+     - Press CTRL+1 to enable Mode A (Best for 1080p Anime)
+     - Press CTRL+2 to enable Mode B (Best for 720p Anime)
+     - Press CTRL+3 to enable Mode C (Best for 480p Anime)
+     - Press CTRL+0 to clear all shaders (Disable Anime4K)
