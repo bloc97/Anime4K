@@ -39,7 +39,7 @@ ____
 ## Quick Usage Instructions
 
 1. Anime4K has 3 major modes: A, B, and C. Each mode is optimized for a different class of anime degradations.
-    - By default, Mode A is automatically enabled, if you use our template (this can be change in `mpv.conf`).
+    - Mode A is automatically enabled, if you use our template (this can be change in `mpv.conf`).
 
 2. To enable each mode manually:
     - Press **CTRL+1** to enable Mode A (Optimized for 1080p Anime).
