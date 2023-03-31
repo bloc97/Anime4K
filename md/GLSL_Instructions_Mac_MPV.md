@@ -10,9 +10,9 @@
 
   3. Download the template files, and extract it (open the .zip file)
      - Optimized shaders for lower-end GPU: *Eg. M1, M2, Intel Chips*
-       - Download template [**here**](Template/GLSL_Mac_Linux_Low-end.zip?raw=true) or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_Low-end/mpv.conf)
+       - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_Low-end/mpv.conf)
      - Optimized shaders for higher-end GPU: *Eg. Pro, Max, and Ultra, Intel Chips* (Untested)
-       - Download template [**here**](Template/GLSL_Mac_Linux_High-end.zip?raw=true) or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_High-end/mpv.conf)
+       - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_High-end/mpv.conf)
 
   4. In the Finder on your Mac, choose Go > Go to Folder...<br>
      <img width="500" src="Screenshots/Mac/Finder.png">
