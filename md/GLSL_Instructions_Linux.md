@@ -25,30 +25,34 @@
          sudo emerge --ask media-video/mpv` 
 
   - Note: make sure to install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134).
-  
-  2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git` , or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
-     - **Optimized shaders for lower-end GPU:**  
-       *(Eg. GTX 980, GTX 1060, RX 570)*
-       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip)
-       - Or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_Low-end/mpv.conf)
-     - **Optimized shaders for higher-end GPU:**  
-       *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*  
-       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip)
-       - Or maually copy the code from [**input.conf**](Template/GLSL_Mac_Linux_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Mac_Linux_High-end/mpv.conf)
 
-  3. Navigate to `~/.config/mpv` and move the input.conf, mpv.conf and the shaders folder to the mpv directory.  
-     `mv path/to/stuff ~/.config/mpv`
+2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git`, or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
+
+    - **Optimized shaders for lower-end GPU:** *(Eg. GTX 980, GTX 1060, RX 570)*
+        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
+        - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_Low-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_Low-end/mpv.conf).
+          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+
+    - **Optimized shaders for higher-end GPU:** *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
+        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip).
+        - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_High-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_High-end/mpv.conf).
+          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+
+3. Navigate to `~/.config/mpv` and move the `input.conf`, `mpv.conf` and the `shaders` folder into the `mpv` directory.
+   `mv path/to/stuff ~/.config/mpv`
 
    ![image](https://user-images.githubusercontent.com/45941793/162597836-22de46b1-fd04-4054-a5ec-f83452ed4e13.png)
 
 ____
 ## Quick Usage Instructions
 
-  1. Anime4K has 3 Major Modes: A, B and C. Each mode is optimized for a different class of anime degradations. For more explanations and customization options, see the [**Advanced Usage Instructions**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x)<br>
-     - By Default, Mode A is automatically enabled in our template (this can be change in mpv.conf)
+1. Anime4K has 3 major modes: A, B, and C. Each mode is optimized for a different class of anime degradations.
+    - By default, Mode A is automatically enabled, if you use our template (this can be change in `mpv.conf`).
 
-  2. To enable each Mode manually
-     - Press CTRL+1 to enable Mode A (Optimized for 1080p Anime)
-     - Press CTRL+2 to enable Mode B (Optimized for 720p Anime)
-     - Press CTRL+3 to enable Mode C (Optimized for 480p Anime)
-     - Press CTRL+0 to clear all shaders (Disable Anime4K)
+2. To enable each mode manually:
+    - Press **CTRL+1** to enable Mode A (Optimized for 1080p Anime).
+    - Press **CTRL+2** to enable Mode B (Optimized for 720p Anime).
+    - Press **CTRL+3** to enable Mode C (Optimized for 480p Anime).
+    - Press **CTRL+0** to clear all shaders (Disable Anime4K).
+    
+3. For more explanations and customization options, see the [Advanced Usage Instructions](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x).
