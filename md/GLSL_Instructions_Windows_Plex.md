@@ -18,7 +18,7 @@
        - Alternatively, create and manually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf).
           - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
 
-  4. Open File Explorer and type in `%LOCALAPPDATA%\Plex` or `%LOCALAPPDATA%\Plex HTPC`.
+  4. Open File Explorer and type in `%LOCALAPPDATA%\Plex` or `%LOCALAPPDATA%\Plex HTPC`, then hit Enter.
  
      <img width="800" src="Screenshots/Windows/Plex/location.png">
      <img width="800" src="Screenshots/Windows/Plex HTPC/location.png">
