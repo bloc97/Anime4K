@@ -26,8 +26,8 @@
      <img width="800" src="Screenshots/Mac/mpv/config.png">
      
   7. That's it, Anime4K is now installed and ready to use!
-     ____
-     
+
+____    
 ## Quick Usage Instructions
 
   1. Anime4K has 3 Major Modes: A, B and C. Each mode is optimized for a different class of anime degradations. For more explanations and customization options, see the [**Advanced Usage Instructions**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x)<br>
