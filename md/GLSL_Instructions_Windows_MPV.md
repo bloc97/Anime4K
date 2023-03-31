@@ -18,7 +18,7 @@
        - Alternatively, create and manually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf).
           - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
 
-  4. Open File Explorer and type in `%APPDATA%/mpv`
+  4. Open File Explorer and type in `%APPDATA%/mpv`, then hit Enter.
  
      <img width="800" src="Screenshots/Windows/mpv/location.png">
 
