@@ -22,7 +22,7 @@
         - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_High-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_High-end/mpv.conf).
           - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
 
-4. In the Finder on your Mac, choose **Go > Go to Folder...**
+4. Open Finder and click on `Go` in the top menu bar. Then click on `Go to Folder...` from the drop-down menu.
    
    <img width="500" src="Screenshots/Mac/Finder.png">
 
