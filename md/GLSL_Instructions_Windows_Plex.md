@@ -7,7 +7,7 @@
  
   2. Open `Plex` or `Plex HTPC` (this will create the config location for you).
 
-  3. Download the template files, and extract it (open the .zip file)
+  3. Download the template files, and extract it (open the .zip file).
      - **Optimized shaders for lower-end GPU:** *(Eg. GTX 980, GTX 1060, RX 570)*
        - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip).
        - Alternatively, create and manually copy the code from [**input.conf**](Template/GLSL_Windows_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_Low-end/mpv.conf).
