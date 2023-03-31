@@ -1,6 +1,6 @@
 # Usage Instructions (GLSL / MPV) (v4.x)
 
-## Installing and setting up Anime4K for mpv on Windows
+## Installing and Setting Up Anime4K for mpv on Windows
 *If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
   1. Download the latest release of mpv [**here**](https://sourceforge.net/projects/mpv-player-windows/files/latest/download). 
