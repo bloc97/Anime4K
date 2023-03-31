@@ -7,7 +7,7 @@ The easiest way to use Anime4K with IINA is to follow our `mpv` guide [**here**]
 
 Then follow these steps:
 
-1. Download the latest release of [IINA](https://iina.io/download/) if you haven't already.
+1. Download the latest release of [IINA](https://iina.io/download/), if you haven't already.
 
 2. Open IINA and click on `IINA` in the top menu bar. Then click on `Settings...` from the drop-down menu.
    
