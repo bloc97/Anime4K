@@ -20,11 +20,11 @@ Then follow these steps:
      
 ## Quick Usage Instructions
 
-  1. Anime4K has 3 Major Modes: A, B and C. Each mode is optimized for a different class of anime degradations, explanations are in [**Advanced Usage Instructions**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x)<br>
-     - By Default, Mode A (best for 1080p anime) is automatically enabled in our template (this can be change in mpv.conf)
+  1. Anime4K has 3 Major Modes: A, B and C. Each mode is optimized for a different class of anime degradations. For more explanations and customization options, see the [**Advanced Usage Instructions**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x)<br>
+     - By Default, Mode A is automatically enabled in our template (this can be change in mpv.conf)
 
   2. To enable each Mode manually
-     - Press CTRL+1 to enable Mode A (1080p)
-     - Press CTRL+2 to enable Mode B (720p)
-     - Press CTRL+3 to enable Mode C (480p)
-     - Press CTRL+0 to clear all shaders
+     - Press CTRL+1 to enable Mode A (best for 1080p anime)
+     - Press CTRL+2 to enable Mode B (best for 720p anime)
+     - Press CTRL+3 to enable Mode C (best for 480p anime)
+     - Press CTRL+0 to clear all shaders (disable Anime4K)
