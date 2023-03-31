@@ -8,9 +8,11 @@
   2. Open mpv (this will create the mpv config file location for you)
 
   3. Download the template files, and extract it (open the .zip file)
-     - Optimized shaders for lower-end GPU: *Eg. GTX 980, GTX 1060, RX 570*
+     - **Optimized shaders for lower-end GPU:**  
+       *(Eg. GTX 980, GTX 1060, RX 570)*
        - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_Low-end/mpv.conf)
-     - Optimized shaders for higher-end GPU: *Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT*
+     - **Optimized shaders for higher-end GPU:**  
+       *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)* 
        - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_High-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf)
 
   4. Open File Explorer and type in `%APPDATA%/mpv`
@@ -22,8 +24,8 @@
      <img width="800" src="Screenshots/Windows/mpv/config.png">
      
   6. That's it, Anime4K is now installed and ready to use!
-     ____
-     
+
+____    
 ## Quick Usage Instructions
 
   1. Anime4K has 3 Major Modes: A, B and C. Each mode is optimized for a different class of anime degradations. For more explanations and customization options, see the [**Advanced Usage Instructions**](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x)<br>
