@@ -1,6 +1,6 @@
 # Usage Instructions (GLSL / MPV) (v4.x)
 
-## Installing and setting up Anime4K for Linux-based Distributions (and other Unix-like OS)
+## Installing and Setting Up Anime4K for Linux-based Distributions (and other Unix-like OS)
 
   1. Install `mpv` from repositories of your distribution, some of the common ones are mentioned here
       ### Fedora Silverblue
