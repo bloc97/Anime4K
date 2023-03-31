@@ -10,10 +10,10 @@
   3. Download the template files, and extract it (open the .zip file)
      - **Optimized shaders for lower-end GPU:**  
        *(Eg. GTX 980, GTX 1060, RX 570)*
-       - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_Low-end/mpv.conf)
+       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_Low-end/mpv.conf)
      - **Optimized shaders for higher-end GPU:**  
        *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)* 
-       - Download template [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_High-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf)
+       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_High-end.zip) or maually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf)
 
   4. Open File Explorer and type in `%APPDATA%/mpv`
  
@@ -32,7 +32,7 @@ ____
      - By Default, Mode A is automatically enabled in our template (this can be change in mpv.conf)
 
   2. To enable each Mode manually
-     - Press CTRL+1 to enable Mode A (best for 1080p anime)
-     - Press CTRL+2 to enable Mode B (best for 720p anime)
-     - Press CTRL+3 to enable Mode C (best for 480p anime)
-     - Press CTRL+0 to clear all shaders (disable Anime4K)
+     - Press CTRL+1 to enable Mode A (Best for 1080p Anime)
+     - Press CTRL+2 to enable Mode B (Best for 720p Anime)
+     - Press CTRL+3 to enable Mode C (Best for 480p Anime)
+     - Press CTRL+0 to clear all shaders (Disable Anime4K)
