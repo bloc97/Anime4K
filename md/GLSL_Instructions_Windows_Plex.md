@@ -1,6 +1,6 @@
 # Usage Instructions (GLSL / PLEX) (v4.x)
 
-## Installing and setting up Anime4K for Plex on Windows
+## Installing and Setting Up Anime4K for Plex on Windows
 
   1. Download `Plex for Windows` or `Plex HTPC (for Windows Home Theater PCs)` from [**here**](https://www.plex.tv/media-server-downloads/#plex-app).  
      - *Note: Only the desktop version of the app supports GLSL shaders.*
