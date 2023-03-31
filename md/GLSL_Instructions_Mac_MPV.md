@@ -2,7 +2,7 @@
 
 ## Installing and Setting Up Anime4K for mpv on Apple Silicon and Intel-based Mac
 
-*If you wish to use another media player, refer to their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
+*If you wish to use another media player, look at their documentation on how to install GLSL shaders and modify the shader accordingly if needed.*
 
 1. Install mpv via [Homebrew](https://formulae.brew.sh/formula/mpv) or download the latest release [here](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz).
     - **Note:** Only the Homebrew version is built for native Apple Silicon.
@@ -10,6 +10,7 @@
 2. Open mpv (this will create the mpv config file location for you).
 
 3. Download the template files and extract them (open the `.zip` file).
+
     - **Optimized shaders for lower-end GPU:** *(Eg. M1, M2, Intel chips)*
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
         - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_Low-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_Low-end/mpv.conf).
