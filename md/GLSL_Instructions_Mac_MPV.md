@@ -32,7 +32,7 @@
 
 6. Move the `input.conf`, `mpv.conf`, and the `shaders` folder into the `mpv` folder.
 
-   <img width="800" src="Screenshots/Mac/mpv/config.PNG">
+   <img width="800" src="Screenshots/Mac/mpv/config.png">
 
 7. That's it! Anime4K is now installed and ready to use.
 
