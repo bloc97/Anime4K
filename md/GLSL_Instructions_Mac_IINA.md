@@ -13,7 +13,7 @@ Then follow these steps:
    
    <img width="400" src="Screenshots/Mac/IINA/Settings.png">
 
-3. In the `Settings` window, click on `Enable advanced settings` and then select `Use config directory: ~/.config/mpv/`.
+3. In the `Settings`>`Advanced` window, click on `Enable advanced settings` and then select `Use config directory: ~/.config/mpv/`.
 
    <img width="800" src="Screenshots/Mac/IINA/Advanced.png">
 
