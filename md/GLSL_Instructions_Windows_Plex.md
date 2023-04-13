@@ -43,4 +43,4 @@ ____
     - Press **CTRL+3** to enable Mode C (Optimized for 480p Anime).
     - Press **CTRL+0** to clear all shaders (Disable Anime4K).
     
-3. For more explanations and customization options, see the [Advanced Usage Instructions](md/GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x).
+3. For more explanations and customization options, see the [Advanced Usage Instructions](GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x).
