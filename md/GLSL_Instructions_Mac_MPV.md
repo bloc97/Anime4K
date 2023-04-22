@@ -6,6 +6,12 @@
 
 1. Install mpv via [Homebrew](https://formulae.brew.sh/formula/mpv) or download the latest release [here](https://laboratory.stolendata.net/~djinn/mpv_osx/mpv-latest.tar.gz).
     - **Note:** Only the Homebrew version is built for native Apple Silicon.
+      - <details>
+        <summary>Click Here for Homebrew Installation</summary>
+        1. If Homebrew is not installed, follow the instructions at https://brew.sh to install it.<br>
+        2. Keep the terminal window open and follow the instructions under "Next steps" to add Homebrew to your PATH.<br>
+        3. Follow the instructions at https://formulae.brew.sh/formula/mpv to install mpv.
+        </details>
 
 2. Open mpv (this will create the mpv config file location for you).
 
