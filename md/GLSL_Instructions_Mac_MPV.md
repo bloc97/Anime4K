@@ -19,7 +19,8 @@
 
 3. Download the template files and extract them (open the `.zip` file).
 
-    - **Optimized shaders for lower-end GPU:** *(Eg. M1, M2, Intel chips)*
+    - **Optimized shaders for lower-end GPU:**  
+      *(Eg. M1, M2, Intel chips)*
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
         - <details>
           <summary>Or click here to install manually.</summary>
@@ -29,8 +30,9 @@
          </ul>
          </details>
 
-    - **Optimized shaders for higher-end GPU:** *(Eg. M1 Pro, M1 Max, M1 Ultra, M2 Pro, M2 Max, Intel chips)*  
-      (Untested, might still have performance issues at higher resolutions)
+    - **Optimized shaders for higher-end GPU:**  
+      *(Eg. M1 Pro, M1 Max, M1 Ultra, M2 Pro, M2 Max, Intel chips)*  
+       (Untested, might still have performance issues)  
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip).
         - <details>
           <summary>Or click here to install manually.</summary>
