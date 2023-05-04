@@ -8,11 +8,11 @@
     - **Note:** Only the Homebrew version is built for native Apple Silicon.
     - <details>
       <summary>Click Here for Homebrew Installation</summary>
-      <ul>
+      <ol type="1">
         <li>If Homebrew is not installed, follow the instructions at <a href="https://brew.sh">https://brew.sh</a> to install it.</li>
         <li>Keep the terminal window open and follow the instructions under "Next steps" to add Homebrew to your PATH.</li>
         <li>Follow the instructions at <a href="https://formulae.brew.sh/formula/mpv">https://formulae.brew.sh/formula/mpv</a> to install mpv.</li>
-      </ul>
+      </ol>
       </details>
 
 2. Open mpv (this will create the mpv config file location for you).
