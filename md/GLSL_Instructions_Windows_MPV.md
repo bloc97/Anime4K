@@ -9,15 +9,27 @@
 
   3. Download the template files, and extract it (open the .zip file).
  
-     - **Optimized shaders for lower-end GPU:**<br>*(Eg. GTX 980, GTX 1060, RX 570)*
-       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip).
-       - Alternatively, create and manually copy the code from [**input.conf**](Template/GLSL_Windows_Low-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_Low-end/mpv.conf).
-          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+     - **Optimized shaders for lower-end GPU:**  
+      *(Eg. GTX 980, GTX 1060, RX 570)*
+        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_Low-end.zip).
+        - <details>
+          <summary>Or click here to install manually.</summary>
+          <ul>
+            <li>Copy & Paste the code from <a href="Template/GLSL_Windows_Low-end/input.conf">input.conf</a> and <a href="Template/GLSL_Windows_Low-end/mpv.conf">mpv.conf</a> in your <code>input.conf</code> and <code>mpv.conf</code> file.</li>
+            <li>Then download and extract the shaders from <a href="https://github.com/bloc97/Anime4K/releases">releases</a> and put them in the <code>shaders</code> folder.</li>
+         </ul>
+         </details>
 
-     - **Optimized shaders for higher-end GPU:**<br>*(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)* 
-       - Download the template files [**here**](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_High-end.zip).
-       - Alternatively, create and manually copy the code from [**input.conf**](Template/GLSL_Windows_High-end/input.conf) and [**mpv.conf**](Template/GLSL_Windows_High-end/mpv.conf).
-          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+     - **Optimized shaders for higher-end GPU:**  
+      *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
+        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Windows_High-end.zip).
+        - <details>
+          <summary>Or click here to install manually.</summary>
+          <ul>
+            <li>Copy & Paste the code from <a href="Template/GLSL_Windows_High-end/input.conf">input.conf</a> and <a href="Template/GLSL_Windows_High-end/mpv.conf">mpv.conf</a> in your <code>input.conf</code> and <code>mpv.conf</code> file.</li>
+            <li>Then download and extract the shaders from <a href="https://github.com/bloc97/Anime4K/releases">releases</a> and put them in the <code>shaders</code> folder.</li>
+         </ul>
+         </details>
 
   4. Open File Explorer and type in `%APPDATA%/mpv`, then hit Enter.
  
