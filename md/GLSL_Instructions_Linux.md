@@ -26,17 +26,29 @@
 
   - Note: make sure to install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134).
 
-2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git`, or download the archive files in the [Releases](https://github.com/bloc97/Anime4K/releases)
+2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git`, or download the template files and extract them.
 
-    - **Optimized shaders for lower-end GPU:** *(Eg. GTX 980, GTX 1060, RX 570)*
+    - **Optimized shaders for lower-end GPU:**  
+      *(Eg. GTX 980, GTX 1060, RX 570)*
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
-        - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_Low-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_Low-end/mpv.conf).
-          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+        - <details>
+          <summary>Or click here to install manually.</summary>
+          <ul>
+            <li>Copy & Paste the code from <a href="Template/GLSL_Mac_Linux_Low-end/input.conf">input.conf</a> and <a href="Template/GLSL_Mac_Linux_Low-end/mpv.conf">mpv.conf</a> in your <code>input.conf</code> and <code>mpv.conf</code> file.</li>
+            <li>Then download and extract the shaders from <a href="https://github.com/bloc97/Anime4K/releases">releases</a> and put them in the <code>shaders</code> folder.</li>
+         </ul>
+         </details>
 
-    - **Optimized shaders for higher-end GPU:** *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
+    - **Optimized shaders for higher-end GPU:**  
+      *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip).
-        - Alternatively, create and manually copy the code from [input.conf](Template/GLSL_Mac_Linux_High-end/input.conf) and [mpv.conf](Template/GLSL_Mac_Linux_High-end/mpv.conf).
-          - Then download the shaders from [releases](https://github.com/bloc97/Anime4K/releases) and put them in the `shaders` folder.
+        - <details>
+          <summary>Or click here to install manually.</summary>
+          <ul>
+            <li>Copy & Paste the code from <a href="Template/GLSL_Mac_Linux_High-end/input.conf">input.conf</a> and <a href="Template/GLSL_Mac_Linux_High-end/mpv.conf">mpv.conf</a> in your <code>input.conf</code> and <code>mpv.conf</code> file.</li>
+            <li>Then download and extract the shaders from <a href="https://github.com/bloc97/Anime4K/releases">releases</a> and put them in the <code>shaders</code> folder.</li>
+         </ul>
+         </details>
 
 3. Navigate to `~/.config/mpv` and move the `input.conf`, `mpv.conf` and the `shaders` folder into the `mpv` directory.
    `mv path/to/stuff ~/.config/mpv`
