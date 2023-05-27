@@ -17,11 +17,19 @@ What Anime4K does provide is a way to upscale, in real time, 1080p anime for 4K 
 
 Currently, research is being done on better real-time upscaling for lower resolution or older content.
 
-## **Installation Instructions**  
-### [Windows (GLSL/MPV)](md/GLSL_Instructions_Windows.md)  
-### [Linux (GLSL/MPV)](md/GLSL_Instructions_Linux.md)  
-### [Mac (GLSL/MPV)](md/GLSL_Instructions_Mac.md)  
-### [Plex (GLSL/MPV)](md/GLSL_Instructions_Plex.md)  
+## **Installation Instructions**
+
+  ### Windows
+  - [(GLSL/MPV)](md/GLSL_Instructions_Windows_MPV.md)  
+  - [(GLSL/Plex)](md/GLSL_Instructions_Windows_Plex.md)  
+
+  ### Linux
+  - [(GLSL/MPV)](md/GLSL_Instructions_Linux.md)  
+
+  ### Mac
+  - [(GLSL/MPV)](md/GLSL_Instructions_Mac_MPV.md)  
+  - [(GLSL/IINA)](md/GLSL_Instructions_Mac_IINA.md)  
+  - [(GLSL/Plex)](md/GLSL_Instructions_Mac_Plex.md)  
 
 ## v4.1 Low resolution experiment
 Results from the [experimental SRGAN shaders](https://github.com/bloc97/Anime4K/commit/5f9294d847e724b67f941d1742e3565a0a106291) for 360p -> 4K: (zoom in to view details)
@@ -29,8 +37,6 @@ Results from the [experimental SRGAN shaders](https://github.com/bloc97/Anime4K/
 The images are sorted by algorithm speed, bicubic being the fastest. [FSRCNNX](https://github.com/igv/FSRCNN-TensorFlow) and Anime4K are real-time while [waifu2x](https://github.com/nagadomi/waifu2x) and [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) are not.
 ![Comparison](results/Comparisons/Cropped_Screenshots/Magia_360p_4K.png?raw=true)
 ![Comparison](results/Comparisons/Cropped_Screenshots/Higurashi_360p_4K.png?raw=true)
-
-
 
 ## v4
 
@@ -67,6 +73,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
 
 ## Projects that use Anime4K
  - https://github.com/Blinue/Magpie (General-purpose real-time upscaler for any program/game running on Windows 10)
+ - https://github.com/imxieyi/Anime4KMetal (Anime4K for Apple platforms based on Metal)
 
 
 *Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*

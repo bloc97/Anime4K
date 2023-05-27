@@ -1,35 +1,16 @@
-# Usage Instructions (GLSL / MPV) (v4.x)
+# Usage Instructions (GLSL / PLEX) (v4.x)
 
-## Installing and Setting Up Anime4K for Linux-based Distributions (and other Unix-like OS)
+## Installing and Setting Up Anime4K for Plex on Apple Silicon and Intel-Based Mac
 
-  1. Install `mpv` from repositories of your distribution, some of the common ones are mentioned here
-      ### Fedora Silverblue
-        1. Install the RPM-Fusion "free" repository, if not already installed, paste in the command below
+1. Download `Plex for Mac` or `Plex HTPC (for macOS Home Theater PCs)` from [**here**](https://www.plex.tv/media-server-downloads/#plex-app).  
+   - *Note: Only the desktop version of the app supports GLSL shaders.*
+ 
+2. Open `Plex` or `Plex HTPC` (this will create the Application Support location for you).
 
-            `sudo rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm`
-
-        2. Reboot and install `mpv`
-        
-        3. Reboot and continue to step 2
-       
-        ### Fedora
-         sudo dnf install mpv
-
-        ### Ubuntu and Derivatives
-         sudo apt install mpv
-
-        ### Arch and Derivatives
-         sudo pacman -S mpv
-
-        ### Gentoo (Add USE Flags as mentioned [here](https://wiki.gentoo.org/wiki/Mpv#USE_flags))
-         sudo emerge --ask media-video/mpv` 
-
-  - Note: make sure to install a version of [**mpv**](https://mpv.io/) that was released after June 2021, older versions [might not work](https://github.com/bloc97/Anime4K/issues/134).
-
-2. Clone the repo using `git clone https://github.com/bloc97/Anime4K.git`, or download the template files and extract them.
+3. Download the template files and extract them (open the .zip file).
 
     - **Optimized shaders for lower-end GPU:**  
-      *(Eg. GTX 980, GTX 1060, RX 570)*
+      *(Eg. M1, M2, Intel chips)*
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
         - <details>
           <summary>Or click here to install manually.</summary>
@@ -40,7 +21,8 @@
          </details>
 
     - **Optimized shaders for higher-end GPU:**  
-      *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
+      *(Eg. M1 Pro, M1 Max, M1 Ultra, M2 Pro, M2 Max, Intel chips)*  
+       (Untested, might still have performance issues)  
         - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip).
         - <details>
           <summary>Or click here to install manually.</summary>
@@ -50,12 +32,23 @@
          </ul>
          </details>
 
-3. Navigate to `~/.config/mpv` and move the `input.conf`, `mpv.conf` and the `shaders` folder into the `mpv` directory.
-   `mv path/to/stuff ~/.config/mpv`
+4. In the Finder on your Mac, choose `Go` > `Go to Folder...`
 
-   ![image](https://user-images.githubusercontent.com/45941793/162597836-22de46b1-fd04-4054-a5ec-f83452ed4e13.png)
+   <img width="500" src="Screenshots/Mac/Finder.png">
+     
+5. Paste `~/Library/Application Support/Plex/` or `~/Library/Application Support/Plex HTPC/` and hit Enter.
 
-____
+   <img width="500" src="Screenshots/Mac/Plex/location.png"><br>
+   <img width="500" src="Screenshots/Mac/Plex HTPC/location.png">
+     
+6. Move the `input.conf`, `mpv.conf`, and the `shaders` folder into the `Plex` or `Plex HTPC` folder.
+
+   <img width="800" src="Screenshots/Mac/Plex/config.png"><br>
+   <img width="800" src="Screenshots/Mac/Plex HTPC/config.png">
+     
+7. That's it! Anime4K is now installed and ready to use.
+
+____    
 ## Quick Usage Instructions
 
 1. Anime4K has 3 major modes: A, B, and C. Each mode is optimized for a different class of anime degradations.
