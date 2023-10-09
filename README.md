@@ -74,6 +74,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
 ## Projects that use Anime4K
  - https://github.com/Blinue/Magpie (General-purpose real-time upscaler for any program/game running on Windows 10)
  - https://github.com/imxieyi/Anime4KMetal (Anime4K for Apple platforms based on Metal)
+ - https://github.com/mikigal/Anime4K-GUI (GUI application based on Anime4K which allows to save upscaled video to disk)
 
 
 *Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
