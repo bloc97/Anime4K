@@ -6,7 +6,7 @@
 
   ### Linux
   - [(GLSL/MPV)](GLSL_Instructions_Linux.md)
-  - [(GLSL/Plex)](md/GLSL_Instructions_Linux_Plex.md)
+  - [(GLSL/Plex)](GLSL_Instructions_Linux_Plex.md)
 
   ### Mac
   - [(GLSL/MPV)](GLSL_Instructions_Mac_MPV.md)  
