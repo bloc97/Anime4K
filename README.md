@@ -74,6 +74,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
 ## Projects that use Anime4K
  - https://github.com/Blinue/Magpie (General-purpose real-time upscaler for any program/game running on Windows 10)
  - https://github.com/imxieyi/Anime4KMetal (Anime4K for Apple platforms based on Metal)
+ - https://colab.research.google.com/drive/11xAn4fyAUJPZOjrxwnL2ipl_1DGGegkB (Anime4K Re-Implemented in PyTorch)
 
 
 *Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
