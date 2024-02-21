@@ -84,6 +84,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
  - https://github.com/andraantariksa/Anime4K-rs (Anime4K Re-Implemented in Rust)
  - https://github.com/TianZerL/Anime4KCPP (Anime4K & more algorithms implemented in C++)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
+ - https://github.com/Anime4KWebBoost/Anime4K-WebGPU (Anime4K for WebGPU)
  
 ## Acknowledgements
 | OpenCV | TensorFlow | Keras | Torch | mpv | MPC |
