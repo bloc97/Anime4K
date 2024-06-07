@@ -77,6 +77,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
  - https://github.com/imxieyi/Anime4KMetal (Anime4K for Apple platforms based on Metal)
  - https://github.com/mikigal/Anime4K-GUI (GUI application based on Anime4K which allows to save upscaled video to disk)
  - https://colab.research.google.com/drive/11xAn4fyAUJPZOjrxwnL2ipl_1DGGegkB (Anime4K Re-Implemented in PyTorch)
+ - https://github.com/Anime4KWebBoost/Anime4K-WebGPU (Anime4K for WebGPU)
 
 *Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
@@ -85,7 +86,6 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
  - https://github.com/andraantariksa/Anime4K-rs (Anime4K Re-Implemented in Rust)
  - https://github.com/TianZerL/Anime4KCPP (Anime4K & more algorithms implemented in C++)
  - https://github.com/k4yt3x/video2x (Anime Video Upscaling Pipeline)
- - https://github.com/Anime4KWebBoost/Anime4K-WebGPU (Anime4K for WebGPU)
  
 ## Acknowledgements
 | OpenCV | TensorFlow | Keras | Torch | mpv | MPC |
