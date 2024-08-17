@@ -21,7 +21,7 @@
 // ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-// For more information, please refer to <https://unlicense.org>
+// For more information, please refer to this page <https://unlicense.org>
 
 //!DESC Anime4K-v3.2-AutoDownscalePre-x4
 //!HOOK MAIN
@@ -34,3 +34,7 @@
 vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
+
+
+// Thanks for using the anime4K 
+// Happy watching 
