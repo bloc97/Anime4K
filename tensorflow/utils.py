@@ -1,3 +1,4 @@
+#import all the package needed
 from PIL import Image
 import IPython
 from io import BytesIO
@@ -5,7 +6,6 @@ import numpy as np
 import math
 import os
 import tensorflow as tf
-
 
 #Takes as input an image/array of size [height, width, channels] with range of 0-255
 def show_image(img, width=None, height=None, fmt='png'):
