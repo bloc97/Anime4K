@@ -103,4 +103,7 @@ I would also like to thank the greater open source community, in which the assor
 
 Finally, but not least, infinite thanks to my family, friends and professors for providing financial, technical, social support and expertise for my ongoing learning journey during these hard times. Your help has been beyond description, really.
 
+*note from the user(me) --> I myself is using the anime4K from quite a while now and i have to say that the eperience it gives is beyond the  imgagination. 
+I am a very big fan of the one piece anime it is the best out there i watched that with anime4K and i enjoyed it a lot. 
+Thanks the anime4K team to create it. 
 *This list is not final, as the project is far from done. Any future acknowledgements will be promptly added.*
