@@ -17,6 +17,11 @@ Then follow these steps:
 
    <img width="800" src="Screenshots/Mac/IINA/Advanced.png">
 
+4. In the `Settings`>`Key Bindings` window, [1] click on your enabled config (in most cases, it should be `IINA Default`), then click on [2] `Duplicate`. On the newly created configuration, click on [3] `Show the config file in Finder`. Use your preferred text editor to add the key bindings for Anime4K (found in `~/.config/mpv/mpv.conf`) at the end of the `.conf` file. 
+
+   <img width="800" src="Screenshots/Mac/IINA/KeyBindings.png">
+
+
 4. That's it! Anime4K is now ready to use with IINA.
 
 ____
@@ -32,3 +37,4 @@ ____
     - Press **CTRL+0** to clear all shaders (Disable Anime4K).
     
 3. For more explanations and customization options, see the [Advanced Usage Instructions](GLSL_Instructions_Advanced.md#advanced-usage-instructions-glsl--mpv-v4x).
+
