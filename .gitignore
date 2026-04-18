@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# macOS metadata
+.DS_Store
+
 # BlueJ files
 *.ctxt
 
