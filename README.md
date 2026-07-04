@@ -77,6 +77,7 @@ Counting since `2021-09-19T16:02:06Z` (ISO 8601)
  - https://github.com/imxieyi/Anime4KMetal (Anime4K for Apple platforms based on Metal)
  - https://github.com/mikigal/Anime4K-GUI (GUI application based on Anime4K which allows to save upscaled video to disk)
  - https://colab.research.google.com/drive/11xAn4fyAUJPZOjrxwnL2ipl_1DGGegkB (Anime4K Re-Implemented in PyTorch)
+ - https://github.com/yorkyang2333/iina-anime4k (Anime4K plugin for IINA on macOS)
 
 *Note that the following might be using an outdated version of Anime4K. There have been significant quality improvements since v3.*
  - https://github.com/yeataro/TD-Anime4K (Anime4K for TouchDesigner)
