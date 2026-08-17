@@ -31,7 +31,7 @@
          </ul>
          </details>
 
-3. Navigate to your local `Plex` or `Plex HTPC` data directory.
+4. Navigate to your local `Plex` or `Plex HTPC` data directory.
 
    #### Flatpak
          /home/.var/app/tv.plex.PlexHTPC/data/plex/

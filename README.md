@@ -62,7 +62,7 @@ What's new:
  - Blind resampling artifact reduction algorithms. *(For badly resampled anime.)*
  - Experimental line darkening and line thinning algorithm. *(For perceptual quality. We perceive thinner/darker lines as perceptually higher quality, even if it might not be the case.)*
 
-[More information about each shader (OUTDATED)](https://github.com/bloc97/Anime4K/wiki).
+[More information about each shader](md/GLSL_Instructions_Advanced.md). (The [wiki](https://github.com/bloc97/Anime4K/wiki) also covers this, but is outdated.)
 
 ## Visits
 
