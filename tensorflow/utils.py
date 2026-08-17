@@ -196,9 +196,9 @@ def degrade_noise_gaussian(img, sigma, color=True, low_freq_sigma=None, low_freq
     
     imgshape = tf.shape(img)
     if color:
-        rg = tf.random.normal(imgshape, mean=0, stddev=rs)
+        rg = tf.random.normal(imgshape, mean=0, stddev=sigma)
     else:
-        rg = tf.random.normal(imgshape[:-1], mean=0, stddev=rs)[..., tf.newaxis]
+        rg = tf.random.normal(imgshape[:-1], mean=0, stddev=sigma)[..., tf.newaxis]
         
     #Low frequency blur if requested
     if low_freq_sigma is not None:
