@@ -35,6 +35,7 @@ First, the basics.
   -  The shaders process the image in the same order as the filename order given in `input.conf`. One exception is `Clamp_Highlights`, explained in the table below.
   -  You are free to choose the CNN variant (S, M, L, VL, UL) for better speed or quality. Each step in size for CNN shaders doubles the processing time. For example, if the M version takes 5ms to run, the L version should take approximately 10ms to run, 20ms for VL and so on.
   -  Non-CNN shaders are significantly faster but might be of lower quality.
+  -  The experimental GAN shaders follow different composition rules and are documented separately in [GAN Shader Instructions](GLSL_Instructions_GAN.md).
 
 Quick explanation of each shader type:
 
@@ -49,6 +50,8 @@ Quick explanation of each shader type:
 | Denoise | Applies a denoising filter to the image. |
 | Deblur | Applies a deblur filter to the image. Sharpens details without overshoot or ringing. |
 | AutoDownscalePre_x4 | Downscales an image after a first upscaling step, so that the second x2 upscaling step exactly matches screen size. This improves performance without noticeably impacting quality as you will not be working with images larger than the screen size. Should be placed between two Upscale shaders. Without this shader, the default behaviour is to downscale to the screen size after running all shaders. |
+| 3DGraphics_Upscale_x2_US | Ultra small x2 upscaler for 3D content such as games, rather than for hand-drawn anime. Intended for use with tools like Magpie. Four passes, so it is far cheaper than any of the anime upscalers. |
+| 3DGraphics_AA_Upscale_x2_US | Same as above, but also reduces aliasing, which 3D content usually has and anime usually does not. |
 | AutoDownscalePre_x2 | Downscales an image after a first upscaling step to match screen size. This improves performance without noticeably impacting quality as you will not be working with images larger than the screen size. Should be placed after the first Upscale shader. Without this shader, the default behaviour is to downscale to the screen size after running all shaders. |
 ____
 Overview of default modes:
