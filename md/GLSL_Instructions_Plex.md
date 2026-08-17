@@ -1,20 +1,9 @@
-# Usage Instructions (GLSL / PLEX MPV) (v4.x)
+# Usage Instructions (GLSL / Plex) (v4.x) — Moved
 
-## Installing and setting up Anime4K for Plex Media Player/Plex HTPC
+This page has been replaced by per-platform guides for Plex:
 
-  1. Install Plex Media Player or Plex HTPC from [**here**](https://www.plex.tv/media-server-downloads/#plex-app)  
- 
-  2. Download the .glsl shader files [**here**](https://github.com/bloc97/Anime4K/releases)  
+  - [(Windows)](GLSL_Instructions_Windows_Plex.md)
+  - [(Linux)](GLSL_Instructions_Linux_Plex.md)
+  - [(Mac)](GLSL_Instructions_Mac_Plex.md)
 
-  3. Copy the .glsl files to `~/Library/Application Support/Plex/shaders` or `~/Library/Application Support/Plex HTPC/shaders` for Mac and `%LOCALAPPDATA%\Plex\shaders` or `%LOCALAPPDATA%\Plex HTPC\shaders` for Windows.
- 
-  4. (Optional) If `mpv.conf` does not exist in `~/Library/Application Support/Plex/`, `~/Library/Application Support/Plex HTPC/`, `%LOCALAPPDATA%\Plex\`, or `%LOCALAPPDATA%\Plex HTPC\`, create an empty file and follow [**these instructions**](https://wiki.archlinux.org/index.php/Mpv#Configuration) to optimize your configuration.  
-
-  5. If `input.conf` does not exist in `~/Library/Application Support/Plex/`, `~/Library/Application Support/Plex HTPC/`, `%LOCALAPPDATA%\Plex\`, or `%LOCALAPPDATA%\Plex HTPC\`, create an empty file and paste one of the following code blocks inside the file:
-  
-  - Note: Only works on the desktop version of the app.
-
-----
-## Follow Device Specific Installation
-
-  - Installation Instructions can be found [**here**](https://github.com/bloc97/Anime4K#installation-instructions)
+For customization options, see the [Advanced Usage Instructions](GLSL_Instructions_Advanced.md).
