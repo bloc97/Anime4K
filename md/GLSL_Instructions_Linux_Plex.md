@@ -7,11 +7,11 @@
  
   2. Open `Plex` or `Plex HTPC` (this will create the config location for you).
 
-  3. Download the template files, and extract it (open the .zip file).
+  3. Download the template files for your GPU tier.
 
      - **Optimized shaders for lower-end GPU:**  
       *(Eg. GTX 980, GTX 1060, RX 570)*
-        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_Low-end.zip).
+        - Download [input.conf](https://raw.githubusercontent.com/bloc97/Anime4K/master/md/Template/GLSL_Mac_Linux_Low-end/input.conf) and [mpv.conf](https://raw.githubusercontent.com/bloc97/Anime4K/master/md/Template/GLSL_Mac_Linux_Low-end/mpv.conf) (right-click, **Save link as...**), then download and extract the shaders from [releases](https://github.com/bloc97/Anime4K/releases) into a `shaders` folder.
         - <details>
           <summary>Or click here to install manually.</summary>
           <ul>
@@ -22,7 +22,7 @@
 
      - **Optimized shaders for higher-end GPU:**  
       *(Eg. GTX 1080, RTX 2070, RTX 3060, RX 590, Vega 56, 5700XT, 6600XT)*
-        - Download the template files [here](https://github.com/Tama47/Anime4K/releases/download/v4.0.1/GLSL_Mac_Linux_High-end.zip).
+        - Download [input.conf](https://raw.githubusercontent.com/bloc97/Anime4K/master/md/Template/GLSL_Mac_Linux_High-end/input.conf) and [mpv.conf](https://raw.githubusercontent.com/bloc97/Anime4K/master/md/Template/GLSL_Mac_Linux_High-end/mpv.conf) (right-click, **Save link as...**), then download and extract the shaders from [releases](https://github.com/bloc97/Anime4K/releases) into a `shaders` folder.
         - <details>
           <summary>Or click here to install manually.</summary>
           <ul>
