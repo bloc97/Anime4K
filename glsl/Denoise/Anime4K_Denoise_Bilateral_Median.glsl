@@ -57,21 +57,23 @@ float gaussian(float x, float s, float m) {
 	return exp(-0.5 * scaled * scaled);
 }
 
-vec4 getMedian(vec4 v[KERNELLEN], float w[KERNELLEN], float n) {
+vec4 getMedian(vec4 v[KERNELLEN], float luma[KERNELLEN], float w[KERNELLEN], float n) {
 	
 	for (int i=0; i<KERNELLEN; i++) {
 		float w_above = 0.0;
 		float w_below = 0.0;
 		for (int j=0; j<KERNELLEN; j++) {
-			if (v[j].x > v[i].x) {
+			if (luma[j] > luma[i]) {
 				w_above += w[j];
-			} else if (v[j].x < v[i].x) {
+			} else if (luma[j] < luma[i]) {
 				w_below += w[j];
 			}
 		}
 		
 		if ((n - w_above) / n >= 0.5 && w_below / n <= 0.5) {
-			return v[i];
+			// Prefer the center color when its luma is already the weighted median.
+			int center = KERNELLEN / 2;
+			return luma[i] == luma[center] ? v[center] : v[i];
 		}
 	}
 }
@@ -113,8 +115,8 @@ vec4 hook() {
 			n += histogram_wn[i];
 		}
 	
-		return getMedian(histogram_v, histogram_wn, n);
+		return getMedian(histogram_v, histogram_l, histogram_wn, n);
 	}
 	
-	return getMedian(histogram_v, histogram_w, n);
+	return getMedian(histogram_v, histogram_l, histogram_w, n);
 }
